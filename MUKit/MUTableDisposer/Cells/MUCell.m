@@ -13,7 +13,7 @@
 
 @synthesize cellData;
 
-//==============================================================================
+
 - (void) setupCellData:(MUCellData *)aCellData
 {
     if(cellData != aCellData)
@@ -26,7 +26,7 @@
     self.accessoryType = cellData.cellAccessoryType;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [cellData release];
@@ -34,7 +34,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (NSArray*) inputTraits
 {
     return nil;

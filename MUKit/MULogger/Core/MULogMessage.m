@@ -18,25 +18,25 @@ static NSString* types[] = {@"DEBUG", @"INFO", @"WARNING", @"ERROR", @"FATAL"};
 @synthesize date;
 @synthesize text;
 
-//==============================================================================
+
 + (id) logMessage
 {
     return [[[MULogMessage alloc] init] autorelease];
 }
 
-//==============================================================================
+
 + (id) logMessageWithType:(MULogMessageType)aLogMessageType text:(NSString*)aText
 {
     return [[[MULogMessage alloc] initWithType:aLogMessageType text:aText] autorelease];
 }
 
-//==============================================================================
+
 - (id) init
 {
     return [self initWithType:logMessageTypeDebug text:nil];
 }
 
-//==============================================================================
+
 - (id) initWithType:(MULogMessageType)aLogMessageType text:(NSString*)aText
 {
     if( (self = [super init]) )
@@ -48,7 +48,7 @@ static NSString* types[] = {@"DEBUG", @"INFO", @"WARNING", @"ERROR", @"FATAL"};
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [text release];
@@ -57,7 +57,7 @@ static NSString* types[] = {@"DEBUG", @"INFO", @"WARNING", @"ERROR", @"FATAL"};
     [super dealloc];
 }
 
-//==============================================================================
+
 - (NSString*) typeDescription
 {
     return types[(int)type];

@@ -12,7 +12,7 @@
 
 @implementation MUCellStandart
 
-//==============================================================================
+
 - (void) setupCellData:(MUCellData *)aCellData
 {
     [super setupCellData:aCellData];

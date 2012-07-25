@@ -15,7 +15,7 @@
 @synthesize dataSource;
 
 #pragma mark - override next methods to customize:
-//==============================================================================
+
 - (UIView*) createPicker
 {
 //    UIPickerView* pv = [[[UIPickerView alloc] initWithFrame:CGRectZero] autorelease];
@@ -27,26 +27,26 @@
     return pv;
 }
 
-//==============================================================================
+
 - (UIPickerView*) popupedPicker
 {
     return (UIPickerView*)picker;
 }
 
 #pragma mark - override next methods to change default behaviours
-//==============================================================================
+
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 1;
 }
 
-//==============================================================================
+
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return [dataSource count];
 }
 
-//==============================================================================
+
 - (NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     NSString* result = nil;
@@ -63,14 +63,14 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSObject*) selectedItem
 {
     int index = [self.popupedPicker selectedRowInComponent:0];
     return [dataSource objectAtIndex:index];
 }
 
-//==============================================================================
+
 - (void) popupWillAppear:(BOOL)animated
 {
     [super popupWillAppear:animated];
@@ -88,7 +88,7 @@
     }
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @end

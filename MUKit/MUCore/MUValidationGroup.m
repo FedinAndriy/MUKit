@@ -10,32 +10,32 @@
 #import "MUValidationGroup.h"
 #import "MUValidator.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUValidationGroup (Private)
 
 - (void) showInvalidViewForField:(UITextField*)aTextField;
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidationGroup
 
 @synthesize invalidIndicatorImage;
 @synthesize delegate;
 
 #pragma mark - init/dealloc
-//==============================================================================
+
 - (id) init
 {
 	NSAssert(NO, @"Can't use this method !!!");	[self release];
 	return nil;
 }
 
-//==============================================================================
+
 - (id) initWithValidators:(NSArray *)aValidators
 {
 	if( (self = [super init]) )
@@ -46,7 +46,7 @@
 	return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
 	[validators release];
@@ -56,7 +56,7 @@
 }
 
 #pragma mark - validation
-//==============================================================================
+
 - (NSArray*) validate
 {
     [self hideInvalidIndicators];
@@ -98,14 +98,14 @@
     return result;
 }
 
-//==============================================================================
+
 - (void) showInvalidViewForField:(UITextField*)aTextField
 {
     aTextField.rightView = [[[UIImageView alloc] initWithImage: invalidIndicatorImage] autorelease];
     aTextField.rightViewMode = UITextFieldViewModeAlways;
 }
 
-//==============================================================================
+
 - (void) hideInvalidIndicators
 {
     for(MUValidator *object in validators)
@@ -115,8 +115,8 @@
     }
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 
 @end

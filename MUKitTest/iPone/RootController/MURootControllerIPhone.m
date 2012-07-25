@@ -17,7 +17,7 @@
 @synthesize popupPressed;
 @synthesize ivTapable;
 
-//==============================================================================
+
 - (id)init
 {
     self = [super initWithNibName:@"MURootControllerIPhone" bundle:nil];
@@ -28,7 +28,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -37,13 +37,13 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)loadView
 {
     [super loadView];
 }
 
-//==============================================================================
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,7 +53,7 @@
     [ivTapable setImageWithURL:imgURL];
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     [self setIvTapable:nil];
@@ -61,35 +61,35 @@
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }
 
 #pragma mark - Button Action
-//==============================================================================
+
 - (IBAction)showKeyboardAvoidingScrollView:(id)sender 
 {
     MUKeyboardAvoidingScrollController *vc = [[MUKeyboardAvoidingScrollController new] autorelease];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-//==============================================================================
+
 - (IBAction)showKeyboardAvoidingTableView:(id)sender 
 {
     MUKeyboardAvoidingTableController *vc = [[MUKeyboardAvoidingTableController new] autorelease];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-//==============================================================================
+
 - (IBAction)showTableDisposerController:(id)sender
 {
     TableViewWithMapedCells *vc = [[TableViewWithMapedCells new] autorelease];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-//==============================================================================
+
 - (IBAction)switchController:(id)sender
 {
     MUSwitchController* switchController = (MUSwitchController*)MUGetPrimeViewController();
@@ -100,7 +100,7 @@
     NSLog(@"Switch Pressed");
 }
 
-//==============================================================================
+
 - (void)dealloc
 {
     [ivTapable release];
@@ -109,13 +109,13 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) imageTapped:(UIImage*)anImage
 {
     MUShowSimpleAlert(@"Image Tapable", @"image taped!");
 }
 
-//==============================================================================
+
 - (IBAction)popupPressed:(id)sender
 {
     MUPopupDatePicker* datePicker = [[MUPopupDatePicker alloc] init];

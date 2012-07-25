@@ -11,7 +11,7 @@
 @implementation MUBaseTableController
 
 #pragma mark - init/dealloc
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -23,7 +23,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void)dealloc
 {
     [dataSource release];
@@ -32,7 +32,7 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
@@ -51,34 +51,34 @@
     [self.view addSubview:tableView];
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     tableView = nil;
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 }
 
 #pragma mark - dataSource
-//==============================================================================
+
 - (BOOL) isDataSourceAvailable
 {
     return [dataSource count];
 }
 
 #pragma mark - table
-//==============================================================================
+
 - (Class) tableViewClass
 {
 	return [UITableView class];
 }
 
-//==============================================================================
+
 /**
  * Override this to change style of your table
  */
@@ -87,21 +87,21 @@
     return UITableViewStylePlain;
 }
 
-//==============================================================================
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // override this method in subclasses
     return [dataSource count];
 }
 
-//==============================================================================
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // override this method in subclasses
     return nil;
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @end

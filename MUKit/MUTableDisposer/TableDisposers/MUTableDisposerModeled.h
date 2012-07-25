@@ -12,7 +12,7 @@
 
 @class MUTableDisposerModeled;
 
-//==============================================================================
+
 @protocol MUTableDisposerModeledDelegate <MUTableDisposerDelegate>
 
 @optional
@@ -22,7 +22,7 @@
 @end
 
 
-//==============================================================================
+
 @interface MUTableDisposerModeled : MUTableDisposer
 {
     NSMutableDictionary* registeredClasses;

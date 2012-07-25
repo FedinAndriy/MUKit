@@ -26,7 +26,7 @@
 @synthesize tf_10;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id)init
 {
     self = [super initWithNibName:@"MUKeyboardAvoidingScrollController" bundle:nil];
@@ -37,7 +37,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void)dealloc 
 {
     [tf_01 release];
@@ -55,7 +55,7 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)viewDidLoad
 {    
     MUValidator *validator = [[[MUValidatorNotEmpty alloc] init] autorelease];
@@ -114,7 +114,7 @@
     [super viewDidLoad];
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     [self setTf_01:nil];
@@ -134,21 +134,21 @@
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     return YES;
 }
 
 #pragma mark - Navigation Button
-//==============================================================================
+
 - (UIBarButtonItem*)createRightNavButton
 {
     return [[[UIBarButtonItem alloc] initWithTitle:@"Validation" style:UIBarButtonItemStyleDone target:nil action:nil] autorelease];
 }
 
 #pragma mark - Button Action
-//==============================================================================
+
 - (void)rightNavButtonPressed:(id)aSender
 {
     [((MUKeyboardAvoidingScrollView*)scrollView) hideKeyBoard];

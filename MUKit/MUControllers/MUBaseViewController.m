@@ -14,7 +14,7 @@
 @synthesize isVisible;
 
 #pragma mark - init/dealoc
-//==============================================================================
+
 - (void)dealloc
 {
     [spinneredView release];    
@@ -22,7 +22,7 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)loadView
 {
     [super loadView];
@@ -89,7 +89,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     [spinneredView release];
@@ -98,21 +98,21 @@
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (void) viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
     isVisible = YES;
 }
 
-//==============================================================================
+
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     isVisible = NO;
 }
 
-//==============================================================================
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation 
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait || interfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) ? (YES) : (NO);
@@ -120,7 +120,7 @@
 
 
 #pragma mark - Spinnered View
-//==============================================================================
+
 // show spinnered view above
 - (void) showSpinneredView
 {
@@ -129,7 +129,7 @@
         [spinneredView show];
 }
 
-//==============================================================================
+
 // hide spinnered view
 - (void) hideSpinneredView;
 {
@@ -141,7 +141,7 @@
 }
 
 #pragma mark - Show Alert View
-//==============================================================================
+
 - (void)showAlertViewWithTitle:(NSString *)aTitle message:(NSString *)aMessage delegate:(id)aDelegate cancelButtonTitle:(NSString *)aCancelButtonTitle otherButtonTitle:(NSString *)aOtherButtonTitle
 {
     if (isVisible)
@@ -151,21 +151,21 @@
 }
 
 #pragma mark - Customization For Navigation Bar
-//==============================================================================
+
 // create custom left button for navigation bar
 - (UIBarButtonItem*) createLeftNavButton
 {
     return nil;
 }
 
-//==============================================================================
+
 // create custom right button for navigation bar
 - (UIBarButtonItem*) createRightNavButton
 {
     return nil;
 }
 
-//==============================================================================
+
 // create custom title view for navigation bar (return nil by default)
 - (UIView*) titleViewNavItem
 {
@@ -173,14 +173,14 @@
 }
 
 #pragma mark - Process Events
-//==============================================================================
+
 // action to process pressed-on-left-button event
 - (void) leftNavButtonPressed:(id)aSender
 {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-//==============================================================================
+
 // action to process pressed-on-right-button event
 - (void) rightNavButtonPressed:(id)aSender
 {
@@ -188,14 +188,14 @@
 }
 
 #pragma mark - Backgraung Image
-//==============================================================================
+
 - (UIImage*) backgraundImage
 {
     // default nil
     return nil;
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @end

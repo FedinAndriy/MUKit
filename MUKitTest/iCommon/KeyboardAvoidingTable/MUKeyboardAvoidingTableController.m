@@ -39,7 +39,7 @@
 @synthesize tf_11;
 @synthesize tf_12;
 
-//==============================================================================
+
 - (id)init
 {
     self = [super initWithNibName:@"MUKeyboardAvoidingTableController" bundle:nil];
@@ -52,7 +52,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void)dealloc 
 {
     [creditCardNumberFormatter release];
@@ -78,7 +78,7 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)viewDidLoad
 {
     NSMutableArray *sectionFirst = [NSMutableArray array];
@@ -227,7 +227,7 @@
     [super viewDidLoad];
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     [self setTf_01:nil];
@@ -248,21 +248,21 @@
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }
 
 #pragma mark - Navigation Button
-//==============================================================================
+
 - (UIBarButtonItem*)createRightNavButton
 {
     return [[[UIBarButtonItem alloc] initWithTitle:@"Validation" style:UIBarButtonItemStyleDone target:nil action:nil] autorelease];
 }
 
 #pragma mark - Private Method
-//==============================================================================
+
 - (MUTextField *)createTextField
 {
     MUTextField *textField = [[[MUTextField alloc] initWithFrame:CGRectMake(10, 0, 300, 40)] autorelease];
@@ -271,7 +271,7 @@
     return textField;
 }
 
-//==============================================================================
+
 - (UITableViewCell *)createTableViewCell
 {
     UITableViewCell *cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"] autorelease];
@@ -281,7 +281,7 @@
 }
 
 #pragma mark - Button Action
-//==============================================================================
+
 - (void)rightNavButtonPressed:(id)aSender
 {
     [((MUKeyboardAvoidingTableView*)tableView) hideKeyBoard];
@@ -305,19 +305,19 @@
 }
 
 #pragma mark - UITableViewDataSource
-//==============================================================================
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return [tableViewCells count];
 }
 
-//==============================================================================
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [[tableViewCells objectAtIndex:section] count];
 }
 
-//==============================================================================
+
 -(UITableViewCell*)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[tableViewCells objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];

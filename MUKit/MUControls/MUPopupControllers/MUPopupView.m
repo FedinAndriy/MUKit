@@ -18,7 +18,7 @@
 @synthesize showOverlayView;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if( (self = [super initWithCoder:aDecoder]) )
@@ -28,7 +28,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id) initWithFrame:(CGRect)frame
 {
     if( (self = [super initWithFrame:frame]) )
@@ -38,7 +38,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
 	[weakRef invalidate];
@@ -47,7 +47,7 @@
 	[super dealloc];
 }
 
-//==============================================================================
+
 - (void) setup
 {
     weakRef = [[MUWeakRef alloc] initWithObject:self];
@@ -55,7 +55,7 @@
     hideByTapOutside = YES;
 }
 
-//==============================================================================
+
 - (void) prepareToRelease
 {
     if([showStrategy isKindOfClass:[MUPopupViewController class]])
@@ -64,7 +64,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) prepareToShow
 {
 //    NSLog(@"retainCount: %i", self.retainCount);
@@ -86,38 +86,38 @@
     }
 }
 
-//==============================================================================
+
 - (void) popupWillAppear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_WILL_SHOW object:self];
 }
 
-//==============================================================================
+
 - (void) popupDidAppear:(BOOL)animated
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_DID_SHOW object:self];
 }
 
-//==============================================================================
+
 - (void) popupWillDisappear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_WILL_HIDE object:self];
 }
 
-//==============================================================================
+
 - (void) popupDidDisappear:(BOOL)animated
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_DID_HIDE object:self];
 }
 
 #pragma mark - weakReference
-//==============================================================================
+
 - (MUWeakRef*) weakReference
 {
 	return weakRef;
 }
 
-//==============================================================================
+
 - (void) hideWithAnimation:(BOOL)animation
 {
     if(!MU_IS_IPAD)
@@ -130,7 +130,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) showWithAnimation:(BOOL)animation inView:(UIView*)aView
 {
     if(!MU_IS_IPAD)
@@ -139,7 +139,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)showFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated
 {
     if(MU_IS_IPAD)
@@ -148,7 +148,7 @@
     }
 }
 
-////==============================================================================
+//
 //- (void) setFrame:(CGRect)frame
 //{
 //    [super setFrame:frame];

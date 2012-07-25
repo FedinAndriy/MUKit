@@ -12,7 +12,7 @@
 
 @implementation MUTableDisposerMaped
 
-//==============================================================================
+
 - (void) mapFromObject
 {
     for(MUSectionReadonly* section in sections)
@@ -24,7 +24,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) mapToObject
 {
     for(MUSectionReadonly* section in sections)
@@ -36,7 +36,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) reloadData
 {
     [self mapFromObject];

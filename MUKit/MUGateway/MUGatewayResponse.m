@@ -12,7 +12,7 @@
 
 @synthesize responseCode, textMessage, dataDictionary, boArray, error;
 
-//==============================================================================
+
 - (id)init
 {
     self = [super init];
@@ -24,7 +24,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [textMessage release];

@@ -47,7 +47,7 @@
 
 @implementation TableViewWithMapedCells
 
-//==============================================================================
+
 - (id)init
 {
     self = [super init];
@@ -62,7 +62,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [tableDisposer release];
@@ -71,7 +71,7 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -156,7 +156,7 @@
     validationGroup.invalidIndicatorImage = [UIImage imageNamed:@"warning_icon"];
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     [validationGroup release];
@@ -164,39 +164,39 @@
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     tableDisposer.tableView.frame = self.view.bounds;
 }
 
-//==============================================================================
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;
 }
 
-//==============================================================================
+
 - (UIBarButtonItem *)createRightNavButton
 {
     return [[[UIBarButtonItem alloc] initWithTitle:@"Validate" style:UIBarButtonItemStyleDone target:nil action:nil] autorelease];
 }
 
-//==============================================================================
+
 - (void) rightNavButtonPressed:(id)aSender
 {
     [validationGroup validate];
 }
 
 #pragma mark - Private Methods
-//==============================================================================
+
 - (void) cellButtonPressed
 {
     NSLog(@"cellButtonPressed");
 }
 
-//==============================================================================
+
 - (void) switcheDidChengeValue:(UISwitch *)sender
 {
     NSLog(@"switcheDidChengeValue %d", sender.on);

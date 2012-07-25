@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MUSectionWritable.h"
 
-//==============================================================================
+
 @protocol MUTableDisposerDelegate <UITableViewDelegate>
 
 @optional
@@ -25,7 +25,7 @@
 
 @end
 
-//==============================================================================
+
 @interface MUTableDisposer : NSObject <UITableViewDataSource, UITableViewDelegate>
 {
 @protected

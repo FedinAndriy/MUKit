@@ -11,7 +11,7 @@
 
 @implementation MUCellData
 
-//==============================================================================
+
 @synthesize cellNibName;
 @synthesize cellClass;
 @dynamic cellIdentifier;
@@ -23,7 +23,7 @@
 @synthesize visible;
 @synthesize enableEdit;
 
-//==============================================================================
+
 -(id) init
 {
     self = [super init];
@@ -42,7 +42,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [cellNibName release];
@@ -52,31 +52,31 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (CGFloat) cellHeightForWidth:(CGFloat) aWidth
 {
     return 44.f;
 }
 
-//==============================================================================
+
 - (NSString *) cellIdentifier
 {
     return NSStringFromClass(self.cellClass);
 }
 
-//==============================================================================
+
 - (void) addCellSelectedTarget:(id)aTarget action:(SEL)anAction
 {
     [cellSelectedHandlers addObject:[MUTargetAction targetActionWithTarget:aTarget action:anAction]];
 }
 
-//==============================================================================
+
 - (void) addCellDeselectedTarget:(id)aTarget action:(SEL)anAction
 {
     [cellDeselectedHandler addObject:[MUTargetAction targetActionWithTarget:aTarget action:anAction]];
 }
 
-//==============================================================================
+
 - (void) performSelectedHandlers
 {
     for(MUTargetAction* handler in cellSelectedHandlers)
@@ -85,7 +85,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) performDeselectedHandlers
 {
     for(MUTargetAction* handler in cellDeselectedHandler)
@@ -94,7 +94,7 @@
     }
 }
 
-//==============================================================================
+
 - (MUCell*) createCell
 {
     MUCell* cell = nil;

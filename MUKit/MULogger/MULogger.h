@@ -16,7 +16,7 @@
 // formatters
 #import "MULogFormatterPlainText.h"
 
-//==============================================================================
+
 void MULogInfo(NSString* format, ...);
 void MULogDebug(NSString* format, ...);
 void MULogWarning(NSString* format, ...);

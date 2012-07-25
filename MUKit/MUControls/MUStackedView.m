@@ -9,9 +9,9 @@
 #import "MUStackedView.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUStackedView (Private)
 
 - (void) setup;
@@ -20,9 +20,9 @@
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUStackedView
 
 
@@ -32,7 +32,7 @@
 @dynamic countStackedSubviews;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithFrame:(CGRect)frame
 {
     if ( (self = [super initWithFrame:frame]) )
@@ -43,7 +43,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -54,7 +54,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [stackedSubviews release];
@@ -62,7 +62,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) setup
 {
     self.clipsToBounds = YES;
@@ -70,7 +70,7 @@
 }
 
 #pragma mark - Add/Remove stacked subviews
-//==============================================================================
+
 - (void) addStackedSubview:(UIView *)aView
 {
     NSAssert(aView, @"aView is nil !!!");
@@ -79,7 +79,7 @@
 //    aView.hidden = YES;
 }
 
-//==============================================================================
+
 - (void) insertStackedSubview:(UIView *)aView atIndex:(NSUInteger)aIndex
 {
     NSAssert(aView, @"aView is nil !!!");
@@ -88,7 +88,7 @@
 //    aView.hidden = YES;
 }
 
-//==============================================================================
+
 - (void) removeStackedSubviewAtIndex:(NSUInteger)aIndex
 {
     UIView* view = [stackedSubviews objectAtIndex:aIndex];
@@ -101,7 +101,7 @@
     [stackedSubviews removeObjectAtIndex:aIndex];
 }
 
-//==============================================================================
+
 - (void) removeStackedSubview:(UIView *)aView
 {
     NSAssert(aView, @"aView is nil !!!");
@@ -109,7 +109,7 @@
     [self removeStackedSubviewAtIndex:index];
 }
 
-//==============================================================================
+
 - (void) removeAllStackedSubviews
 {
 //    for(UIView* view in stackedSubviews)
@@ -121,14 +121,14 @@
     currentView = nil;
 }
 
-//==============================================================================
+
 - (NSUInteger) countStackedSubviews
 {
     return [stackedSubviews count];
 }
 
 #pragma mark - Switch between stacked subviews
-//==============================================================================
+
 - (void) setCurrentIndex:(NSUInteger)aCurrentIndex
 {
     if(aCurrentIndex < [stackedSubviews count])
@@ -137,7 +137,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) setCurrentStackedSubview:(UIView *)aCurrentStackedSubview
 {
     NSUInteger index = [stackedSubviews indexOfObject:aCurrentStackedSubview];
@@ -149,7 +149,7 @@
 //    }
 }
 
-//==============================================================================
+
 - (void) switchToStackedSubview:(UIView*)aStackedSubview
 {
     NSUInteger fromIndex = (currentView) ? ([stackedSubviews indexOfObject:currentView]) : (NSNotFound);
@@ -171,7 +171,7 @@
         [delegate stackedView:self didChangedFromIndex:fromIndex toIndex:toIndex];
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @end

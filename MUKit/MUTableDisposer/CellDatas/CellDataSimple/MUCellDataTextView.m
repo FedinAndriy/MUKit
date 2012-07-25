@@ -23,7 +23,7 @@
 @synthesize filter;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
@@ -42,7 +42,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [validator release];
@@ -51,7 +51,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (CGFloat) cellHeightForWidth:(CGFloat)aWidth
 {
     return 90;

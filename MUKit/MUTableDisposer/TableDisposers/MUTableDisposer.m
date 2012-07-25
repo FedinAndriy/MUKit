@@ -10,9 +10,9 @@
 #import "MUKeyboardAvoidingTableView.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUTableDisposer ()
 
 - (UITableView*) createTableView;
@@ -20,9 +20,9 @@
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUTableDisposer
 
 @synthesize tableClass;
@@ -30,7 +30,7 @@
 @synthesize tableView;
 @synthesize delegate;
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -42,7 +42,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [sections release];
@@ -51,7 +51,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (UITableView*)tableView
 {
     if(!tableView)
@@ -61,7 +61,7 @@
     return tableView;
 }
 
-//==============================================================================
+
 - (UITableView*) createTableView
 {
     UITableView* tv = [[tableClass alloc] initWithFrame:CGRectZero style:tableStyle];
@@ -70,21 +70,21 @@
     return tv;
 }
 
-//==============================================================================
+
 - (void) releaseView
 {
     [tableView release];
     tableView = nil;
 }
 
-//==============================================================================
+
 - (void) addSection:(MUSectionReadonly*)aSection
 {
     [sections addObject:aSection];
     [aSection setTableDisposer:self];
 }
 
-//==============================================================================
+
 - (void) removeSectionAtIndex:(NSUInteger)anIndex needUpdateTable:(BOOL)aNeedUpdateTable
 {
     if(aNeedUpdateTable)
@@ -93,38 +93,38 @@
     [sections removeObjectAtIndex:anIndex];
 }
 
-//==============================================================================
+
 - (void) removeSection:(MUSectionReadonly*)aSection needUpdateTable:(BOOL)aNeedUpdateTable
 {
     NSUInteger index = [self indexBySection:aSection];
     [self removeSectionAtIndex:index needUpdateTable:aNeedUpdateTable];
 }
 
-//==============================================================================
+
 - (void) removeAllSections
 {
     [sections removeAllObjects];
 }
 
-//==============================================================================
+
 - (MUSectionReadonly*) sectionByIndex:(NSUInteger)anIndex
 {
     return [sections objectAtIndex:anIndex];
 }
 
-//==============================================================================
+
 - (NSUInteger) indexBySection:(MUSectionReadonly*)aSection
 {
     return [sections indexOfObject:aSection];
 }
 
-//==============================================================================
+
 - (NSUInteger) sectionsCount
 {
     return [sections count];
 }
 
-//==============================================================================
+
 - (NSIndexPath*) indexPathByCellData:(MUCellData*)aCellData
 {
     NSIndexPath* result = nil;
@@ -144,7 +144,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSIndexPath*) indexPathByVisibleCellData:(MUCellData*)aCellData
 {
     NSIndexPath* result = nil;
@@ -164,19 +164,19 @@
     return result;
 }
 
-//==============================================================================
+
 - (MUCellData*) cellDataByIndexPath:(NSIndexPath*)anIndexPath
 {
     return [[self sectionByIndex:anIndexPath.section] cellDataAtIndex:anIndexPath.row];
 }
 
-//==============================================================================
+
 - (MUCellData*) visibleCellDataByIndexPath:(NSIndexPath*)anIndexPath
 {
     return [[self sectionByIndex:anIndexPath.section] visibleCellDataAtIndex:anIndexPath.row];
 }
 
-//==============================================================================
+
 - (void) hideCellByIndexPath:(NSIndexPath*)anIndexPath needUpdateTable:(BOOL)aNeedUpdateTable
 {
     MUSectionReadonly* section = [self sectionByIndex:anIndexPath.section];
@@ -186,7 +186,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) showCellByIndexPath:(NSIndexPath*)anIndexPath needUpdateTable:(BOOL)aNeedUpdateTable
 {
     MUSectionReadonly* section = [self sectionByIndex:anIndexPath.section];
@@ -197,37 +197,37 @@
 }
 
 #pragma mark - UITableViewDataSource
-//==============================================================================
+
 - (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section
 {
     return [[self sectionByIndex:section] visibleCellDataCount];
 }
 
-//==============================================================================
+
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return [[self sectionByIndex:indexPath.section] cellForIndex:indexPath.row];
 }
 
-//==============================================================================
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView
 {
     return [sections count];
 }
 
-//==============================================================================
+
 - (NSString *)tableView:(UITableView *)aTableView titleForHeaderInSection:(NSInteger)section
 {
     return [self sectionByIndex:section].headerTitle;
 }
 
-//==============================================================================
+
 - (NSString *)tableView:(UITableView *)aTableView titleForFooterInSection:(NSInteger)section
 {
     return [self sectionByIndex:section].footerTitle;
 }
 
-//==============================================================================
+
 - (BOOL)tableView:(UITableView *)aTableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BOOL result = NO;
@@ -238,7 +238,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (BOOL)tableView:(UITableView *)aTableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BOOL result = NO;
@@ -249,7 +249,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)aTableView
 {
     NSArray* result = nil;
@@ -260,7 +260,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSInteger)tableView:(UITableView *)aTableView sectionForSectionIndexTitle:(NSString *)title atIndex:(NSInteger)index
 {
     NSInteger result = NSNotFound;
@@ -271,7 +271,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView:commitEditingStyle:forRowAtIndexPath:)])
@@ -280,7 +280,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView:moveRowAtIndexPath:toIndexPath:)])
@@ -290,7 +290,7 @@
 }
 
 #pragma mark - UITableViewDelegate
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView:willDisplayCell:forRowAtIndexPath:)])
@@ -299,14 +299,14 @@
     }
 }
 
-//==============================================================================
+
 - (CGFloat)tableView:(UITableView *)aTableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MUCellData* cellData = [[self sectionByIndex:indexPath.section] visibleCellDataAtIndex:indexPath.row];
     return [cellData cellHeightForWidth:aTableView.bounds.size.width];
 }
 
-//==============================================================================
+
 - (CGFloat)tableView:(UITableView *)aTableView heightForHeaderInSection:(NSInteger)section
 {
     CGFloat result = 0;
@@ -323,7 +323,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (CGFloat)tableView:(UITableView *)aTableView heightForFooterInSection:(NSInteger)section
 {
     CGFloat result = 0;
@@ -340,19 +340,19 @@
 //    return [self sectionByIndex:section].footerView ? [self sectionByIndex:section].footerView.bounds.size.height : 20;
 }
 
-//==============================================================================
+
 - (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)section
 {
     return [self sectionByIndex:section].headerView;
 }
 
-//==============================================================================
+
 - (UIView *)tableView:(UITableView *)aTableView viewForFooterInSection:(NSInteger)section
 {
     return [self sectionByIndex:section].footerView;
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MUCellData* cellData = [[self sectionByIndex:indexPath.section] visibleCellDataAtIndex:indexPath.row];
@@ -372,7 +372,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MUCellData* cellData = [[self sectionByIndex:indexPath.section] visibleCellDataAtIndex:indexPath.row];
@@ -387,9 +387,9 @@
     }
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 //- (UITableViewCellAccessoryType)tableView:(UITableView *)aTableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
 //{
 //    UITableViewCellAccessoryType result = UITableViewCellAccessoryNone;
@@ -400,7 +400,7 @@
 //    return result;
 //}
 
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView: accessoryButtonTappedForRowWithIndexPath:)])
@@ -409,7 +409,7 @@
     }
 }
 
-//==============================================================================
+
 - (NSIndexPath *)tableView:(UITableView *)aTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSIndexPath* result = indexPath;
@@ -420,7 +420,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSIndexPath *)tableView:(UITableView *)aTableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSIndexPath* result = indexPath;
@@ -431,7 +431,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (UITableViewCellEditingStyle)tableView:(UITableView *)aTableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCellEditingStyle result = UITableViewCellEditingStyleNone;
@@ -442,7 +442,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSString *)tableView:(UITableView *)aTableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString* result = nil;
@@ -453,7 +453,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (BOOL)tableView:(UITableView *)aTableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BOOL result = NO;
@@ -464,7 +464,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView*)aTableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView:willBeginEditingRowAtIndexPath:)])
@@ -473,7 +473,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView*)aTableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView:didEndEditingRowAtIndexPath:)])
@@ -482,7 +482,7 @@
     }
 }
 
-//==============================================================================
+
 - (NSIndexPath *)tableView:(UITableView *)aTableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
 {
     NSIndexPath* result = nil;
@@ -493,7 +493,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSInteger)tableView:(UITableView *)aTableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger result = 0;
@@ -504,7 +504,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (BOOL)tableView:(UITableView *)aTableView shouldShowMenuForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     BOOL result = NO;
@@ -515,7 +515,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (BOOL)tableView:(UITableView *)aTableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
     BOOL result = NO;
@@ -526,7 +526,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void)tableView:(UITableView *)aTableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
     if(delegate && [delegate respondsToSelector:@selector(tableView:performAction:forRowAtIndexPath:withSender:)])
@@ -535,7 +535,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) reloadData
 {
     if([tableView isKindOfClass:[MUKeyboardAvoidingTableView class]])
@@ -551,7 +551,7 @@
     [tableView reloadData];
 }
 
-//==============================================================================
+
 - (void) reloadSectionsWithAnimation:(UITableViewRowAnimation)anAnimation
 {
     for(MUSectionReadonly* section in sections)
@@ -562,7 +562,7 @@
 
 
 #pragma mark - UIScrollViewDelegate
-//==============================================================================
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidScroll:)])
@@ -571,7 +571,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewDidZoom:(UIScrollView *)scrollView
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidZoom:)])
@@ -580,7 +580,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView;
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewWillBeginDragging:)])
@@ -589,7 +589,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset 
 {    
     if(delegate && [delegate respondsToSelector:@selector(scrollViewWillEndDragging:withVelocity:targetContentOffset:)])
@@ -598,7 +598,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidEndDragging:willDecelerate:)])
@@ -607,7 +607,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewWillBeginDecelerating:)])
@@ -616,7 +616,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidEndDecelerating:)])
@@ -625,7 +625,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidEndScrollingAnimation:)])
@@ -634,7 +634,7 @@
     }
 }
 
-//==============================================================================
+
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
 {
     UIView *view = nil;
@@ -645,7 +645,7 @@
     return view;
 }
 
-//==============================================================================
+
 - (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewWillBeginZooming:withView:)])
@@ -654,7 +654,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidEndZooming:withView:atScale:)])
@@ -663,7 +663,7 @@
     }
 }
 
-//==============================================================================
+
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView;   // return a yes if you want to scroll to the top. if not defined, assumes YES
 {
     BOOL result = YES;
@@ -674,7 +674,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
 {
     if(delegate && [delegate respondsToSelector:@selector(scrollViewDidScrollToTop:)])

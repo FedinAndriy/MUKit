@@ -12,7 +12,7 @@
 
 @synthesize filePath;
 
-//==============================================================================
+
 - (void) dealloc
 {
     [filePath release];
@@ -20,7 +20,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) consumeMessages:(NSArray*)aMessages
 {
     if(!filePath)

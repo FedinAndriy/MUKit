@@ -14,7 +14,7 @@
 @synthesize popupedPicker;
 
 #pragma mark - override next methods to customize:
-//==============================================================================
+
 - (UIView*) createPicker
 {
 //    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectZero] autorelease];
@@ -24,19 +24,19 @@
     return pv;
 }
 
-//==============================================================================
+
 - (UIDatePicker*) popupedPicker
 {
     return (UIDatePicker*)self->picker;
 }
 
-//==============================================================================
+
 - (NSObject*) selectedItem
 {
     return self.popupedPicker.date;
 }
 
-//==============================================================================
+
 - (void) popupWillAppear:(BOOL)animated
 {
     [super popupWillAppear:animated];
@@ -55,7 +55,7 @@
     }
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @end

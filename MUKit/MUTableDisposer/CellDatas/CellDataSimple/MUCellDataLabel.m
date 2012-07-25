@@ -12,7 +12,7 @@
 @implementation MUCellDataLabel
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];

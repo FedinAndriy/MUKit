@@ -14,7 +14,7 @@
 @synthesize text, textFont, textColor;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
@@ -29,7 +29,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [title release];
@@ -41,14 +41,14 @@
 }
 
 #pragma mark - Maping
-//==============================================================================
+
 - (void) mapFromObject
 {
     if (object && key)
         text = [[object valueForKeyPath:key] retain];
 }
 
-//==============================================================================
+
 - (void) mapToObject
 {
     if (object && key)

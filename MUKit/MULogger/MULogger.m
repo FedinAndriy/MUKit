@@ -9,7 +9,7 @@
 #include "MULogger.h"
 #import <Foundation/Foundation.h>
 
-//==============================================================================
+
 inline void MULogInfo(NSString* format, ...)
 {
     va_list args;
@@ -18,7 +18,7 @@ inline void MULogInfo(NSString* format, ...)
     va_end(args);
 }
 
-//==============================================================================
+
 inline void MULogDebug(NSString* format, ...)
 {
     va_list args;
@@ -27,7 +27,7 @@ inline void MULogDebug(NSString* format, ...)
     va_end(args);
 }
 
-//==============================================================================
+
 inline void MULogWarning(NSString* format, ...)
 {
     va_list args;
@@ -36,7 +36,7 @@ inline void MULogWarning(NSString* format, ...)
     va_end(args);
 }
 
-//==============================================================================
+
 inline void MULogError(NSString* format, ...)
 {
     va_list args;
@@ -45,7 +45,7 @@ inline void MULogError(NSString* format, ...)
     va_end(args);
 }
 
-//==============================================================================
+
 inline void MULogFatal(NSString* format, ...)
 {
     va_list args;

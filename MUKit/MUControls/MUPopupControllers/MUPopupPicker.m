@@ -8,9 +8,9 @@
 
 #import "MUPopupPicker.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUPopupPicker (Private)
 
 - (void) toolbarButtonPressed:(UIButton*)aSender;
@@ -19,15 +19,15 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUPopupPicker
 
 @synthesize toolbar;
 @synthesize selectedItem;
 
-//==============================================================================
+
 - (void) dealloc
 {
     [toolbar release];
@@ -36,7 +36,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 // Create, configure and return popupedView
 - (void) setup
 {
@@ -49,7 +49,7 @@
     [self configureFrames];
 }
 
-//==============================================================================
+
 - (void) configureFrames
 {
     //
@@ -69,7 +69,7 @@
     
 }
 
-//==============================================================================
+
 - (void) setToolbar:(MUToolbar *)aToolbar
 {
     if(toolbar == aToolbar)
@@ -110,20 +110,20 @@
     }
 }
 
-//==============================================================================
+
 - (UIView*) createPicker
 {
     return nil;     // override it in subclasses
 }
 
-//==============================================================================
+
 - (NSObject*) selectedItem
 {
     return nil; // override it in subclasses
 }
 
 #pragma mark - Toolbar
-//==============================================================================
+
 - (void) toolbarButtonPressed:(UIButton*)aSender
 {
     NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
@@ -131,7 +131,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_TOOLBAR_ITEM_DID_PRESSED object:self userInfo:userInfo];
 }
 
-//==============================================================================
+
 - (void) toolbarItemPressed:(UIBarButtonItem*)aSender
 {
     NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
@@ -139,7 +139,7 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_TOOLBAR_ITEM_DID_PRESSED object:self userInfo:userInfo];
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @end

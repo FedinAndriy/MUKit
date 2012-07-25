@@ -8,7 +8,7 @@
 
 #import "MUCellDataModeledDynamic.h"
 
-//==============================================================================
+
 MUCellIndent MUCellIndentMake(float left, float top, float right, float botton)
 {
     MUCellIndent cellIndent;
@@ -19,13 +19,13 @@ MUCellIndent MUCellIndentMake(float left, float top, float right, float botton)
     return cellIndent;
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 
 @implementation MUCellDataModeledDynamic
 
-//==============================================================================
+
 - (id) initWithModel:(id)aModel
 {
     self = [super initWithModel:aModel];
@@ -36,13 +36,13 @@ MUCellIndent MUCellIndentMake(float left, float top, float right, float botton)
     return self;
 }
 
-//==============================================================================
+
 - (MUCellIndent) setupCellIndent
 {
     return MUCellIndentMake(5, 5, 20, 5);
 }
 
-//==============================================================================
+
 - (float) cellHeightForWidth:(CGFloat)aWidth
 {
     if ((int)aWidth != currentCellWidth)
@@ -53,7 +53,7 @@ MUCellIndent MUCellIndentMake(float left, float top, float right, float botton)
     return currentCellHeight;
 }
 
-//==============================================================================
+
 - (float) recalculateCellHeight
 {
     return 44.f;

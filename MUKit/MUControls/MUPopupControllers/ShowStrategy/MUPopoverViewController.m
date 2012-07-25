@@ -12,7 +12,7 @@
 
 @synthesize popoverOwner;
 
-//==============================================================================
+
 - (id) initWithPopupView:(MUPopupView*)aPopupedView
 {
     if( (self = [super init]) )
@@ -23,7 +23,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [popupedView release];
@@ -32,7 +32,7 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -46,25 +46,25 @@
     [self setContentSizeForViewInPopover:popupedView.bounds.size];
 }
 
-//==============================================================================
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [popupedView popupWillAppear:animated];
 }
 
-//==============================================================================
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [popupedView popupDidAppear:animated];
 }
 
-//==============================================================================
+
 - (void) viewWillDisappear:(BOOL)animated
 {
     [popupedView popupWillDisappear:animated];
 }
 
-//==============================================================================
+
 - (void) viewDidDisappear:(BOOL)animated
 {
     [popupedView popupDidDisappear:animated];

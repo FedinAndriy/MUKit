@@ -10,9 +10,9 @@
 #import "MUCellDataTextField.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUCellTextField ()
 
 - (void) didChangeValueInTextField:(UITextField *) aTextField;
@@ -20,12 +20,12 @@
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUCellTextField
 
-//==============================================================================
+
 @synthesize textField;
 
 - (id) initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -46,7 +46,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) setupCellData:(MUCellData *)aCellData
 {
     [super setupCellData:aCellData];
@@ -89,13 +89,13 @@
     }
 }
 
-//==============================================================================
+
 - (NSArray *) inputTraits
 {
     return [NSArray arrayWithObject:textField];
 }
 
-//==============================================================================
+
 - (void) didChangeValueInTextField:(UITextField *) aTextField
 {
     ((MUCellDataTextField*)self.cellData).text = aTextField.text;

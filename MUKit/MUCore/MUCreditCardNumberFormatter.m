@@ -10,7 +10,7 @@
 
 @implementation MUCreditCardNumberFormatter
 
-//==============================================================================
+
 - (BOOL) cardFormatForTextField:(UITextField *)textField 
   shouldChangeCharactersInRange:(NSRange)range 
               replacementString:(NSString *)string 

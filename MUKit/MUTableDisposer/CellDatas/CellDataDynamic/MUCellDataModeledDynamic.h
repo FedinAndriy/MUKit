@@ -8,7 +8,7 @@
 
 #import "MUCellDataModeled.h"
 
-//==============================================================================
+
 typedef struct _MUCellIndent
 {
     float left;
@@ -19,7 +19,7 @@ typedef struct _MUCellIndent
 
 MUCellIndent MUCellIndentMake(float left, float top, float right, float botton);
 
-//==============================================================================
+
 @interface MUCellDataModeledDynamic : MUCellDataModeled
 {
     MUCellIndent cellIndent;

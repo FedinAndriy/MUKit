@@ -11,7 +11,7 @@
 @implementation MUPopupDateTimePicker
 
 #pragma mark - override next methods to customize:
-//==============================================================================
+
 - (UIView*) createPicker
 {
 //    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectZero] autorelease];
@@ -21,5 +21,5 @@
     return pv;
 }
 
-//==============================================================================
+
 @end

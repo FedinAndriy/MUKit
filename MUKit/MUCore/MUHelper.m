@@ -10,7 +10,7 @@
 #import "MUKitDefines.h"
 
 
-//==============================================================================
+
 UIViewController* MUGetPrimeViewController()
 {
     UIViewController* result = nil;
@@ -23,13 +23,13 @@ UIViewController* MUGetPrimeViewController()
     return result;
 }
 
-//==============================================================================
+
 void MUShowSimpleAlert(NSString* aTitle, NSString* aMessage)
 {
     [[[[UIAlertView alloc] initWithTitle:NSLocalizedString(aTitle, nil) message:NSLocalizedString(aMessage, nil) delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] autorelease] show];
 }
 
-//==============================================================================
+
 NSMutableArray* MUDivideArray(NSArray* aDividedArray, NSString* aFieldName, BOOL anAscending, MUDividedComparator aComparator)
 {
 	NSMutableArray* result = [NSMutableArray array];
@@ -63,14 +63,14 @@ NSMutableArray* MUDivideArray(NSArray* aDividedArray, NSString* aFieldName, BOOL
 	return result;
 }
 
-//==============================================================================
+
 NSDate* MUDateFromTimeStampInDictionary(NSDictionary* aDictionary, NSString* aKey)
 {
     NSTimeInterval timestamp = [MU_NULL_PROTECT( [aDictionary objectForKey:aKey] ) doubleValue];
     return [NSDate dateWithTimeIntervalSince1970:timestamp];
 }
 
-//==============================================================================
+
 NSString* MUGenerateUUID()
 {
     CFUUIDRef uuidRef = CFUUIDCreate(kCFAllocatorDefault);
@@ -79,13 +79,13 @@ NSString* MUGenerateUUID()
     return uuid;
 }
 
-//==============================================================================
+
 NSString* MUDocumentDirecoryPath()
 {
     return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 }
 
-//==============================================================================
+
 void MUHideWebViewShadows(UIWebView* webView)
 {
     for (UIView* subView in [webView subviews])

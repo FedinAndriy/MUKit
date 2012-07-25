@@ -12,13 +12,13 @@
 @implementation MUTextFieldPadding
 
 #pragma mark - init/dealloc
-//==========================================================================================
+============
 + (id) textFieldPaddingWithBG:(UIImage*)aBG padding:(int)aPadding;
 {
     return [[[MUTextFieldPadding alloc] initWithBG:aBG padding:aPadding] autorelease];
 }
 
-//==========================================================================================
+============
 - (id) initWithBG:(UIImage*)aBG padding:(int)aPadding
 {
     self = [super initWithFrame: CGRectMake(0, 0, aBG.size.width, aBG.size.width)];
@@ -33,7 +33,7 @@
 }
 
 #pragma mark - customization
-//==========================================================================================
+============
 - (void) setPadding:(int)aPadding
 {
     UIView* view = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, aPadding, self.bounds.size.height)] autorelease];
@@ -42,7 +42,7 @@
 }
 
 
-//==========================================================================================
-//==========================================================================================
-//==========================================================================================
+============
+============
+============
 @end

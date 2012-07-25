@@ -28,21 +28,21 @@ BOOL canBeInputByPhonePad(char c)
     return NO;    
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidator
 
 @synthesize validatableObject;
 @synthesize errorMessage;
 
-//==============================================================================
+
 - (BOOL) validate
 {
     return NO;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [errorMessage release];
@@ -51,12 +51,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorAny
 
-//==============================================================================
+
 - (BOOL) validate
 {
     return YES;
@@ -64,12 +64,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorNumber
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -83,12 +83,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorLetters
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -102,12 +102,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorWords
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -121,12 +121,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorEmail
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -141,12 +141,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorEqual
 
-//==============================================================================
+
 - (id) initWithTestedField:(id<MUValidationProtocol>)aTestedObject
 {
     if( (self = [super init]) )
@@ -157,7 +157,7 @@ BOOL canBeInputByPhonePad(char c)
     return self;
 }
 
-//==============================================================================
+
 - (id) initWithTestedFieldValidator:(MUValidator *)aTestedValidator
 {
     if( (self = [super init]) )
@@ -168,7 +168,7 @@ BOOL canBeInputByPhonePad(char c)
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [testedValidator release];
@@ -176,7 +176,7 @@ BOOL canBeInputByPhonePad(char c)
     [super dealloc];
 }
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -185,12 +185,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorNotEmpty
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -199,12 +199,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorUSAZipCode
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -220,12 +220,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorFullName
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -239,12 +239,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorURL
 
-//==============================================================================
+
 - (BOOL) validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -259,12 +259,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorIntWithRange
 
-//==============================================================================
+
 - (id)initWithRange:(NSRange)aRange
 {
     self = [super init];
@@ -275,7 +275,7 @@ BOOL canBeInputByPhonePad(char c)
     return self;
 }
 
-//==============================================================================
+
 - (BOOL) validate
 {
     BOOL result = NO;
@@ -287,12 +287,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorStringWithRange
 
-//==============================================================================
+
 - (id)initWithRange:(NSRange)aRange
 {
     self = [super init];
@@ -303,7 +303,7 @@ BOOL canBeInputByPhonePad(char c)
     return self;
 }
 
-//==============================================================================
+
 - (BOOL) validate
 {
     BOOL result = NO;
@@ -317,12 +317,12 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorCountNumberInTextWithRange
 
-//==============================================================================
+
 - (id)initWithRange:(NSRange)aRange
 {
     self = [super init];
@@ -333,7 +333,7 @@ BOOL canBeInputByPhonePad(char c)
     return self;
 }
 
-//==============================================================================
+
 - (BOOL) validate
 {
     BOOL result = NO;
@@ -349,9 +349,9 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorMoney
 
 - (BOOL) validate
@@ -384,14 +384,14 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUValidatorRegExp
 
 @synthesize regularExpression;
 
-//==============================================================================
+
 - (id) initWithRegExp:(NSRegularExpression *)aRegExp
 {
     if( (self = [super init]) )
@@ -401,7 +401,7 @@ BOOL canBeInputByPhonePad(char c)
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [regularExpression release];
@@ -409,7 +409,7 @@ BOOL canBeInputByPhonePad(char c)
     [super dealloc];
 }
 
-//==============================================================================
+
 - (BOOL) validate
 {
     BOOL result = NO;
@@ -428,6 +428,6 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+

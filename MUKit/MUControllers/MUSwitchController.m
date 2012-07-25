@@ -12,7 +12,7 @@
 
 @synthesize switchDelegate;
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -22,7 +22,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) viewDidLoad
 {
     [super viewDidLoad];
@@ -30,7 +30,7 @@
     self.navigationBarHidden = YES;
 }
 
-//==============================================================================
+
 - (void) switchToController:(UIViewController*)aController animated:(BOOL)anAnimate
 {
     BOOL canSwitch = YES;
@@ -50,34 +50,21 @@
 }
 
 #pragma mark - Disabled methods
-//==============================================================================
+
 - (id)initWithRootViewController:(UIViewController *)rootViewController
 {
     [self release];
     return nil;
 }
 
-//==============================================================================
-- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    NSAssert(NO, @"You can't use this method!");
-}
 
-//==============================================================================
-- (UIViewController *)popViewControllerAnimated:(BOOL)animated
-{
-    NSAssert(NO, @"You can't use this method!");
-    return nil;
-}
-
-//==============================================================================
 - (NSArray *)popToViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
     NSAssert(NO, @"You can't use this method!");
     return nil;
 }
 
-//==============================================================================
+
 - (NSArray *)popToRootViewControllerAnimated:(BOOL)animated
 {
     NSAssert(NO, @"You can't use this method!");

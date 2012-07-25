@@ -10,23 +10,23 @@
 #import "MUCellDataTextView.h"
 #import <QuartzCore/QuartzCore.h>
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUCellTextView ()
 
 
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUCellTextView
 
 @synthesize textView;
 
-//==============================================================================
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -49,7 +49,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [textView removeObserver:self forKeyPath:@"observedText"];
@@ -57,7 +57,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) setupCellData:(MUCellData *)aCellData
 {
     [super setupCellData:aCellData];
@@ -92,13 +92,13 @@
     
 }
 
-//==============================================================================
+
 - (NSArray *) inputTraits
 {
     return [NSArray arrayWithObject:textView];
 }
 
-//==============================================================================
+
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 //    NSLog(@"Observing: %@", [change objectForKey:NSKeyValueChangeNewKey]);

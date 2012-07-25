@@ -24,7 +24,7 @@
 @synthesize titleTextAlignment;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
@@ -41,7 +41,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [subtitle release];
@@ -56,14 +56,14 @@
 }
 
 #pragma mark - Maping
-//==============================================================================
+
 - (void) mapFromObject
 {
     if (object && key)
         subtitle = [[object valueForKeyPath:key] retain];
 }
 
-//==============================================================================
+
 - (void) mapToObject
 {
     if (object && key)

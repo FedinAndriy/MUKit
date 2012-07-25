@@ -10,7 +10,7 @@
 
 @implementation MUTableDisposerRequested
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -20,7 +20,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [requests release];
@@ -28,7 +28,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) designateRequest:(id)aRequest forSectionAtIndex:(NSUInteger)aSectionIndex
 {
     [requests setObject:aRequest forKey:[NSNumber numberWithInt:aSectionIndex]];
@@ -42,19 +42,19 @@
     }
 }
 
-//==============================================================================
+
 - (void) designateRequest:(id)aRequest forSection:(MUSectionReadonly*)aSection
 {
     NSUInteger index = [self indexBySection:aSection];
     [self designateRequest:aRequest forSectionAtIndex:index];
 }
 
-//==============================================================================
+
 - (void) reloadData
 {
 }
 
-//==============================================================================
+
 - (void) reloadDataForSectionAtIndex:(NSUInteger)aSectionIndex
 {
     [[self sectionByIndex:aSectionIndex] removeAllCellData];
@@ -63,13 +63,13 @@
 //    [request start];
 }
 
-//==============================================================================
+
 - (void) reloadDataForSection:(MUSectionReadonly*)aSection
 {
     [self reloadDataForSectionAtIndex:[self indexBySection:aSection]];
 }
 
-//==============================================================================
+
 - (void) reloadDataForAllSections
 {
     for(MUSectionReadonly* section in sections)
@@ -78,6 +78,6 @@
     }
 }
 
-//==============================================================================
+
 
 @end

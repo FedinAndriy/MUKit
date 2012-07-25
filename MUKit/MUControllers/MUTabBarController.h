@@ -10,7 +10,7 @@
 #import "MUTabedToolbar.h"
 
 
-//==============================================================================
+
 @interface MUTabBarItem : NSObject
 
 @property (nonatomic, retain) NSString* title;
@@ -28,14 +28,14 @@
 @end
 
 @class MUTabBarController;
-//==============================================================================
+
 @protocol MUTabBarItemProtocol <NSObject>
 
 @property (nonatomic, retain) MUTabBarItem* mutabBarItem;
 @property (nonatomic, assign) MUTabBarController* mutabBarController;
 @end
 
-//==============================================================================
+
 @protocol MUTabBarControllerDelegate<NSObject>
 
 @optional
@@ -44,7 +44,7 @@
 
 @end
 
-//==============================================================================
+
 typedef enum MUTabBarControllerStyle
 {
     MUTabBarControllerStyleTabsFullSize,
@@ -52,7 +52,7 @@ typedef enum MUTabBarControllerStyle
     
 } MUTabBarControllerStyle;
 
-//==============================================================================
+
 @interface MUTabBarController : UIViewController <MUTabedToolbarDelegate>
 {
     MUTabedToolbar* tabBar;
@@ -89,7 +89,7 @@ typedef enum MUTabBarControllerStyle
 @end
 
 
-//==============================================================================
+
 @interface UIViewController (MUTabBarController)
 
 @property (nonatomic, assign) MUTabBarController* mutabBarController;

@@ -10,25 +10,25 @@
 #import "MUKeyboardAvoidingProtocol.h"
 
 
-//==========================================================================================
-//==========================================================================================
-//==========================================================================================
+============
+============
+============
 @interface MUTextView_Holder : NSObject <UITextViewDelegate>
 
 @property (nonatomic, assign) MUTextView* holded;
 
 @end
 
-//==========================================================================================
-//==========================================================================================
-//==========================================================================================
+============
+============
+============
 @interface MUTextView ()
 
 - (void) setup;
 
 @end
 
-//==========================================================================================
+============
 @implementation MUTextView
 
 @synthesize mudelegate;
@@ -36,7 +36,7 @@
 @synthesize observedText;
 @synthesize filter;
 
-//==========================================================================================
+============
 - (id) init
 {
     if( (self = [super init]) )
@@ -46,7 +46,7 @@
     return self;
 }
 
-//==========================================================================================
+============
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if( (self = [super initWithCoder:aDecoder]) )
@@ -56,7 +56,7 @@
     return self;
 }
 
-//==========================================================================================
+============
 - (id) initWithFrame:(CGRect)frame
 {
     if( (self = [super initWithFrame:frame]) )
@@ -66,7 +66,7 @@
     return self;
 }
 
-//==========================================================================================
+============
 - (void) dealloc
 {
     super.delegate = nil;
@@ -77,7 +77,7 @@
     [super dealloc];
 }
 
-//==========================================================================================
+============
 - (void) setup
 {
     delegateHolder = [MUTextView_Holder new];
@@ -86,7 +86,7 @@
 }
 
 #pragma mark - MUValidationProtocol
-//==========================================================================================
+============
 - (void) setValidator:(MUValidator*)aValidator
 {
     if(validator != aValidator)
@@ -97,32 +97,32 @@
     }
 }
 
-//==========================================================================================
+============
 - (NSString*) validatableText
 {
     return self.text;
 }
 
-//==========================================================================================
+============
 - (void) setValidatableText:(NSString *)aValidatableText
 {
     self.text = aValidatableText;
 }
 
-//==========================================================================================
+============
 - (MUValidator*) validator
 {
     return validator;
 }
 
-//==========================================================================================
+============
 - (BOOL) validate
 {
     return (validator) ? ([validator validate]) : (YES);
 }
 
 #pragma mark - UITextViewDelegate
-//==========================================================================================
+============
 - (void) setDelegate:(id<UITextViewDelegate>)delegate
 {
     if(delegate)
@@ -131,15 +131,15 @@
     }
 }
 
-//==========================================================================================
+============
 - (id<UITextViewDelegate>) delegate
 {
     return delegateHolder;
 }
 
-//==========================================================================================
-//==========================================================================================
-//==========================================================================================
+============
+============
+============
 @end
 
 
@@ -147,7 +147,7 @@
 
 @synthesize holded;
 
-//==========================================================================================
+============
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     BOOL result = YES;
@@ -158,7 +158,7 @@
     return result;
 }
 
-//==========================================================================================
+============
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
     BOOL result = YES;
@@ -169,7 +169,7 @@
     return result;
 }
 
-//==========================================================================================
+============
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     [holded.keyboardAvoiding adjustOffset];
@@ -178,7 +178,7 @@
         [holded.mudelegate textViewDidBeginEditing:textView];
 }
 
-//==========================================================================================
+============
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     holded.observedText = textView.text;
@@ -187,7 +187,7 @@
         [holded.mudelegate textViewDidEndEditing:textView];
 }
 
-//==========================================================================================
+============
 - (BOOL)textView:(MUTextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
     BOOL result = YES;
@@ -203,14 +203,14 @@
     return result;
 }
 
-//==========================================================================================
+============
 - (void)textViewDidChange:(UITextView *)textView
 {
     if([holded.mudelegate respondsToSelector:@selector(textViewDidChange:)])
         [holded.mudelegate textViewDidChange:textView];
 }
 
-//==========================================================================================
+============
 - (void)textViewDidChangeSelection:(UITextView *)textView
 {
     if([holded.mudelegate respondsToSelector:@selector(textViewDidChangeSelection:)])

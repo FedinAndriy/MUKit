@@ -10,10 +10,10 @@
 
 @implementation MUCellDataModeled
 
-//==============================================================================
+
 @synthesize model;
 
-//==============================================================================
+
 - (id) init
 {
     NSAssert(NO, @"You can't use this method! Instead use 'initWithModel:'");
@@ -21,7 +21,7 @@
     return nil;
 }
 
-//==============================================================================
+
 - (id) initWithModel:(id)aModel
 {
     self = [super init];
@@ -32,7 +32,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [model release];    

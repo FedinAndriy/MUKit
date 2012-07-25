@@ -9,9 +9,9 @@
 #import "MUImageViewTapable.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUImageViewTapable (Private)
 
 - (void) initialize;
@@ -20,15 +20,15 @@
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUImageViewTapable
 
 @synthesize enable;
 @synthesize data;
 
-//==============================================================================
+
 - (id)init
 {
     if( (self = [super init]) )
@@ -38,7 +38,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if( (self = [super initWithCoder:aDecoder]) )
@@ -48,7 +48,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id) initWithFrame:(CGRect)frame
 {
     if( (self = [super initWithFrame:frame]) )
@@ -58,7 +58,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) initialize
 {
     enable = YES;
@@ -70,7 +70,7 @@
     [tapRecognizer release];
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [targetActions release];
@@ -79,14 +79,14 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) addTarget:(id)aTarget action:(SEL)anAction
 {
     MUTargetAction* ta = [MUTargetAction targetActionWithTarget:aTarget action:anAction];
     [targetActions addObject:ta];
 }
 
-//==============================================================================
+
 - (void) handleTap:(UITapGestureRecognizer*)aTapRecognizer
 {
     if(!enable)

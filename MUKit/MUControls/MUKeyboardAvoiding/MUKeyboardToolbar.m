@@ -17,13 +17,13 @@
 
 @implementation MUKeyboardToolbar
 
-//==============================================================================
+
 @synthesize previousTitle;
 @synthesize nextTitle;
 @synthesize doneButton;
 @synthesize delegate;
 
-//==============================================================================
+
 - (id) initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -61,7 +61,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     self.previousTitle = nil;
@@ -69,14 +69,14 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) setTintColor:(UIColor *)tintColor
 {
     [super setTintColor:tintColor];
     [segmentedPreviousNext setTintColor:tintColor];
 }
 
-//==============================================================================
+
 - (void) selectedInputFieldIndex:(NSInteger)selectInsex allCountInputFields:(NSInteger)allCountInputFields
 {
     // Check if "Previous" button should be enabled
@@ -92,7 +92,7 @@
         [segmentedPreviousNext setEnabled:NO forSegmentAtIndex:1];
 }
 
-//==============================================================================
+
 - (void)segmentedControlPreviousNextChangedValue:(id)sender
 {
     switch ([(UISegmentedControl *)sender selectedSegmentIndex]) {
@@ -107,13 +107,13 @@
     }
 }
 
-//==============================================================================
+
 - (void)buttonDonePressed:(id)sender
 {
     [delegate didDoneButtonPressd];
 }
 
-//==============================================================================
+
 - (void) setPreviousTitle:(NSString *)aPreviousTitle
 {
     [previousTitle release];
@@ -121,7 +121,7 @@
     [segmentedPreviousNext setTitle:previousTitle forSegmentAtIndex:0];
 }
 
-//==============================================================================
+
 - (void) setNextTitle:(NSString *)aNextTitle
 {
     [nextTitle release];

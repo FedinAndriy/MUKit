@@ -17,7 +17,7 @@
 @synthesize offText;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
@@ -30,7 +30,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [targetAction release];
@@ -41,21 +41,21 @@
 }
 
 #pragma mark - Target/Action
-//==============================================================================
+
 - (void) setTarget:(id)aTarget action:(SEL)anAction
 {
     [targetAction setTarget:aTarget action:anAction];
 }
 
 #pragma mark - Maping
-//==============================================================================
+
 - (void) mapFromObject
 {
     if (object && key)
         boolValue = [[object valueForKeyPath:key] boolValue];
 }
 
-//==============================================================================
+
 - (void) mapToObject
 {
     if (object && key)

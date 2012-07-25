@@ -11,11 +11,11 @@
 
 @implementation MUProgressView
 
-//==============================================================================
+
 @synthesize cornerRadius, progress;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
@@ -26,7 +26,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -37,7 +37,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) setup
 {
     self.backgroundColor = [UIColor clearColor];
@@ -60,7 +60,7 @@
     [self addSubview:progressView];
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [progressView release];
@@ -68,7 +68,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void)layoutSubviews
 {
     [super layoutSubviews];
@@ -77,62 +77,62 @@
 }
 
 #pragma mark - use of the derived-class
-//==============================================================================
+
 - (float)borderWidth
 {
     return 1;
 }
 
-//==============================================================================
+
 - (CGColorRef)borderColor
 {
     return [[UIColor lightGrayColor] CGColor];
 }
 
-//==============================================================================
+
 - (float)offsetProgressView
 {
     return 1.f;
 }
 
-//==============================================================================
+
 - (UIColor *)progressColor
 {
     return [UIColor clearColor];
 }
 
-//==============================================================================
+
 - (UIImage *)progressImage
 {
     return nil;
 }
 
-//==============================================================================
+
 - (UIImage *)trackImage
 {
     return nil;
 }
 
 #pragma mark - Setter Methods
-//==============================================================================
+
 - (void) setProgressColor:(UIColor *)progressColor
 {
     progressView.backgroundColor = progressColor;
 }
 
-//==============================================================================
+
 - (void)setProgressImage:(UIImage *)progressImage
 {
     progressView.image = progressImage;
 }
 
-//==============================================================================
+
 - (void)setTrackImage:(UIImage *)trackImage
 {
     trackView.image = trackImage;
 }
 
-//==============================================================================
+
 - (void)setCornerRadius:(float)aCornerRadius
 {
     cornerRadius = aCornerRadius;
@@ -143,13 +143,13 @@
     trackView.layer.cornerRadius = cornerRadius;
 }
 
-//==============================================================================
+
 - (void) setProgress:(float)aProgress
 {
     [self setProgress:aProgress animated:NO];
 }
 
-//==============================================================================
+
 - (void) setProgress:(float)aProgress animated:(BOOL)animated
 {
     progress = aProgress;

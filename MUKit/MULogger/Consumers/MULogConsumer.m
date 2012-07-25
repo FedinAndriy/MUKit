@@ -12,20 +12,20 @@
 
 @synthesize formatter;
 
-//==============================================================================
+
 + (id) consumerWithFormatter:(NSObject<MULogFormatter>*)aLogFormatter
 {
     return [[[[self class] alloc] initWithFormatter:aLogFormatter] autorelease];
 }
 
-//==============================================================================
+
 - (id) init
 {
     [self release];
     return nil;
 }
 
-//==============================================================================
+
 - (id) initWithFormatter:(NSObject<MULogFormatter>*)aLogFormatter
 {
     if( (self = [super init]) )
@@ -35,7 +35,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [formatter release];
@@ -43,7 +43,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) consumeMessages:(NSArray*)aMessages
 {
     NSAssert(NO, @"Owerride this method in subclasses!");

@@ -12,7 +12,7 @@
 
 @synthesize modeledDelegate;
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -22,7 +22,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [registeredClasses release];
@@ -30,20 +30,20 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) registerCellData:(Class)aCellDataClass forModel:(Class)aModelClass
 {
     [registeredClasses setObject:aCellDataClass forKey:aModelClass];
 }
 
-//==============================================================================
+
 - (void) setupModels:(NSArray*)aModels forSectionAtIndex:(NSUInteger)aSectionIndex
 {
     MUSectionReadonly* section = [self sectionByIndex:aSectionIndex];
     [self setupModels:aModels forSection:section];
 }
 
-//==============================================================================
+
 - (void) setupModels:(NSArray*)aModels forSection:(MUSectionReadonly*)aSection
 {
     NSAssert(aSection, @"aSection is nil!!!");

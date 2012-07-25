@@ -8,9 +8,9 @@
 
 #import "MULogManager.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MULogManager (Private)
 
 - (void) addMessage:(MULogMessage*)aMessage;
@@ -19,12 +19,12 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MULogManager
 
-//==============================================================================
+
 + (MULogManager*)sharedInstance
 {
     static MULogManager* sharedInstance = nil;
@@ -37,7 +37,7 @@
     return sharedInstance;
 }
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -47,7 +47,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [consumers release];
@@ -56,7 +56,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) configureWithConsumers:(NSArray*)aConsumers
 {
     if(consumers != aConsumers)
@@ -66,7 +66,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) logMessageWithType:(MULogMessageType)aLogMessageType format:(NSString*)aFormattedText, ...
 {
     va_list args;
@@ -79,7 +79,7 @@
     va_end(args);
 }
 
-//==============================================================================
+
 - (void) logMessageWithType:(MULogMessageType)aLogMessageType format:(NSString*)aFormattedText arguments:(va_list) args
 {
     NSString* strText = [[NSString alloc] initWithFormat:aFormattedText arguments:args];
@@ -89,7 +89,7 @@
 }
 
 #pragma mark - Private
-//==============================================================================
+
 - (void) addMessage:(MULogMessage*)aMessage
 {
     NSLog(@"%@", [NSString stringWithFormat:@"%@ : %@", [aMessage typeDescription], [aMessage text]] );
@@ -104,13 +104,13 @@
     }
 }
 
-//==============================================================================
+
 - (BOOL) needFlushMessages
 {
     return [messagesBuffer count] > 5 || ((MULogMessage*)[messagesBuffer lastObject]).type >= logMessageTypeError;
 }
 
-//==============================================================================
+
 - (void) flushMessages
 {
     for(MULogConsumer* consumer in consumers)

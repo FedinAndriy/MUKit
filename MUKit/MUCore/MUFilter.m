@@ -8,15 +8,15 @@
 
 #import "MUFilter.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 /// text filter : base class
 @implementation MUFilter
 
 @synthesize maxLengthText;
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [self initWithMaxLengthText:NSNotFound]) )
@@ -25,7 +25,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id)initWithMaxLengthText:(NSUInteger) aMaxLengthText
 {
     if( (self = [super init]) )
@@ -35,7 +35,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (BOOL) filterText:(id)inputTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     BOOL result = YES;
@@ -51,13 +51,13 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 /// text with only number
 @implementation MUFilterNumbers
 
-//==============================================================================
+
 - (BOOL) filterText:(id)inputTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     BOOL result = YES;
@@ -75,13 +75,13 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 /// text with only letters
 @implementation MUFilterLetters
 
-//==============================================================================
+
 - (BOOL) filterText:(id)inputTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     BOOL result = YES;
@@ -100,9 +100,9 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUFilterLettersAndDigits
 
 - (BOOL) filterText:(id)inputTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string

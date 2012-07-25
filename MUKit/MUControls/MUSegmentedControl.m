@@ -9,18 +9,18 @@
 #import "MUSegmentedControl.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUSegmentedControl (Private)
 
 - (void) itemPressed:(UIButton*)aSender;
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUSegmentedControl
 
 @synthesize backgroundImageView = bgImageView;
@@ -39,7 +39,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [bgImageView release];
@@ -48,13 +48,13 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) setBackgroundImage:(UIImage*)aBackgroundImage
 {
     [bgImageView setImage:aBackgroundImage];
 }
 
-//==============================================================================
+
 - (void) addButton:(UIButton*)aButton
 {
     if(aButton)
@@ -65,14 +65,14 @@
     }
 }
 
-////==============================================================================
+//
 //- (void) setEnabled:(BOOL)aEnabled
 //{
 //	enabled = aEnabled;
 //	self.userInteractionEnabled = enabled;
 //}
 
-//==============================================================================
+
 - (void) itemPressed:(UIButton*)aSender
 {
 	if(self.enabled)
@@ -83,7 +83,7 @@
     }
 }
 
-//==============================================================================
+
 // programmaticaly switch by index
 - (void) switchToItemWithIndex:(NSUInteger)aIndex
 {
@@ -99,7 +99,7 @@
     }
 }
 
-//==============================================================================
+
 - (NSUInteger) currentIndex
 {
     return [buttons indexOfObject:currentItem];

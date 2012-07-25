@@ -10,7 +10,7 @@
 
 @implementation MUPhoneNumberFormatter
 
-//==============================================================================
+
 - (id)init 
 {
     self = [super init];
@@ -47,7 +47,7 @@
     return self;    
 }
 
-//==============================================================================
+
 - (BOOL)phoneFormatForTextField:(UITextField *)textField
   shouldChangeCharactersInRange:(NSRange)range 
               replacementString:(NSString *)string 
@@ -70,7 +70,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (NSString *)format:(NSString *)phoneNumber withLocale:(NSString *)locale 
 {    
     NSArray *localeFormats = [predefinedFormats objectForKey:locale];    
@@ -123,7 +123,7 @@
     return input;    
 }
 
-//==============================================================================
+
 - (NSString *)strip:(NSString *)phoneNumber 
 {
     
@@ -137,7 +137,7 @@
     return res;    
 }
 
-//==============================================================================
+
 - (BOOL)canBeInputByPhonePad:(char)c 
 {    
     if(c == '+' || c == '*' || c == '#') 

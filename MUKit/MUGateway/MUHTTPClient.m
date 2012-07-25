@@ -14,7 +14,7 @@
 
 @synthesize gatewayDelegate;
 
-//==============================================================================
+
 - (void) enqueueHTTPRequestOperation:(AFHTTPRequestOperation *)operation
 {
     [gatewayDelegate httpRequestOperationDidEnqueue:operation];

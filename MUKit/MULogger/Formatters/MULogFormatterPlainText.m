@@ -11,7 +11,7 @@
 
 @implementation MULogFormatterPlainText
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -24,14 +24,14 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [logDateFormatter release];
     [super dealloc];
 }
 
-//==============================================================================
+
 - (NSData*) formatMessage:(MULogMessage*)aMessage
 {
     return [[NSString stringWithFormat:@"(%@) %@ : %@\n", [logDateFormatter stringFromDate:aMessage.date], [aMessage typeDescription], [aMessage text]] dataUsingEncoding:NSUTF8StringEncoding];

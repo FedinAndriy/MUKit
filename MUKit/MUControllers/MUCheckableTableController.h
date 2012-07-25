@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "MUBaseTableController.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUCheckableData : NSObject
 {
     NSString* titleKey;
@@ -29,9 +29,9 @@
 @end
 
 @class MUCheckableTableController;
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @protocol MUCheckableTableControllerDelegate
 
 - (void) checkableTableController:(MUCheckableTableController *)aCheckableTableController completeSelectionWithCheckableData:(MUCheckableData*)aCheckableData;
@@ -41,9 +41,9 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUCheckableTableController : MUBaseTableController
 {
     UITableViewCell* prevSelectedCell;

@@ -12,7 +12,7 @@
 @implementation MUPopupHoursMinutesPicker
 
 #pragma mark - override next methods to customize:
-//==============================================================================
+
 - (UIView*) createPicker
 {
 //    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectZero] autorelease];
@@ -26,31 +26,31 @@
     return pv;
 }
 
-//==============================================================================
+
 - (UIPickerView*) popupedPicker
 {
     return (UIPickerView*)picker;
 }
 
-//==============================================================================
+
 - (NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     return 2;
 }
 
-//==============================================================================
+
 - (NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     return (component == 0) ? (24) : (60);
 }
 
-//==============================================================================
+
 - (NSString*) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
     return [NSString stringWithFormat:@"%i", row];
 }
 
-//==============================================================================
+
 - (NSObject*) selectedItem
 {
     NSNumber* result = nil;
@@ -63,7 +63,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void) popupWillAppear:(BOOL)animated
 {
     [super popupWillAppear:animated];
@@ -107,5 +107,5 @@
     }
 }
 
-//==============================================================================
+
 @end

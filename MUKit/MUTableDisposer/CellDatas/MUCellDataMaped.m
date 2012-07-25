@@ -10,11 +10,11 @@
 
 @implementation MUCellDataMaped
 
-//==============================================================================
+
 @synthesize key;
 @synthesize object;
 
-//==============================================================================
+
 - (id) init
 {
     NSAssert(NO, @"You can't use this method! Instead use 'initWithObject:key:'");
@@ -22,7 +22,7 @@
     return nil;
 }
 
-//==============================================================================
+
 - (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super init];
@@ -34,20 +34,20 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [key release];
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) mapFromObject
 {
     NSAssert(nil, @"Override this method in subclasses!");
 }
 
-//==============================================================================
+
 - (void) mapToObject
 {
     NSAssert(nil, @"Override this method in subclasses!");

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-//==============================================================================
+
 /// text filter : base class
 @interface MUFilter : NSObject
 {
@@ -22,19 +22,19 @@
 
 @end
 
-//==============================================================================
+
 /// text with only number
 @interface MUFilterNumbers : MUFilter
 
 @end
 
-//==============================================================================
+
 /// text with only letters
 @interface MUFilterLetters : MUFilter
 
 @end
 
-//==============================================================================
+
 @interface MUFilterLettersAndDigits : MUFilter
 
 @end

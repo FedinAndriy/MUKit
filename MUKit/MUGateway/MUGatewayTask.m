@@ -15,20 +15,20 @@
 @synthesize gateway;
 @synthesize operation;
 
-//==============================================================================
+
 + (id) taskWithGateway:(MUGateway*)aGateway operation:(AFHTTPRequestOperation*)anOperation
 {
     return [[[MUGatewayTask alloc] initWithGateway:aGateway operation:anOperation] autorelease];
 }
 
-//==============================================================================
+
 - (id) init
 {
     [self release];
     return nil;
 }
 
-//==============================================================================
+
 - (id) initWithGateway:(MUGateway*)aGateway operation:(AFHTTPRequestOperation*)anOperation
 {
     if( (self = [super init]) )
@@ -39,7 +39,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) cancel
 {
     [operation cancel];

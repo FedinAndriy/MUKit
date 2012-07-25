@@ -12,16 +12,16 @@
 
 #define _UIKeyboardFrameEndUserInfoKey (&UIKeyboardFrameEndUserInfoKey != NULL ? UIKeyboardFrameEndUserInfoKey : @"UIKeyboardBoundsUserInfoKey")
 
-//==============================================================================
+
 @interface MUKeyboardAvoidingTableView (Init)
 
 - (void)setup;
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUKeyboardAvoidingTableView (Private)
 
 - (UIView*)findFirstResponderBeneathView:(UIView*)view;
@@ -35,16 +35,16 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUKeyboardAvoidingTableView
 
 @synthesize keyboardToolbar = keyboardToolbar;
 @synthesize keyboardToolbarShow;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 -(id)initWithFrame:(CGRect)frame  
 {
     self = [super initWithFrame:frame];
@@ -55,7 +55,7 @@
     return self;
 }
 
-//==============================================================================
+
 -(id)initWithCoder:(NSCoder *)aDecoder 
 {
     self = [super initWithCoder:aDecoder];
@@ -66,7 +66,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (id)initWithFrame:(CGRect)frame style:(UITableViewStyle)style
 {
     self = [super initWithFrame:frame style:style];
@@ -77,7 +77,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void)setup 
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -88,7 +88,7 @@
         [self createToolbar];
 }
 
-//==============================================================================
+
 -(void)dealloc 
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -97,7 +97,7 @@
 }
 
 #pragma mark - SetFrame/SetContentSize/TouchesEnded
-//==============================================================================
+
 -(void)setFrame:(CGRect)frame 
 {
     [super setFrame:frame];
@@ -107,7 +107,7 @@
     }
 }
 
-//==============================================================================
+
 -(void)setContentSize:(CGSize)contentSize 
 {
     [super setContentSize:contentSize];
@@ -117,7 +117,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event 
 {
     [[self findFirstResponderBeneathView:self] resignFirstResponder];
@@ -125,7 +125,7 @@
 }
 
 #pragma mark - NSNotification
-//==============================================================================
+
 - (void)keyboardWillShow:(NSNotification*)notification 
 {
     if (!_keyboardVisible)
@@ -148,7 +148,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)keyboardWillHide:(NSNotification*)notification 
 {
     _keyboardRect = CGRectZero;
@@ -167,7 +167,7 @@
 }
 
 #pragma mark - Private Methods
-//==============================================================================
+
 - (UIView*)findFirstResponderBeneathView:(UIView*)view 
 {
     // Search recursively for first responder
@@ -182,7 +182,7 @@
     return nil;
 }
 
-//==============================================================================
+
 - (UIEdgeInsets)contentInsetForKeyboard 
 {
     UIEdgeInsets newInset = self.contentInset;
@@ -191,7 +191,7 @@
     return newInset;
 }
 
-//==============================================================================
+
 -(CGFloat)idealOffsetForView:(UIView *)view withSpace:(CGFloat)space 
 {   
     _selectIndexInputField = [_objectsInKeyboard indexOfObject:view];
@@ -227,7 +227,7 @@
     return offset;
 }
 
-//==============================================================================
+
 - (CGRect)keyboardRect 
 {
     CGRect keyboardRect = [self convertRect:_keyboardRect fromView:nil];
@@ -240,7 +240,7 @@
 }
 
 #pragma mark - Public Methods
-//==============================================================================
+
 -(void)adjustOffset 
 {    
     // Only do this if the keyboard is already visible
@@ -254,13 +254,13 @@
     [self setContentOffset:idealOffset animated:YES];                
 }
 
-//==============================================================================
+
 - (void)hideKeyBoard
 {
     [[self findFirstResponderBeneathView:self] resignFirstResponder];
 }
 
-//==============================================================================
+
 - (void)addObjectForKeyboard:(id<UITextInputTraits, MUKeyboardAvoiderProtocol>)objectForKeyboard
 {
     if ([_objectsInKeyboard count] > 0) 
@@ -274,7 +274,7 @@
     objectForKeyboard.keyboardAvoiding = self;
 }
 
-//==============================================================================
+
 - (void)addObjectsForKeyboard:(NSArray *)objectsForKeyboard
 {
     for (id obj in objectsForKeyboard)
@@ -294,7 +294,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)responderShouldReturn:(UIResponder*)aResponder
 {    
     NSInteger index = [_objectsInKeyboard indexOfObject:aResponder];
@@ -311,13 +311,13 @@
 }
 
 #pragma mark - MUKeyboardToolbarProtocol
-//==============================================================================
+
 - (void) didDoneButtonPressd
 {
     [self hideKeyBoard];
 }
 
-//==============================================================================
+
 - (void) didNextButtonPressd
 {
     if (_selectIndexInputField < [_objectsInKeyboard count] - 1) 
@@ -331,7 +331,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) didPrevButtonPressd
 {
     if (_selectIndexInputField >= 1) 
@@ -358,7 +358,7 @@
 }
 
 #pragma mark - Setting Toolbar
-//==============================================================================
+
 - (void) setKeyboardToolbarShow:(BOOL)aKeyboardToolbarShow
 {
     keyboardToolbarShow = aKeyboardToolbarShow;
@@ -372,7 +372,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) createToolbar
 {
     keyboardToolbar = [[MUKeyboardToolbar alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 44.f)];
@@ -380,7 +380,7 @@
     [self setInputAccessoryView:keyboardToolbar];
 }
 
-//==============================================================================
+
 - (void) deleteToolbar
 {
     [keyboardToolbar release];
@@ -388,7 +388,7 @@
     [self setInputAccessoryView:keyboardToolbar];
 }
 
-//==============================================================================
+
 - (void) setInputAccessoryView:(UIView*)accessoryView
 {
     for (id obj in _objectsInKeyboard)
@@ -400,7 +400,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) removeAllObjectForKeyboard
 {
     [_objectsInKeyboard removeAllObjects];

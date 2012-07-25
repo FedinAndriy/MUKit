@@ -10,7 +10,7 @@
 
 @implementation MURootControllerIPad
 
-//==============================================================================
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -21,7 +21,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -30,24 +30,24 @@
 }
 
 #pragma mark - View lifecycle
-//==============================================================================
+
 - (void)loadView
 {
     [super loadView];
 }
 
-//==============================================================================
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
 }
-//==============================================================================
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return YES;

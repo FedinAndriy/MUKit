@@ -9,12 +9,12 @@
 #import "MUGateway.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUGateway
 
-//==============================================================================
+
 - (void) dealloc
 {
     [httpClient release];
@@ -22,7 +22,7 @@
     [super dealloc];
 }
 
-//==============================================================================
+
 - (void) configureHTTPClientWithBaseURL:(NSURL*)aBaseURL
 {
     [httpClient release];
@@ -30,14 +30,14 @@
     httpClient.gatewayDelegate = self;
 }
 
-//==============================================================================
+
 - (void) httpRequestOperationDidEnqueue:(AFHTTPRequestOperation *)anOperation
 {
     MUGatewayTask* task = [MUGatewayTask taskWithGateway:self operation:anOperation];
     startingTask = task;
 }
 
-//==============================================================================
-//==============================================================================
+
+
 
 @end

@@ -10,7 +10,7 @@
 
 #define MU_IS_OS_VER_5x ([[[UIDevice currentDevice] systemVersion] floatValue] >= 5.0)
 
-//==============================================================================
+
 @implementation MUTabBarItem
 
 @synthesize title;
@@ -23,7 +23,7 @@
 @synthesize backgroundImageNormal;
 @synthesize backgroundImageSelected;
 
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -36,7 +36,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [title release];
@@ -52,9 +52,9 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUTabBarController ()
 
 - (CGRect) getContentFrame;
@@ -66,9 +66,9 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUTabBarController
 
 @synthesize delegate;
@@ -87,7 +87,7 @@
 @synthesize selectedIndex;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id)init
 {
     self = [super init];
@@ -101,7 +101,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [tabBarBackgroundImage release];
@@ -113,14 +113,14 @@
 }
 
 #pragma mark - View Lifecycle
-//==============================================================================
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 }
 
-//==============================================================================
+
 - (void)viewDidUnload
 {
     tabBar = nil;
@@ -132,7 +132,7 @@
     [super viewDidUnload];
 }
 
-//==============================================================================
+
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -176,7 +176,7 @@
         [[self selectedViewController] viewWillAppear:animated];
 }
 
-//==============================================================================
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -185,7 +185,7 @@
         [[self selectedViewController] viewDidAppear:animated];
 }
 
-//==============================================================================
+
 - (void) viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
@@ -194,7 +194,7 @@
         [[self selectedViewController] viewWillDisappear:animated];
 }
 
-//==============================================================================
+
 - (void) viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
@@ -203,7 +203,7 @@
         [[self selectedViewController] viewDidDisappear:animated];
 }
 
-//==============================================================================
+
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
 {
     BOOL result = YES;
@@ -216,14 +216,14 @@
 
 
 #pragma mark - 
-//==============================================================================
+
 - (void) setTabBarEnabled:(BOOL)aTabBarEnabled
 {
     tabBarEnabled = aTabBarEnabled;
     tabBar.enabled = tabBarEnabled;
 }
 
-//==============================================================================
+
 - (void) setSelectedIndex:(NSUInteger)aSelectedIndex
 {
     // save prev
@@ -276,13 +276,13 @@
         [delegate tabBarController:self didSelectViewController:[viewControllers objectAtIndex:aSelectedIndex]];
 }
 
-//==============================================================================
+
 - (UIViewController*) selectedViewController
 {
     return ([viewControllers count] > 0 && selectedIndex < [viewControllers count]) ? ([viewControllers objectAtIndex:selectedIndex]) : nil;
 }
 
-//==============================================================================
+
 - (void) setSelectedViewController:(UIViewController *)aSelectedViewController
 {
     NSUInteger index = [viewControllers indexOfObject:aSelectedViewController];
@@ -292,14 +292,14 @@
     }
 }
 
-//==============================================================================
+
 - (CGRect) getContentFrame
 {
     float y = (tabBarOnTheTop) ? (tabBarHeight) : (0);
     return CGRectMake(0, y, self.view.bounds.size.width, self.view.bounds.size.height - tabBarHeight);
 }
 
-//==============================================================================
+
 - (void) setViewControllers:(NSArray *)aViewControllers
 {
     if(viewControllers != aViewControllers)
@@ -328,7 +328,7 @@
     
 }
 
-//==============================================================================
+
 - (void) correctForNavigationController:(UIViewController**)vc
 {
     if([*vc isKindOfClass:[UINavigationController class]])
@@ -342,7 +342,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) setupControllers
 {
     CGSize tabBarItemFullSize = CGSizeMake(tabBar.bounds.size.width / [viewControllers count], tabBar.bounds.size.height);
@@ -411,25 +411,25 @@
     [self setSelectedIndex:selectedIndex];
 }
 
-//==============================================================================
+
 - (void) configureTabBar
 {
     // empty by default
 }
 
-//==============================================================================
+
 - (UIButton*) createTabBarButtonAtIndex:(NSUInteger)anIndex
 {
     return [UIButton buttonWithType:UIButtonTypeCustom];
 }
 
-//==============================================================================
+
 - (void) configureTabBarButton:(UIButton*)aTabBarButton atIndex:(NSUInteger)anIndex
 {
     // empty by default
 }
 
-//==============================================================================
+
 - (UIBarButtonItem*) spacerBeforeTabBarButtonAtIndex:(NSUInteger)anIndex
 {
     UIBarButtonItem* result = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil] autorelease];
@@ -437,7 +437,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (CGFloat) spaceBeforeTabBarButtonAtIndex:(NSUInteger)anIndex
 {
     CGFloat result = 0.0f;
@@ -451,7 +451,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void) disabledButtonPressed
 {
     if([self.selectedViewController isKindOfClass:[UINavigationController class]])
@@ -460,7 +460,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) updateTabArrow
 {
     if(!tabArrowImage)
@@ -490,7 +490,7 @@
 
 
 #pragma mark - MUTabedToolbarDelegate
-//==============================================================================
+
 - (BOOL) tabedToolbar:(MUTabedToolbar *)aTabBar shouldSelectItemAtIndex:(NSUInteger)anIndex
 {
     BOOL result = YES;
@@ -501,7 +501,7 @@
     return result;
 }
 
-//==============================================================================
+
 - (void) tabedToolbar:(MUTabedToolbar*)aTabBar itemChangedTo:(NSUInteger)aToIndex from:(NSUInteger)aFromIndex
 {
     [self setSelectedIndex:aToIndex];

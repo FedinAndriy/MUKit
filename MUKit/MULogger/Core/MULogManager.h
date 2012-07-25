@@ -11,7 +11,7 @@
 #import "MULogConsumer.h"
 
 
-//==============================================================================
+
 @interface MULogManager : NSObject
 {
     NSArray* consumers;

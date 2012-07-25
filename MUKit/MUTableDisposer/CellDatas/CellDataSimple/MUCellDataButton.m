@@ -20,7 +20,7 @@
 @synthesize titleAlignment;
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) init
 {
     self = [super init];
@@ -36,7 +36,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [title release];
@@ -47,7 +47,7 @@
 }
 
 #pragma mark - Target/Action
-//==============================================================================
+
 - (void) setTarget:(id)aTarget action:(SEL)anAction
 {
     [targetAction setTarget:aTarget action:anAction];

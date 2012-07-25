@@ -14,9 +14,9 @@
 #import "MUKeyboardAvoidingProtocol.h"
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUSectionWritable ()
 
 - (MUCell*) createCellAtIndex:(NSUInteger)anIndex;
@@ -24,13 +24,13 @@
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUSectionWritable
 
 #pragma mark - Init/Dealloc
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -40,7 +40,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [cells release];
@@ -49,7 +49,7 @@
 }
 
 #pragma mark - Cells
-//==============================================================================
+
 - (void) createCells
 {
     [self updateCellDataVisibility];
@@ -64,7 +64,7 @@
     }
 }
 
-//==============================================================================
+
 - (UITableViewCell<MUCellProtocol>*) cellForIndex:(NSUInteger)anIndex
 {
     UITableViewCell<MUCellProtocol>* cell = [cells objectAtIndex:anIndex];
@@ -72,14 +72,14 @@
     return cell;
 }
 
-//==============================================================================
+
 - (void) reloadWithAnimation:(UITableViewRowAnimation)anAnimation
 {
     [self mapFromObject];
     [super reloadWithAnimation:anAnimation];
 }
 
-//==============================================================================
+
 - (void) reloadRowsAtIndexes:(NSArray *)anIndexes withAnimation:(UITableViewRowAnimation)aRowAnimation
 {
     NSMutableArray* indexPaths = [NSMutableArray array];
@@ -108,7 +108,7 @@
 
 
 #pragma mark - Show/Hide cels
-//==============================================================================
+
 - (void) hideCellByIndex:(NSUInteger)anIndex needUpdateTable:(BOOL)aNeedUpdateTable
 {
     MUCellData* cellData = [self cellDataAtIndex:anIndex];
@@ -128,7 +128,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) showCellByIndex:(NSUInteger)anIndex needUpdateTable:(BOOL)aNeedUpdateTable
 {
     MUCellData* cellData = [self cellDataAtIndex:anIndex];
@@ -150,7 +150,7 @@
 }
 
 #pragma mark - Maping
-//==============================================================================
+
 - (void) mapFromObject
 {
     for (MUCellData* cellData in cellDataSource)
@@ -161,7 +161,7 @@
     [self createCells];
 }
 
-//==============================================================================
+
 - (void) mapToObject
 {
     for (MUCellData* cellData in cellDataSource)
@@ -173,7 +173,7 @@
 
 
 #pragma mark - Private
-//==============================================================================
+
 - (MUCell*) createCellAtIndex:(NSUInteger)anIndex
 {
     MUCellData* cellData = [self visibleCellDataAtIndex:anIndex];

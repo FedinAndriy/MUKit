@@ -8,9 +8,9 @@
 
 #import "MUAutoresizeButton.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUAutoresizeButton (Private)
 
 - (void) setTitleName:(NSString*) titleName 
@@ -28,15 +28,15 @@
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUAutoresizeButton
 
 @synthesize maxWidth = _maxWidth;
 @synthesize minWidth = _minWidth;
 
-//==============================================================================
+
 +(id) buttonByImageName:(NSString*) imageName
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
@@ -44,7 +44,7 @@
     return btn;
 }
 
-//==============================================================================
+
 +(id) buttonByTitleName:(NSString*) titleName 
               imageName:(NSString*) imageName
 {
@@ -53,7 +53,7 @@
     return btn;
 }
 
-//==============================================================================
+
 +(id) buttonByTitleName:(NSString*) titleName 
               imageName:(NSString*) imageName 
            imageCapSize:(ImageCapSize) imageCapSize
@@ -63,7 +63,7 @@
     return btn;
 }
 
-//==============================================================================
+
 +(id) buttonByTitleName:(NSString*) titleName 
               imageName:(NSString*) imageName 
             titleOffset:(TitleOffset) titleOffset
@@ -73,7 +73,7 @@
     return btn;
 }
 
-//==============================================================================
+
 +(id) buttonByTitleName:(NSString*) titleName 
               imageName:(NSString*) imageName 
            imageCapSize:(ImageCapSize) imageCapSize
@@ -84,7 +84,7 @@
     return btn;
 }
 
-//==============================================================================
+
 +(id) buttonForNavBackByTitleName:(NSString*) titleName 
                         imageName:(NSString*) imageName
 {
@@ -93,7 +93,7 @@
     return btn;
 }
 
-//==============================================================================
+
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if( (self = [super initWithCoder:aDecoder]) )
@@ -108,7 +108,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) setTitleName:(NSString *)titleName 
             imageName:(NSString *)imageName 
          imageCapSize:(ImageCapSize)imageCapSize 
@@ -117,7 +117,7 @@
     [self setTitleName:titleName image:[UIImage imageNamed:imageName] imageCapSize:imageCapSize titleOffset:titleOffset];
 }
 
-//==============================================================================
+
 - (void) setTitleName:(NSString*) titleName 
                 image:(UIImage*) image 
          imageCapSize:(ImageCapSize) imageCapSize 
@@ -132,7 +132,7 @@
     [self setupFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
 }
 
-//==============================================================================
+
 -(void)setupFont:(UIFont *)font
 {
     UIImage *image = [self getAutoresizeImageByFont:font];
@@ -150,13 +150,13 @@
     }
 }
 
-//==============================================================================
+
 - (void)setHighlighted:(BOOL)highlighted
 {
     [super setHighlighted:highlighted];
 }
 
-//==============================================================================
+
 - (UIImage*)getAutoresizeImageByFont:(UIFont*)font
 {
     UIImage *image = originalBGImage;   //[UIImage imageNamed:_imageName];
@@ -194,7 +194,7 @@
     return image;
 }
 
-//==============================================================================
+
 - (void)setMaxWidth:(int)maxWidth
 {
     if (maxWidth < self.frame.size.width)
@@ -204,7 +204,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) setMinWidth:(int)minWidth
 {
     if (minWidth > self.frame.size.width)
@@ -214,7 +214,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) setAutoresizeTitle:(NSString*)aTitle
 {
 	[_title release];
@@ -223,7 +223,7 @@
     [self setupFont:[UIFont boldSystemFontOfSize:14]];
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [_title release];
@@ -232,8 +232,8 @@
     [super dealloc];
 }
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 
 @end

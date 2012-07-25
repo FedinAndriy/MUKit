@@ -9,7 +9,7 @@
 
 #import "MUDraw.h"
 
-//==============================================================================
+
 void MUDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor, bool isHorizontal)
 {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
@@ -43,19 +43,19 @@ void MUDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startCol
     CGColorSpaceRelease(colorSpace);
 }
 
-//==============================================================================
+
 void MUDrawLinearGradientVertical(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
 {
     MUDrawLinearGradient(context, rect, startColor, endColor, true);
 }
 
-//==============================================================================
+
 void MUDrawLinearGradientHorizontal(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
 {
     MUDrawLinearGradient(context, rect, startColor, endColor, false);
 }
 
-//==============================================================================
+
 CGContextRef MUCreateThreadSafeContext(CGSize contextSize)
 {
     CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
@@ -70,13 +70,13 @@ CGContextRef MUCreateThreadSafeContext(CGSize contextSize)
     return context;
 }
 
-//==============================================================================
+
 CGImageRef MUCreateCGImageFromThreadSafeContext(CGContextRef context)
 {
     return CGBitmapContextCreateImage(context);
 }
 
-//==============================================================================
+
 UIImage* MUImageWithColor(UIColor* color, CGSize size)
 {
     UIImage* result = nil;

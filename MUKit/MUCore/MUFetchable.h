@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-//==============================================================================
+
 @protocol MUFetchable <NSObject>
 
 @property (nonatomic, assign) BOOL needFetch;      // need fetch data from server

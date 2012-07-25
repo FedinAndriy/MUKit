@@ -13,9 +13,9 @@
 #define MOTION_DURATION         0.4f
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUPopupViewController (Private)
 
 - (void) hidedButtonPressed:(id)aSender;
@@ -29,9 +29,9 @@
 @end
 
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUPopupViewController
 
 @synthesize popupedView;
@@ -41,7 +41,7 @@
 @synthesize overlayViewAlpha;
 
 #pragma mark - init/dealloc
-//==============================================================================
+
 - (id) init
 {
     if( (self = [super init]) )
@@ -55,7 +55,7 @@
     return self;
 }
 
-//==============================================================================
+
 - (void) dealloc
 {
     [popupedView release];
@@ -64,7 +64,7 @@
 }
 
 #pragma mark - view life cicle
-//==============================================================================
+
 - (void) setupSubviews
 {
     CGRect frame;
@@ -103,7 +103,7 @@
     }
 }
 
-//==============================================================================
+
 - (void)loadView
 {
 	self.view = [[[UIView alloc]init] autorelease];
@@ -114,7 +114,7 @@
 	self.view.backgroundColor = [UIColor clearColor];
 }
 
-//==============================================================================
+
 - (void) popupWillAppear:(BOOL)animated
 {
 	//calculate and setup frame for view
@@ -154,19 +154,19 @@
     [popupedView popupWillAppear:animated];
 }
 
-//==============================================================================
+
 - (void) popupDidAppear:(BOOL)animated
 {
     [popupedView popupDidAppear:animated];
 }
 
-//==============================================================================
+
 - (void) popupWillDisappear:(BOOL)animated
 {
     [popupedView popupWillDisappear:animated];
 }
 
-//==============================================================================
+
 - (void) popupDidDisappear:(BOOL)animated
 {
     isShow = NO;
@@ -178,14 +178,14 @@
 }
 
 #pragma mark - rotations
-//==============================================================================
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
 	return YES;
 }
 
 #pragma mark - show/hide
-//==============================================================================
+
 - (void) showWithAnimation:(BOOL)animation inView:(UIView*)aView
 {
     if(isShow || animatingNow) return;
@@ -232,7 +232,7 @@
     
 }
 
-//==============================================================================
+
 - (void) hideWithAnimation:(BOOL)animation
 {
     if(!isShow || animatingNow) return;
@@ -267,7 +267,7 @@
     }
 }
 
-//==============================================================================
+
 - (void) hidedButtonPressed:(id)aSender
 {
     [self hideWithAnimation:YES];
