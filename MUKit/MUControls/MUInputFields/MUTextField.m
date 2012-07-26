@@ -11,25 +11,25 @@
 #import "MUKeyboardAvoidingProtocol.h"
 
 
-============
-============
-============
+ 
+ 
+ 
 @interface MUTextField_Holder : NSObject <UITextFieldDelegate>
 
 @property (nonatomic, assign) MUTextField* holded;
 
 @end
 
-============
-============
-============
+ 
+ 
+ 
 @interface MUTextField ()
 
 - (void) setup;
 
 @end
 
-============
+ 
 @implementation MUTextField
 
 @synthesize validatableText;
@@ -38,7 +38,7 @@
 @synthesize filter;
 
 #pragma mark - Init/Dealloc
-============
+ 
 - (id)init
 {
     self = [super init];
@@ -49,7 +49,7 @@
     return self;
 }
 
-============
+ 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -60,7 +60,7 @@
     return self;
 }
 
-============
+ 
 - (id) initWithCoder:(NSCoder *)aDecoder
 {
     if( (self = [super initWithCoder:aDecoder]) )
@@ -70,7 +70,7 @@
     return self;
 }
 
-============
+ 
 - (void) dealloc
 {
     super.delegate = nil;
@@ -81,7 +81,7 @@
     [super dealloc];
 }
 
-============
+ 
 - (void) setup
 {
     self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -91,7 +91,7 @@
 }
 
 #pragma mark - MUValidationProtocol
-============
+ 
 - (void) setValidator:(MUValidator*)aValidator
 {
     if(validator != aValidator)
@@ -102,38 +102,38 @@
     }
 }
 
-============
+ 
 - (NSString*) validatableText
 {
     return self.text;
 }
 
-============
+ 
 - (void) setValidatableText:(NSString *)aValidatableText
 {
     self.text = aValidatableText;
 }
 
-============
+ 
 - (MUValidator*) validator
 {
     return validator;
 }
 
-============
+ 
 - (BOOL) validate
 {
     return (validator) ? ([validator validate]) : (YES);
 }
 
 #pragma mark - UITextFieldDelegate
-============
+ 
 - (void) setDelegate:(id<UITextFieldDelegate>)aDelegate
 {
     mudelegate = aDelegate;
 }
 
-============
+ 
 - (id<UITextFieldDelegate>) delegate
 {
     return mudelegate;
@@ -141,14 +141,14 @@
 @end
 
 
-============
-============
-============
+ 
+ 
+ 
 @implementation MUTextField_Holder
 
 @synthesize holded;
 
-============
+ 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     BOOL result = YES;
@@ -159,7 +159,7 @@
     return result;
 }
 
-============
+ 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [holded.keyboardAvoiding adjustOffset];
@@ -168,7 +168,7 @@
         [holded.mudelegate textFieldDidBeginEditing:textField];
 }
 
-============
+ 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
     BOOL result = YES;
@@ -179,14 +179,14 @@
     return result;
 }
 
-============
+ 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     if([holded.mudelegate respondsToSelector:@selector(textFieldDidEndEditing:)])
         [holded.mudelegate textFieldDidEndEditing:textField];
 }
 
-============
+ 
 - (BOOL)textField:(MUTextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
     BOOL result = YES;
@@ -199,7 +199,7 @@
     return result;
 }
 
-============
+ 
 - (BOOL)textFieldShouldClear:(UITextField *)textField
 {
     BOOL result = YES;
@@ -210,7 +210,7 @@
     return result;
 }
 
-============
+ 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     BOOL result = YES;

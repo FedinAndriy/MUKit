@@ -11,7 +11,7 @@
 
 @implementation MUSpinneredView
 
-============
+ 
 - (id) initWithParentView: (UIView*)aParentView color:(UIColor*)aColor
 {
 	if((self = [super init]) && aParentView)
@@ -30,7 +30,7 @@
 	return self;
 }
 
-============
+ 
 - (void) dealloc
 {
 	[self removeFromSuperview];
@@ -39,7 +39,7 @@
 	[super dealloc];
 }
 
-============
+ 
 - (void) show
 {
 	if(!isShow)
@@ -51,7 +51,7 @@
 	}
 }
 
-============
+ 
 - (void) hide
 {
 	if(isShow)
@@ -62,8 +62,8 @@
 	}
 }
 
-============
-============
-============
+ 
+ 
+ 
 
 @end
