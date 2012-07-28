@@ -144,8 +144,11 @@
         tabBar.delegate = self;
         tabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         tabBar.autoresizingMask |= (tabBarOnTheTop) ? (UIViewAutoresizingFlexibleBottomMargin) : (UIViewAutoresizingFlexibleTopMargin);
-        tabBar.backgroundImage = tabBarBackgroundImage;
-        tabBar.drawColor = tabBarDrawColor;
+
+        #warning removed properties
+//        tabBar.backgroundImage = tabBarBackgroundImage;
+//        tabBar.drawColor = tabBarDrawColor;
+
         tabBar.backgroundColor = tabBarBackgroundColor;
         tabBar.enabled = tabBarEnabled;
 

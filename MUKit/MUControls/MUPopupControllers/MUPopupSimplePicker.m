@@ -7,7 +7,6 @@
 //
 
 #import "MUPopupSimplePicker.h"
-#import "MUTitledID.h"
 
 
 @implementation MUPopupSimplePicker
@@ -48,9 +47,7 @@
 {
     NSString *result = nil;
     NSObject *item = [dataSource objectAtIndex:row];
-    if ([item isKindOfClass:[MUTitledID class]])
-        result = ((MUTitledID *) item).title;
-    else if ([item isKindOfClass:[NSString class]])
+    if ([item isKindOfClass:[NSString class]])
         result = (NSString *) item;
     else {
         NSAssert(NO, @"Wrong class in dataSource !!!");

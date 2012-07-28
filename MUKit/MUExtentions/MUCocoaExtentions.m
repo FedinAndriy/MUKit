@@ -75,29 +75,6 @@
 
 @end
 
-@implementation UIView (Extension)
-
-- (UIViewController *)firstAvailableUIViewController
-{
-    // convenience function for casting and to "mask" the recursive function
-    return (UIViewController *) [self traverseResponderChainForUIViewController];
-}
-
-- (id)traverseResponderChainForUIViewController
-{
-    id result = nil;
-
-    id nextResponder = [self nextResponder];
-    if ([nextResponder isKindOfClass:[UIViewController class]])
-        result = nextResponder;
-    else if ([nextResponder isKindOfClass:[UIView class]])
-        result = [nextResponder traverseResponderChainForUIViewController];
-
-    return result;
-}
-
-@end
-
 @implementation NSString (Extension)
 
 - (NSString *)urlEncodeUsingEncoding:(NSStringEncoding)encoding

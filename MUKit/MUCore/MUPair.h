@@ -7,13 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MUWeakRef.h"
-
 
 @interface MUPair : NSObject
-{
-
-}
 
 @property(nonatomic, retain) NSObject *first;
 @property(nonatomic, retain) NSObject *second;

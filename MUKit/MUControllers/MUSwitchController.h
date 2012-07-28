@@ -18,7 +18,7 @@
 
 @end
 
-@interface MUSwitchController : UINavigationController
+@interface MUSwitchController : UIViewController
 
 @property(nonatomic, assign) id <MUSwitchControllerDelegate> switchDelegate;
 

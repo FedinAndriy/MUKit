@@ -34,17 +34,8 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [weakRef invalidate];
-    [weakRef release];
-
-    [super dealloc];
-}
-
 - (void)setup
 {
-    weakRef = [[MUWeakRef alloc] initWithObject:self];
 
     hideByTapOutside = YES;
 }
@@ -95,13 +86,6 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_DID_HIDE object:self];
 }
 
-#pragma mark - weakReference
-
-- (MUWeakRef *)weakReference
-{
-    return weakRef;
-}
-
 - (void)hideWithAnimation:(BOOL)animation
 {
     if (!MU_IS_IPAD) {
@@ -126,15 +110,5 @@
     }
 }
 
-//
-//- (void) setFrame:(CGRect)frame
-//{
-//    [super setFrame:frame];
-//    
-//    if([showStrategy isKindOfClass:[UIPopoverController class]])
-//    {
-//        [((UIPopoverController*)showStrategy).contentViewController setContentSizeForViewInPopover:frame.size];
-//    }
-//}
 
 @end

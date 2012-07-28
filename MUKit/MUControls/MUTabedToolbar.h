@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MUToolbar.h"
 
 
 @class MUTabedToolbar;
@@ -23,7 +22,7 @@
 @end
 
 ///
-@interface MUTabedToolbar : MUToolbar
+@interface MUTabedToolbar : UIToolbar
 {
     UIButton *currentItem;
 

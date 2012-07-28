@@ -6,7 +6,6 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MUToolbar.h"
 
 @protocol MUKeyboardToolbarProtocol <NSObject>
 
@@ -16,7 +15,7 @@
 
 @end
 
-@interface MUKeyboardToolbar : MUToolbar
+@interface MUKeyboardToolbar : UIToolbar
 {
     UISegmentedControl *segmentedPreviousNext;
     UIBarButtonItem *doneButton;

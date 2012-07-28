@@ -22,7 +22,6 @@
          titleOffset:(TitleOffset)titleOffset;
 
 - (UIImage *)getAutoresizeImageByFont:(UIFont *)font;
-- (void)addImage:(UIImage *)image;
 
 @end
 

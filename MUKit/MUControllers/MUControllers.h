@@ -10,9 +10,7 @@
 #define MUKitTest_MUControllers_h
 
 // base controllers
-#import "MUCheckableTableController.h"
 #import "MUBaseViewController.h"
-#import "MUBaseScrollerController.h"
 #import "MUSwitchController.h"
 
 #endif

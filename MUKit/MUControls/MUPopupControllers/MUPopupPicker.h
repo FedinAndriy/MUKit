@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "MUPopupView.h"
-#import "MUToolbar.h"
 
 
 #define POPUPVIEW_TOOLBAR_ITEM_DID_PRESSED      @"MUPopupViewToolbarItemDidPressed"
@@ -19,13 +18,13 @@
 @interface MUPopupPicker : MUPopupView
 {
 @protected
-    MUToolbar *toolbar;
+    UIToolbar *toolbar;
     UIView *picker;
 
     NSObject *selectedItem;
 }
 
-@property(nonatomic, retain) MUToolbar *toolbar;
+@property(nonatomic, retain) UIToolbar *toolbar;
 @property(nonatomic, retain) NSObject *selectedItem;
 
 - (UIView *)createPicker;

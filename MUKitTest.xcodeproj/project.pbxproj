@@ -23,9 +23,7 @@
 		0208F28B1529CBF5003382F9 /* MUCellSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 0208F2791529CBF5003382F9 /* MUCellSwitch.m */; };
 		0208F28C1529CBF5003382F9 /* MUCellTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0208F27B1529CBF5003382F9 /* MUCellTextField.m */; };
 		0208F28D1529CBF5003382F9 /* MUCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0208F27D1529CBF5003382F9 /* MUCell.m */; };
-		025A6298152F17FD00E49856 /* MUBaseScrollerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6234152F17FC00E49856 /* MUBaseScrollerController.m */; };
 		025A629A152F17FD00E49856 /* MUBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6238152F17FC00E49856 /* MUBaseViewController.m */; };
-		025A629B152F17FD00E49856 /* MUCheckableTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A623A152F17FC00E49856 /* MUCheckableTableController.m */; };
 		025A629C152F17FD00E49856 /* MUSwitchController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A623C152F17FC00E49856 /* MUSwitchController.m */; };
 		025A62A0152F17FD00E49856 /* MUAutoresizeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6245152F17FC00E49856 /* MUAutoresizeButton.m */; };
 		025A62A1152F17FD00E49856 /* MUImageViewTapable.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6248152F17FC00E49856 /* MUImageViewTapable.m */; };
@@ -45,28 +43,23 @@
 		025A62B0152F17FD00E49856 /* MUPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A626C152F17FC00E49856 /* MUPopoverViewController.m */; };
 		025A62B1152F17FD00E49856 /* MUPopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A626E152F17FC00E49856 /* MUPopupViewController.m */; };
 		025A62B2152F17FD00E49856 /* MUProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6270152F17FC00E49856 /* MUProgressView.m */; };
-		025A62B3152F17FD00E49856 /* MUSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6272152F17FC00E49856 /* MUSearchBar.m */; };
-		025A62B4152F17FD00E49856 /* MUSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6274152F17FC00E49856 /* MUSegmentedControl.m */; };
-		025A62B5152F17FD00E49856 /* MUSpinneredView.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6276152F17FC00E49856 /* MUSpinneredView.m */; };
-		025A62B6152F17FD00E49856 /* MUStackedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6278152F17FC00E49856 /* MUStackedView.m */; };
 		025A62B7152F17FD00E49856 /* MUTabedToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A627A152F17FC00E49856 /* MUTabedToolbar.m */; };
-		025A62C5152F17FD00E49856 /* MUToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 025A6297152F17FD00E49856 /* MUToolbar.m */; };
 		028693EA152C55C70040FD86 /* MUCellDataTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 028693E9152C55C70040FD86 /* MUCellDataTextView.m */; };
 		028693EE152C568B0040FD86 /* MUCellDataTextPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 028693ED152C568B0040FD86 /* MUCellDataTextPair.m */; };
 		028693F1152C63250040FD86 /* MUCellTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 028693F0152C63250040FD86 /* MUCellTextView.m */; };
 		028F8D3915259B3600C7907F /* MUSectionReadonly.m in Sources */ = {isa = PBXBuildFile; fileRef = 028F8D3215259B3600C7907F /* MUSectionReadonly.m */; };
 		028F8D3A15259B3600C7907F /* MUSectionWritable.m in Sources */ = {isa = PBXBuildFile; fileRef = 028F8D3415259B3600C7907F /* MUSectionWritable.m */; };
-		02A01D5C15A71ABE007AEE1B /* MUDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 02A01D5A15A71ABE007AEE1B /* MUDraw.m */; };
 		02AF8F6315305506005B8AED /* MUTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02AF8F6215305506005B8AED /* MUTabBarController.m */; };
 		02BDB7E31525FA4F00764326 /* MUTableDisposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB7E21525FA4F00764326 /* MUTableDisposer.m */; };
 		02BDB7ED1525FF3500764326 /* MUTableDisposerModeled.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB7EC1525FF3500764326 /* MUTableDisposerModeled.m */; };
 		02BDB7F11526043300764326 /* MUTableDisposerMapped.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB7F01526043300764326 /* MUTableDisposerMapped.m */; };
 		02BDB7F4152604EF00764326 /* MUTableDisposerRequested.m in Sources */ = {isa = PBXBuildFile; fileRef = 02BDB7F3152604EF00764326 /* MUTableDisposerRequested.m */; };
-		02EFC340155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EFC337155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.m */; };
-		02EFC341155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EFC338155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.xib */; };
-		02EFC342155C1D7C00E2639C /* MUKeyboardAvoidingTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EFC33B155C1D7C00E2639C /* MUKeyboardAvoidingTableController.m */; };
-		02EFC343155C1D7C00E2639C /* MUKeyboardAvoidingTableController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02EFC33C155C1D7C00E2639C /* MUKeyboardAvoidingTableController.xib */; };
 		02EFC344155C1D7C00E2639C /* TableViewWithMapedCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 02EFC33F155C1D7C00E2639C /* TableViewWithMapedCells.m */; };
+		1D6A328AEF08E8E7D72440D3 /* DCRoundSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3391DBC43DC4DA5040DD /* DCRoundSwitchKnobLayer.m */; };
+		1D6A329DF7DF408A30D2E05F /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3493CF97B0C24A8FAED9 /* DCRoundSwitchToggleLayer.m */; };
+		1D6A3827958AD90A5991EF27 /* MUDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A34C6D15227877B3D3F3D /* MUDraw.m */; };
+		1D6A385B907D7EFB9DDBD4A3 /* DCRoundSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A3E479B08AFE95ED94C54 /* DCRoundSwitch.m */; };
+		1D6A3FC9D26C0B075FE9BAC6 /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D6A30A5232D991E7098207B /* DCRoundSwitchOutlineLayer.m */; };
 		E62CDA57152AF88300DACE8F /* warning_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E62CDA55152AF88300DACE8F /* warning_icon.png */; };
 		E62CDA58152AF88300DACE8F /* warning_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E62CDA56152AF88300DACE8F /* warning_icon@2x.png */; };
 		E6337FDC153C6BE500EFBD6F /* MUKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = E6337FDB153C6BE500EFBD6F /* MUKeyboardToolbar.m */; };
@@ -76,7 +69,6 @@
 		E64AA469152306F70087B49E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E64AA467152306F70087B49E /* InfoPlist.strings */; };
 		E64AA46B152306F70087B49E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E64AA46A152306F70087B49E /* main.m */; };
 		E64AA46F152306F70087B49E /* MUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E64AA46E152306F70087B49E /* MUAppDelegate.m */; };
-		E64D69C6153E76F900FF5C58 /* MUBaseTableController.m in Sources */ = {isa = PBXBuildFile; fileRef = E64D69C5153E76F800FF5C58 /* MUBaseTableController.m */; };
 		E64D69C9153E82B200FF5C58 /* MUFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = E64D69C8153E82B200FF5C58 /* MUFilter.m */; };
 		E6562936152308CF00CEC66C /* MURootControllerIPad.m in Sources */ = {isa = PBXBuildFile; fileRef = E6562929152308CF00CEC66C /* MURootControllerIPad.m */; };
 		E6562937152308CF00CEC66C /* MURootControllerIPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = E656292A152308CF00CEC66C /* MURootControllerIPad.xib */; };
@@ -87,19 +79,9 @@
 		E6562A0F152308DD00CEC66C /* MUPair.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629A5152308DC00CEC66C /* MUPair.m */; };
 		E6562A10152308DD00CEC66C /* MUPhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629A7152308DC00CEC66C /* MUPhoneNumberFormatter.m */; };
 		E6562A11152308DD00CEC66C /* MUTargetAction.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629A9152308DC00CEC66C /* MUTargetAction.m */; };
-		E6562A12152308DD00CEC66C /* MUTitledID.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629AB152308DC00CEC66C /* MUTitledID.m */; };
 		E6562A13152308DD00CEC66C /* MUValidationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629AD152308DC00CEC66C /* MUValidationGroup.m */; };
 		E6562A14152308DD00CEC66C /* MUValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629AF152308DC00CEC66C /* MUValidator.m */; };
-		E6562A15152308DD00CEC66C /* MUWeakRef.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629B1152308DC00CEC66C /* MUWeakRef.m */; };
 		E6562A16152308DD00CEC66C /* MUCocoaExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629B4152308DC00CEC66C /* MUCocoaExtentions.m */; };
-		E6562A17152308DD00CEC66C /* NSString+Base64Encoding.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629B6152308DC00CEC66C /* NSString+Base64Encoding.m */; };
-		E6562A22152308DD00CEC66C /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629D4152308DC00CEC66C /* NSDate-Utilities.m */; };
-		E6562A23152308DD00CEC66C /* DCRoundSwitch.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629D7152308DC00CEC66C /* DCRoundSwitch.m */; };
-		E6562A24152308DD00CEC66C /* DCRoundSwitchKnobLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629D9152308DC00CEC66C /* DCRoundSwitchKnobLayer.m */; };
-		E6562A25152308DD00CEC66C /* DCRoundSwitchOutlineLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629DB152308DC00CEC66C /* DCRoundSwitchOutlineLayer.m */; };
-		E6562A26152308DD00CEC66C /* DCRoundSwitchToggleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E65629DD152308DC00CEC66C /* DCRoundSwitchToggleLayer.m */; };
-		E6562A27152308DD00CEC66C /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = E65629DE152308DC00CEC66C /* license.txt */; };
-		E6562A28152308DD00CEC66C /* readme.md in Resources */ = {isa = PBXBuildFile; fileRef = E65629DF152308DC00CEC66C /* readme.md */; };
 		E6562A2A1523092B00CEC66C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6562A291523092B00CEC66C /* QuartzCore.framework */; };
 		E9E49188B2194DC3A24C7D69 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DB4464FCC8654B77A686DF9C /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -138,12 +120,8 @@
 		0208F27B1529CBF5003382F9 /* MUCellTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCellTextField.m; sourceTree = "<group>"; };
 		0208F27C1529CBF5003382F9 /* MUCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCell.h; sourceTree = "<group>"; };
 		0208F27D1529CBF5003382F9 /* MUCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCell.m; sourceTree = "<group>"; };
-		025A6233152F17FC00E49856 /* MUBaseScrollerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUBaseScrollerController.h; sourceTree = "<group>"; };
-		025A6234152F17FC00E49856 /* MUBaseScrollerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUBaseScrollerController.m; sourceTree = "<group>"; };
 		025A6237152F17FC00E49856 /* MUBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUBaseViewController.h; sourceTree = "<group>"; };
 		025A6238152F17FC00E49856 /* MUBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUBaseViewController.m; sourceTree = "<group>"; };
-		025A6239152F17FC00E49856 /* MUCheckableTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCheckableTableController.h; sourceTree = "<group>"; };
-		025A623A152F17FC00E49856 /* MUCheckableTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCheckableTableController.m; sourceTree = "<group>"; };
 		025A623B152F17FC00E49856 /* MUSwitchController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSwitchController.h; sourceTree = "<group>"; };
 		025A623C152F17FC00E49856 /* MUSwitchController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSwitchController.m; sourceTree = "<group>"; };
 		025A6244152F17FC00E49856 /* MUAutoresizeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUAutoresizeButton.h; sourceTree = "<group>"; };
@@ -185,18 +163,8 @@
 		025A626E152F17FC00E49856 /* MUPopupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPopupViewController.m; sourceTree = "<group>"; };
 		025A626F152F17FC00E49856 /* MUProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUProgressView.h; sourceTree = "<group>"; };
 		025A6270152F17FC00E49856 /* MUProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUProgressView.m; sourceTree = "<group>"; };
-		025A6271152F17FC00E49856 /* MUSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSearchBar.h; sourceTree = "<group>"; };
-		025A6272152F17FC00E49856 /* MUSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSearchBar.m; sourceTree = "<group>"; };
-		025A6273152F17FC00E49856 /* MUSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSegmentedControl.h; sourceTree = "<group>"; };
-		025A6274152F17FC00E49856 /* MUSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSegmentedControl.m; sourceTree = "<group>"; };
-		025A6275152F17FC00E49856 /* MUSpinneredView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSpinneredView.h; sourceTree = "<group>"; };
-		025A6276152F17FC00E49856 /* MUSpinneredView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSpinneredView.m; sourceTree = "<group>"; };
-		025A6277152F17FC00E49856 /* MUStackedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUStackedView.h; sourceTree = "<group>"; };
-		025A6278152F17FC00E49856 /* MUStackedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUStackedView.m; sourceTree = "<group>"; };
 		025A6279152F17FC00E49856 /* MUTabedToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTabedToolbar.h; sourceTree = "<group>"; };
 		025A627A152F17FC00E49856 /* MUTabedToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUTabedToolbar.m; sourceTree = "<group>"; };
-		025A6296152F17FD00E49856 /* MUToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUToolbar.h; sourceTree = "<group>"; };
-		025A6297152F17FD00E49856 /* MUToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUToolbar.m; sourceTree = "<group>"; };
 		025A62C6152F188400E49856 /* MUControllers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUControllers.h; sourceTree = "<group>"; };
 		028693E8152C55C70040FD86 /* MUCellDataTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCellDataTextView.h; sourceTree = "<group>"; };
 		028693E9152C55C70040FD86 /* MUCellDataTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCellDataTextView.m; sourceTree = "<group>"; };
@@ -208,8 +176,6 @@
 		028F8D3215259B3600C7907F /* MUSectionReadonly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSectionReadonly.m; sourceTree = "<group>"; };
 		028F8D3315259B3600C7907F /* MUSectionWritable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUSectionWritable.h; sourceTree = "<group>"; };
 		028F8D3415259B3600C7907F /* MUSectionWritable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUSectionWritable.m; sourceTree = "<group>"; };
-		02A01D5A15A71ABE007AEE1B /* MUDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUDraw.m; sourceTree = "<group>"; };
-		02A01D5B15A71ABE007AEE1B /* MUDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUDraw.h; sourceTree = "<group>"; };
 		02A2094E152CEA220010733B /* MUCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUCore.h; sourceTree = "<group>"; };
 		02A20950152CF24C0010733B /* MUExtentions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUExtentions.h; sourceTree = "<group>"; };
 		02A20964152D05760010733B /* MUTableDisposers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUTableDisposers.h; sourceTree = "<group>"; };
@@ -224,14 +190,18 @@
 		02BDB7F01526043300764326 /* MUTableDisposerMapped.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUTableDisposerMapped.m; sourceTree = "<group>"; };
 		02BDB7F2152604EF00764326 /* MUTableDisposerRequested.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTableDisposerRequested.h; sourceTree = "<group>"; };
 		02BDB7F3152604EF00764326 /* MUTableDisposerRequested.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUTableDisposerRequested.m; sourceTree = "<group>"; };
-		02EFC336155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUKeyboardAvoidingScrollController.h; sourceTree = "<group>"; };
-		02EFC337155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUKeyboardAvoidingScrollController.m; sourceTree = "<group>"; };
-		02EFC338155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUKeyboardAvoidingScrollController.xib; sourceTree = "<group>"; };
-		02EFC33A155C1D7C00E2639C /* MUKeyboardAvoidingTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUKeyboardAvoidingTableController.h; sourceTree = "<group>"; };
-		02EFC33B155C1D7C00E2639C /* MUKeyboardAvoidingTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUKeyboardAvoidingTableController.m; sourceTree = "<group>"; };
-		02EFC33C155C1D7C00E2639C /* MUKeyboardAvoidingTableController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MUKeyboardAvoidingTableController.xib; sourceTree = "<group>"; };
 		02EFC33E155C1D7C00E2639C /* TableViewWithMapedCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewWithMapedCells.h; sourceTree = "<group>"; };
 		02EFC33F155C1D7C00E2639C /* TableViewWithMapedCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewWithMapedCells.m; sourceTree = "<group>"; };
+		1D6A30A5232D991E7098207B /* DCRoundSwitchOutlineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchOutlineLayer.m; sourceTree = "<group>"; };
+		1D6A3391DBC43DC4DA5040DD /* DCRoundSwitchKnobLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchKnobLayer.m; sourceTree = "<group>"; };
+		1D6A3493CF97B0C24A8FAED9 /* DCRoundSwitchToggleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchToggleLayer.m; sourceTree = "<group>"; };
+		1D6A34C6D15227877B3D3F3D /* MUDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUDraw.m; sourceTree = "<group>"; };
+		1D6A359E41F0CF570062A2F1 /* DCRoundSwitchKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchKnobLayer.h; sourceTree = "<group>"; };
+		1D6A376A62E9219A281A3D94 /* DCRoundSwitchToggleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchToggleLayer.h; sourceTree = "<group>"; };
+		1D6A38DB4AFE3544EB157731 /* DCRoundSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitch.h; sourceTree = "<group>"; };
+		1D6A3ADCB391E4DBE261050A /* DCRoundSwitchOutlineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchOutlineLayer.h; sourceTree = "<group>"; };
+		1D6A3D3B03826F803DED28F0 /* MUDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUDraw.h; sourceTree = "<group>"; };
+		1D6A3E479B08AFE95ED94C54 /* DCRoundSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitch.m; sourceTree = "<group>"; };
 		99521E5F94A64C81B0626F2D /* Pods.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		DB4464FCC8654B77A686DF9C /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E62CDA55152AF88300DACE8F /* warning_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = warning_icon.png; sourceTree = "<group>"; };
@@ -248,8 +218,6 @@
 		E64AA46C152306F70087B49E /* MUKitTest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MUKitTest-Prefix.pch"; sourceTree = "<group>"; };
 		E64AA46D152306F70087B49E /* MUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MUAppDelegate.h; sourceTree = "<group>"; };
 		E64AA46E152306F70087B49E /* MUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MUAppDelegate.m; sourceTree = "<group>"; };
-		E64D69C4153E76F800FF5C58 /* MUBaseTableController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUBaseTableController.h; sourceTree = "<group>"; };
-		E64D69C5153E76F800FF5C58 /* MUBaseTableController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUBaseTableController.m; sourceTree = "<group>"; };
 		E64D69C7153E82B200FF5C58 /* MUFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUFilter.h; sourceTree = "<group>"; };
 		E64D69C8153E82B200FF5C58 /* MUFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUFilter.m; sourceTree = "<group>"; };
 		E6562928152308CF00CEC66C /* MURootControllerIPad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MURootControllerIPad.h; sourceTree = "<group>"; };
@@ -270,30 +238,12 @@
 		E65629A7152308DC00CEC66C /* MUPhoneNumberFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUPhoneNumberFormatter.m; sourceTree = "<group>"; };
 		E65629A8152308DC00CEC66C /* MUTargetAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTargetAction.h; sourceTree = "<group>"; };
 		E65629A9152308DC00CEC66C /* MUTargetAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUTargetAction.m; sourceTree = "<group>"; };
-		E65629AA152308DC00CEC66C /* MUTitledID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUTitledID.h; sourceTree = "<group>"; };
-		E65629AB152308DC00CEC66C /* MUTitledID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUTitledID.m; sourceTree = "<group>"; };
 		E65629AC152308DC00CEC66C /* MUValidationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUValidationGroup.h; sourceTree = "<group>"; };
 		E65629AD152308DC00CEC66C /* MUValidationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUValidationGroup.m; sourceTree = "<group>"; };
 		E65629AE152308DC00CEC66C /* MUValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUValidator.h; sourceTree = "<group>"; };
 		E65629AF152308DC00CEC66C /* MUValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUValidator.m; sourceTree = "<group>"; };
-		E65629B0152308DC00CEC66C /* MUWeakRef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUWeakRef.h; sourceTree = "<group>"; };
-		E65629B1152308DC00CEC66C /* MUWeakRef.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUWeakRef.m; sourceTree = "<group>"; };
 		E65629B3152308DC00CEC66C /* MUCocoaExtentions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MUCocoaExtentions.h; sourceTree = "<group>"; };
 		E65629B4152308DC00CEC66C /* MUCocoaExtentions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MUCocoaExtentions.m; sourceTree = "<group>"; };
-		E65629B5152308DC00CEC66C /* NSString+Base64Encoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64Encoding.h"; sourceTree = "<group>"; };
-		E65629B6152308DC00CEC66C /* NSString+Base64Encoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64Encoding.m"; sourceTree = "<group>"; };
-		E65629D3152308DC00CEC66C /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Utilities.h"; sourceTree = "<group>"; };
-		E65629D4152308DC00CEC66C /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Utilities.m"; sourceTree = "<group>"; };
-		E65629D6152308DC00CEC66C /* DCRoundSwitch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitch.h; sourceTree = "<group>"; };
-		E65629D7152308DC00CEC66C /* DCRoundSwitch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitch.m; sourceTree = "<group>"; };
-		E65629D8152308DC00CEC66C /* DCRoundSwitchKnobLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchKnobLayer.h; sourceTree = "<group>"; };
-		E65629D9152308DC00CEC66C /* DCRoundSwitchKnobLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchKnobLayer.m; sourceTree = "<group>"; };
-		E65629DA152308DC00CEC66C /* DCRoundSwitchOutlineLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchOutlineLayer.h; sourceTree = "<group>"; };
-		E65629DB152308DC00CEC66C /* DCRoundSwitchOutlineLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchOutlineLayer.m; sourceTree = "<group>"; };
-		E65629DC152308DC00CEC66C /* DCRoundSwitchToggleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCRoundSwitchToggleLayer.h; sourceTree = "<group>"; };
-		E65629DD152308DC00CEC66C /* DCRoundSwitchToggleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCRoundSwitchToggleLayer.m; sourceTree = "<group>"; };
-		E65629DE152308DC00CEC66C /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
-		E65629DF152308DC00CEC66C /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.md; sourceTree = "<group>"; };
 		E6562A291523092B00CEC66C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -404,12 +354,6 @@
 				025A62C6152F188400E49856 /* MUControllers.h */,
 				025A6237152F17FC00E49856 /* MUBaseViewController.h */,
 				025A6238152F17FC00E49856 /* MUBaseViewController.m */,
-				E64D69C4153E76F800FF5C58 /* MUBaseTableController.h */,
-				E64D69C5153E76F800FF5C58 /* MUBaseTableController.m */,
-				025A6233152F17FC00E49856 /* MUBaseScrollerController.h */,
-				025A6234152F17FC00E49856 /* MUBaseScrollerController.m */,
-				025A6239152F17FC00E49856 /* MUCheckableTableController.h */,
-				025A623A152F17FC00E49856 /* MUCheckableTableController.m */,
 				025A623B152F17FC00E49856 /* MUSwitchController.h */,
 				025A623C152F17FC00E49856 /* MUSwitchController.m */,
 				02AF8F6115305506005B8AED /* MUTabBarController.h */,
@@ -431,18 +375,8 @@
 				025A6259152F17FC00E49856 /* MUPopupControllers */,
 				025A626F152F17FC00E49856 /* MUProgressView.h */,
 				025A6270152F17FC00E49856 /* MUProgressView.m */,
-				025A6271152F17FC00E49856 /* MUSearchBar.h */,
-				025A6272152F17FC00E49856 /* MUSearchBar.m */,
-				025A6273152F17FC00E49856 /* MUSegmentedControl.h */,
-				025A6274152F17FC00E49856 /* MUSegmentedControl.m */,
-				025A6275152F17FC00E49856 /* MUSpinneredView.h */,
-				025A6276152F17FC00E49856 /* MUSpinneredView.m */,
-				025A6277152F17FC00E49856 /* MUStackedView.h */,
-				025A6278152F17FC00E49856 /* MUStackedView.m */,
 				025A6279152F17FC00E49856 /* MUTabedToolbar.h */,
 				025A627A152F17FC00E49856 /* MUTabedToolbar.m */,
-				025A6296152F17FD00E49856 /* MUToolbar.h */,
-				025A6297152F17FD00E49856 /* MUToolbar.m */,
 			);
 			path = MUControls;
 			sourceTree = "<group>";
@@ -533,15 +467,6 @@
 			path = Sections;
 			sourceTree = "<group>";
 		};
-		02A01D5915A71ABE007AEE1B /* MUDraw */ = {
-			isa = PBXGroup;
-			children = (
-				02A01D5A15A71ABE007AEE1B /* MUDraw.m */,
-				02A01D5B15A71ABE007AEE1B /* MUDraw.h */,
-			);
-			path = MUDraw;
-			sourceTree = "<group>";
-		};
 		02BDB7E01525FA4F00764326 /* TableDisposers */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,31 +485,9 @@
 		02EFC334155C1D7C00E2639C /* iCommon */ = {
 			isa = PBXGroup;
 			children = (
-				02EFC335155C1D7C00E2639C /* KeyboardAvoidingScroll */,
-				02EFC339155C1D7C00E2639C /* KeyboardAvoidingTable */,
 				02EFC33D155C1D7C00E2639C /* TableViewWithMapedCells */,
 			);
 			path = iCommon;
-			sourceTree = "<group>";
-		};
-		02EFC335155C1D7C00E2639C /* KeyboardAvoidingScroll */ = {
-			isa = PBXGroup;
-			children = (
-				02EFC336155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.h */,
-				02EFC337155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.m */,
-				02EFC338155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.xib */,
-			);
-			path = KeyboardAvoidingScroll;
-			sourceTree = "<group>";
-		};
-		02EFC339155C1D7C00E2639C /* KeyboardAvoidingTable */ = {
-			isa = PBXGroup;
-			children = (
-				02EFC33A155C1D7C00E2639C /* MUKeyboardAvoidingTableController.h */,
-				02EFC33B155C1D7C00E2639C /* MUKeyboardAvoidingTableController.m */,
-				02EFC33C155C1D7C00E2639C /* MUKeyboardAvoidingTableController.xib */,
-			);
-			path = KeyboardAvoidingTable;
 			sourceTree = "<group>";
 		};
 		02EFC33D155C1D7C00E2639C /* TableViewWithMapedCells */ = {
@@ -594,6 +497,38 @@
 				02EFC33F155C1D7C00E2639C /* TableViewWithMapedCells.m */,
 			);
 			path = TableViewWithMapedCells;
+			sourceTree = "<group>";
+		};
+		1D6A3C66972A95D3A6FB5776 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A3C9FB1394D30F31DDDDA /* DCRoundSwitch */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		1D6A3C9FB1394D30F31DDDDA /* DCRoundSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A3493CF97B0C24A8FAED9 /* DCRoundSwitchToggleLayer.m */,
+				1D6A376A62E9219A281A3D94 /* DCRoundSwitchToggleLayer.h */,
+				1D6A30A5232D991E7098207B /* DCRoundSwitchOutlineLayer.m */,
+				1D6A3ADCB391E4DBE261050A /* DCRoundSwitchOutlineLayer.h */,
+				1D6A3391DBC43DC4DA5040DD /* DCRoundSwitchKnobLayer.m */,
+				1D6A359E41F0CF570062A2F1 /* DCRoundSwitchKnobLayer.h */,
+				1D6A3E479B08AFE95ED94C54 /* DCRoundSwitch.m */,
+				1D6A38DB4AFE3544EB157731 /* DCRoundSwitch.h */,
+			);
+			path = DCRoundSwitch;
+			sourceTree = "<group>";
+		};
+		1D6A3FA116E78FAD1F454AEA /* MUDraw */ = {
+			isa = PBXGroup;
+			children = (
+				1D6A34C6D15227877B3D3F3D /* MUDraw.m */,
+				1D6A3D3B03826F803DED28F0 /* MUDraw.h */,
+			);
+			path = MUDraw;
 			sourceTree = "<group>";
 		};
 		E62CDA53152AF88300DACE8F /* Resourse */ = {
@@ -710,13 +645,13 @@
 			isa = PBXGroup;
 			children = (
 				02A20965152D07030010733B /* MUKit.h */,
-				02A01D5915A71ABE007AEE1B /* MUDraw */,
 				025A6232152F17FC00E49856 /* MUControllers */,
 				025A6241152F17FC00E49856 /* MUControls */,
 				E656299D152308DC00CEC66C /* MUCore */,
 				E65629B2152308DC00CEC66C /* MUExtentions */,
 				028F8D2515259B3600C7907F /* MUTableDisposer */,
-				E65629D1152308DC00CEC66C /* ThirdParty */,
+				1D6A3C66972A95D3A6FB5776 /* ThirdParty */,
+				1D6A3FA116E78FAD1F454AEA /* MUDraw */,
 			);
 			path = MUKit;
 			sourceTree = "<group>";
@@ -737,14 +672,10 @@
 				E65629A7152308DC00CEC66C /* MUPhoneNumberFormatter.m */,
 				E65629A8152308DC00CEC66C /* MUTargetAction.h */,
 				E65629A9152308DC00CEC66C /* MUTargetAction.m */,
-				E65629AA152308DC00CEC66C /* MUTitledID.h */,
-				E65629AB152308DC00CEC66C /* MUTitledID.m */,
 				E65629AC152308DC00CEC66C /* MUValidationGroup.h */,
 				E65629AD152308DC00CEC66C /* MUValidationGroup.m */,
 				E65629AE152308DC00CEC66C /* MUValidator.h */,
 				E65629AF152308DC00CEC66C /* MUValidator.m */,
-				E65629B0152308DC00CEC66C /* MUWeakRef.h */,
-				E65629B1152308DC00CEC66C /* MUWeakRef.m */,
 				E64D69C7153E82B200FF5C58 /* MUFilter.h */,
 				E64D69C8153E82B200FF5C58 /* MUFilter.m */,
 			);
@@ -757,45 +688,8 @@
 				02A20950152CF24C0010733B /* MUExtentions.h */,
 				E65629B3152308DC00CEC66C /* MUCocoaExtentions.h */,
 				E65629B4152308DC00CEC66C /* MUCocoaExtentions.m */,
-				E65629B5152308DC00CEC66C /* NSString+Base64Encoding.h */,
-				E65629B6152308DC00CEC66C /* NSString+Base64Encoding.m */,
 			);
 			path = MUExtentions;
-			sourceTree = "<group>";
-		};
-		E65629D1152308DC00CEC66C /* ThirdParty */ = {
-			isa = PBXGroup;
-			children = (
-				E65629D2152308DC00CEC66C /* DateExtentions */,
-				E65629D5152308DC00CEC66C /* DCRoundSwitch */,
-			);
-			path = ThirdParty;
-			sourceTree = "<group>";
-		};
-		E65629D2152308DC00CEC66C /* DateExtentions */ = {
-			isa = PBXGroup;
-			children = (
-				E65629D3152308DC00CEC66C /* NSDate-Utilities.h */,
-				E65629D4152308DC00CEC66C /* NSDate-Utilities.m */,
-			);
-			path = DateExtentions;
-			sourceTree = "<group>";
-		};
-		E65629D5152308DC00CEC66C /* DCRoundSwitch */ = {
-			isa = PBXGroup;
-			children = (
-				E65629D6152308DC00CEC66C /* DCRoundSwitch.h */,
-				E65629D7152308DC00CEC66C /* DCRoundSwitch.m */,
-				E65629D8152308DC00CEC66C /* DCRoundSwitchKnobLayer.h */,
-				E65629D9152308DC00CEC66C /* DCRoundSwitchKnobLayer.m */,
-				E65629DA152308DC00CEC66C /* DCRoundSwitchOutlineLayer.h */,
-				E65629DB152308DC00CEC66C /* DCRoundSwitchOutlineLayer.m */,
-				E65629DC152308DC00CEC66C /* DCRoundSwitchToggleLayer.h */,
-				E65629DD152308DC00CEC66C /* DCRoundSwitchToggleLayer.m */,
-				E65629DE152308DC00CEC66C /* license.txt */,
-				E65629DF152308DC00CEC66C /* readme.md */,
-			);
-			path = DCRoundSwitch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -852,12 +746,8 @@
 				E64AA469152306F70087B49E /* InfoPlist.strings in Resources */,
 				E6562937152308CF00CEC66C /* MURootControllerIPad.xib in Resources */,
 				E6562939152308CF00CEC66C /* MURootControllerIPhone.xib in Resources */,
-				E6562A27152308DD00CEC66C /* license.txt in Resources */,
-				E6562A28152308DD00CEC66C /* readme.md in Resources */,
 				E62CDA57152AF88300DACE8F /* warning_icon.png in Resources */,
 				E62CDA58152AF88300DACE8F /* warning_icon@2x.png in Resources */,
-				02EFC341155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.xib in Resources */,
-				02EFC343155C1D7C00E2639C /* MUKeyboardAvoidingTableController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,17 +784,9 @@
 				E6562A0F152308DD00CEC66C /* MUPair.m in Sources */,
 				E6562A10152308DD00CEC66C /* MUPhoneNumberFormatter.m in Sources */,
 				E6562A11152308DD00CEC66C /* MUTargetAction.m in Sources */,
-				E6562A12152308DD00CEC66C /* MUTitledID.m in Sources */,
 				E6562A13152308DD00CEC66C /* MUValidationGroup.m in Sources */,
 				E6562A14152308DD00CEC66C /* MUValidator.m in Sources */,
-				E6562A15152308DD00CEC66C /* MUWeakRef.m in Sources */,
 				E6562A16152308DD00CEC66C /* MUCocoaExtentions.m in Sources */,
-				E6562A17152308DD00CEC66C /* NSString+Base64Encoding.m in Sources */,
-				E6562A22152308DD00CEC66C /* NSDate-Utilities.m in Sources */,
-				E6562A23152308DD00CEC66C /* DCRoundSwitch.m in Sources */,
-				E6562A24152308DD00CEC66C /* DCRoundSwitchKnobLayer.m in Sources */,
-				E6562A25152308DD00CEC66C /* DCRoundSwitchOutlineLayer.m in Sources */,
-				E6562A26152308DD00CEC66C /* DCRoundSwitchToggleLayer.m in Sources */,
 				028F8D3915259B3600C7907F /* MUSectionReadonly.m in Sources */,
 				028F8D3A15259B3600C7907F /* MUSectionWritable.m in Sources */,
 				02BDB7E31525FA4F00764326 /* MUTableDisposer.m in Sources */,
@@ -930,9 +812,7 @@
 				028693EA152C55C70040FD86 /* MUCellDataTextView.m in Sources */,
 				028693EE152C568B0040FD86 /* MUCellDataTextPair.m in Sources */,
 				028693F1152C63250040FD86 /* MUCellTextView.m in Sources */,
-				025A6298152F17FD00E49856 /* MUBaseScrollerController.m in Sources */,
 				025A629A152F17FD00E49856 /* MUBaseViewController.m in Sources */,
-				025A629B152F17FD00E49856 /* MUCheckableTableController.m in Sources */,
 				025A629C152F17FD00E49856 /* MUSwitchController.m in Sources */,
 				025A62A0152F17FD00E49856 /* MUAutoresizeButton.m in Sources */,
 				025A62A1152F17FD00E49856 /* MUImageViewTapable.m in Sources */,
@@ -952,20 +832,16 @@
 				025A62B0152F17FD00E49856 /* MUPopoverViewController.m in Sources */,
 				025A62B1152F17FD00E49856 /* MUPopupViewController.m in Sources */,
 				025A62B2152F17FD00E49856 /* MUProgressView.m in Sources */,
-				025A62B3152F17FD00E49856 /* MUSearchBar.m in Sources */,
-				025A62B4152F17FD00E49856 /* MUSegmentedControl.m in Sources */,
-				025A62B5152F17FD00E49856 /* MUSpinneredView.m in Sources */,
-				025A62B6152F17FD00E49856 /* MUStackedView.m in Sources */,
 				025A62B7152F17FD00E49856 /* MUTabedToolbar.m in Sources */,
-				025A62C5152F17FD00E49856 /* MUToolbar.m in Sources */,
 				02AF8F6315305506005B8AED /* MUTabBarController.m in Sources */,
 				E6337FDC153C6BE500EFBD6F /* MUKeyboardToolbar.m in Sources */,
-				E64D69C6153E76F900FF5C58 /* MUBaseTableController.m in Sources */,
 				E64D69C9153E82B200FF5C58 /* MUFilter.m in Sources */,
-				02EFC340155C1D7C00E2639C /* MUKeyboardAvoidingScrollController.m in Sources */,
-				02EFC342155C1D7C00E2639C /* MUKeyboardAvoidingTableController.m in Sources */,
 				02EFC344155C1D7C00E2639C /* TableViewWithMapedCells.m in Sources */,
-				02A01D5C15A71ABE007AEE1B /* MUDraw.m in Sources */,
+				1D6A385B907D7EFB9DDBD4A3 /* DCRoundSwitch.m in Sources */,
+				1D6A328AEF08E8E7D72440D3 /* DCRoundSwitchKnobLayer.m in Sources */,
+				1D6A3FC9D26C0B075FE9BAC6 /* DCRoundSwitchOutlineLayer.m in Sources */,
+				1D6A329DF7DF408A30D2E05F /* DCRoundSwitchToggleLayer.m in Sources */,
+				1D6A3827958AD90A5991EF27 /* MUDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

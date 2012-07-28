@@ -8,10 +8,7 @@
 
 #import "MURootControllerIPhone.h"
 #import "MUKit.h"
-#import "MUKeyboardAvoidingScrollController.h"
-#import "MUKeyboardAvoidingTableController.h"
 #import "TableViewWithMapedCells.h"
-#import "MUSwitchController.h"
 
 @implementation MURootControllerIPhone
 @synthesize popupPressed;
@@ -71,15 +68,13 @@
 
 - (IBAction)showKeyboardAvoidingScrollView:(id)sender 
 {
-    MUKeyboardAvoidingScrollController *vc = [[MUKeyboardAvoidingScrollController new] autorelease];
-    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
 - (IBAction)showKeyboardAvoidingTableView:(id)sender 
 {
-    MUKeyboardAvoidingTableController *vc = [[MUKeyboardAvoidingTableController new] autorelease];
-    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
@@ -92,11 +87,9 @@
 
 - (IBAction)switchController:(id)sender
 {
-    MUSwitchController* switchController = (MUSwitchController*)MUGetPrimeViewController();
-
     TableViewWithMapedCells *vc = [[TableViewWithMapedCells new] autorelease];
     UINavigationController* nc = [[[UINavigationController alloc] initWithRootViewController:vc] autorelease];
-    [switchController switchToController:nc animated:YES];
+
     NSLog(@"Switch Pressed");
 }
 
@@ -112,7 +105,7 @@
 
 - (void) imageTapped:(UIImage*)anImage
 {
-    MUShowSimpleAlert(@"Image Tapable", @"image taped!");
+
 }
 
 

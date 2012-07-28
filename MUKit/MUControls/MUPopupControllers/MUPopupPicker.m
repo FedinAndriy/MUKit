@@ -62,7 +62,7 @@
 
 }
 
-- (void)setToolbar:(MUToolbar *)aToolbar
+- (void)setToolbar:(UIToolbar *)aToolbar
 {
     if (toolbar == aToolbar)
         return;

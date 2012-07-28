@@ -10,6 +10,5 @@
 #define MUKitTest_MUExtentions_h
 
 #import "MUCocoaExtentions.h"
-#import "NSString+Base64Encoding.h"
 
 #endif

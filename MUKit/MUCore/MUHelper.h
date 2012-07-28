@@ -9,16 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MUCocoaExtentions.h"
 
-inline UIViewController *MUGetPrimeViewController();
-
-inline void MUShowSimpleAlert(NSString *aTitle, NSString *aMessage);
-
-typedef BOOL (^MUDividedComparator)(id anObj1, id anObj2);
-inline NSMutableArray *MUDivideArray(NSArray *aDividedArray, NSString *aFieldName, BOOL anAscending, MUDividedComparator aComparator);
-
 NSDate *MUDateFromTimeStampInDictionary(NSDictionary *aDictionary, NSString *aKey);
 
 inline NSString *MUGenerateUUID();
-inline NSString *MUDocumentDirecoryPath();
+inline NSString *MUDocumentDirectoryPath();
 
 inline void MUHideWebViewShadows(UIWebView *webView);

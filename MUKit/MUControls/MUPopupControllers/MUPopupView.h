@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MUKitDefines.h"
-#import "MUWeakRef.h"
+
 #import "MUPopupViewController.h"
 
 
@@ -17,10 +17,7 @@
 #define POPUPVIEW_WILL_HIDE     @"PopupViewWillHide"
 #define POPUPVIEW_DID_HIDE      @"PopupViewDidHide"
 
-@interface MUPopupView : UIView <MUWeakRefProtocol>
-{
-    MUWeakRef *weakRef;
-}
+@interface MUPopupView : UIView
 
 @property(nonatomic, readonly) NSObject *showStrategy;
 @property(nonatomic, assign) BOOL hideByTapOutside;

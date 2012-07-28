@@ -10,7 +10,7 @@
 #import "MUPopupPicker.h"
 
 /**
- * This class can work with dataSource elements of classes MUTitledID or NSString+Extension, else generate assert.
+ * This class can work with dataSource elements of classes NSString+Extension, else generate assert.
  * This picker has only one component in pickerView.
  */
 @interface MUPopupSimplePicker : MUPopupPicker <UIPickerViewDelegate, UIPickerViewDataSource>

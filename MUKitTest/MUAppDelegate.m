@@ -10,7 +10,6 @@
 
 #import "MURootControllerIPhone.h"
 #import "MURootControllerIPad.h"
-#import "MUDraw.h"
 
 @implementation MUAppDelegate
 
@@ -26,18 +25,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MUImageWithColor([UIColor whiteColor], CGSizeMake(9, 9));
+
     UIViewController *viewController = nil;
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    
-//    // Override point for customization after application launch.
-//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) 
-//    {
-//        viewController = [[[MURootControllerIPad alloc] initWithNibName:@"MURootControllerIPad" bundle:nil] autorelease];
-//    } else {
-//        viewController = [[[MURootControllerIPhone alloc] initWithNibName:@"MURootControllerIPhone" bundle:nil] autorelease];
-//    }
+
     viewController = [[[MURootControllerIPhone alloc] init] autorelease];
     UINavigationController* navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     
