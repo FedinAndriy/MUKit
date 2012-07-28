@@ -15,13 +15,13 @@
 
 @interface MUTextView : UITextView <MUValidationProtocol, UITextViewDelegate, MUKeyboardAvoiderProtocol>
 {
-    MUValidator* validator;
-    MUTextView_Holder* delegateHolder;
+    MUValidator *validator;
+    MUTextView_Holder *delegateHolder;
     MUFilter *filter;
 }
 
-@property (nonatomic, assign) id<UITextViewDelegate> mudelegate;
-@property (nonatomic, copy) NSString* observedText;
-@property (nonatomic, retain) MUFilter *filter;
+@property(nonatomic, assign) id <UITextViewDelegate> mudelegate;
+@property(nonatomic, copy) NSString *observedText;
+@property(nonatomic, retain) MUFilter *filter;
 
 @end

@@ -12,6 +12,6 @@
 
 @interface MUPopupHoursMinutesPicker : MUPopupPicker <UIPickerViewDataSource, UIPickerViewDelegate>
 
-@property (nonatomic, readonly) UIPickerView* popupedPicker;
+@property(nonatomic, readonly) UIPickerView *popupedPicker;
 
 @end

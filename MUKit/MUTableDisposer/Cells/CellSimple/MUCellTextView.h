@@ -12,9 +12,9 @@
 
 @interface MUCellTextView : MUCell
 {
-    UILabel* titleLabel;
+    UILabel *titleLabel;
 }
 
-@property (nonatomic, readonly ) MUTextView *textView;
+@property(nonatomic, readonly) MUTextView *textView;
 
 @end

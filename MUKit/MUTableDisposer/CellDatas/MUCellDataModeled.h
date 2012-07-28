@@ -10,8 +10,8 @@
 
 @interface MUCellDataModeled : MUCellData
 
-@property (nonatomic, readonly) id model;
+@property(nonatomic, readonly) id model;
 
-- (id) initWithModel:(id)aModel;
+- (id)initWithModel:(id)aModel;
 
 @end

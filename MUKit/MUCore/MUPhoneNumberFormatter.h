@@ -10,13 +10,13 @@
 
 @interface MUPhoneNumberFormatter : NSObject
 {
-    NSDictionary *predefinedFormats;    
+    NSDictionary *predefinedFormats;
 }
 
 - (id)init;
 
 - (BOOL)phoneFormatForTextField:(UITextField *)textField
-  shouldChangeCharactersInRange:(NSRange)range 
+  shouldChangeCharactersInRange:(NSRange)range
               replacementString:(NSString *)string
                      withLocale:(NSString *)locale;
 

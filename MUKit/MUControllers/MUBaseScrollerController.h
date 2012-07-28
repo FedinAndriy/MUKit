@@ -11,12 +11,12 @@
 
 @interface MUBaseScrollerController : MUBaseViewController <UIScrollViewDelegate>
 {
-    IBOutlet UIScrollView* scrollView;
+    IBOutlet UIScrollView *scrollView;
 }
 
-- (CGSize) getContentSizeForScrollView;
-- (Class) scrollViewClass;
+- (CGSize)getContentSizeForScrollView;
+- (Class)scrollViewClass;
 
-- (UIImage*) backgraundImageForScrollView;
+- (UIImage *)backgraundImageForScrollView;
 
 @end

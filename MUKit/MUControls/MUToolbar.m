@@ -9,9 +9,6 @@
 #import "MUToolbar.h"
 
 
-
-
-
 @implementation MUToolbar
 
 @synthesize backgroundImage = bgImage;
@@ -19,35 +16,31 @@
 
 #pragma mark - init/dealloc
 
-- (id) initWithFrame:(CGRect)aFrame
+- (id)initWithFrame:(CGRect)aFrame
 {
-	if( (self = [super initWithFrame:aFrame]) )
-	{
-		self.backgroundColor = [UIColor clearColor];
+    if ((self = [super initWithFrame:aFrame])) {
+        self.backgroundColor = [UIColor clearColor];
         drawColor = NO;
-	}
-	
-	return self;
+    }
+
+    return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
-	[bgImage release];
-	
-	[super dealloc];
+    [bgImage release];
+
+    [super dealloc];
 }
 
-
-- (void) drawRect:(CGRect)aRect
+- (void)drawRect:(CGRect)aRect
 {
-    if(bgImage)
+    if (bgImage)
         [bgImage drawInRect:self.bounds blendMode:kCGBlendModeNormal alpha:1.0f];
-    else if(drawColor)
-    {
-        CGContextRef context = UIGraphicsGetCurrentContext(); 
+    else if (drawColor) {
+        CGContextRef context = UIGraphicsGetCurrentContext();
         CGColorRef colorRef = self.backgroundColor.CGColor;
-        const float* components = CGColorGetComponents(colorRef);
+        const float *components = CGColorGetComponents(colorRef);
         CGContextSetRGBFillColor(context, components[0], components[1], components[2], components[3]);
         CGContextFillRect(context, self.bounds);
 
@@ -55,9 +48,5 @@
     else
         [super drawRect:aRect];
 }
-
-
-
-
 
 @end

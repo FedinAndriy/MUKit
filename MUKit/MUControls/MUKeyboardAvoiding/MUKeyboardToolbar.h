@@ -10,9 +10,9 @@
 
 @protocol MUKeyboardToolbarProtocol <NSObject>
 
-- (void) didNextButtonPressd;
-- (void) didPrevButtonPressd;
-- (void) didDoneButtonPressd;
+- (void)didNextButtonPressd;
+- (void)didPrevButtonPressd;
+- (void)didDoneButtonPressd;
 
 @end
 
@@ -20,15 +20,15 @@
 {
     UISegmentedControl *segmentedPreviousNext;
     UIBarButtonItem *doneButton;
-    id<MUKeyboardToolbarProtocol> delegate;
+    id <MUKeyboardToolbarProtocol> delegate;
 }
 
-@property (nonatomic, retain) NSString *previousTitle;
-@property (nonatomic, retain) NSString *nextTitle;
-@property (nonatomic, assign) id<MUKeyboardToolbarProtocol> delegate;
+@property(nonatomic, retain) NSString *previousTitle;
+@property(nonatomic, retain) NSString *nextTitle;
+@property(nonatomic, assign) id <MUKeyboardToolbarProtocol> delegate;
 
-@property (nonatomic, readonly) UIBarButtonItem *doneButton;
+@property(nonatomic, readonly) UIBarButtonItem *doneButton;
 
-- (void) selectedInputFieldIndex:(NSInteger)selectInsex allCountInputFields:(NSInteger)allCountInputFields;
+- (void)selectedInputFieldIndex:(NSInteger)selectInsex allCountInputFields:(NSInteger)allCountInputFields;
 
 @end

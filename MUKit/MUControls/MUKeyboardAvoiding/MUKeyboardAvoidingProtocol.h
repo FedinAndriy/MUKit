@@ -13,13 +13,13 @@
 
 @protocol MUKeyboardAvoidingProtocol <NSObject>
 
-@property (nonatomic, readonly) MUKeyboardToolbar *keyboardToolbar;
-@property (nonatomic, assign) BOOL keyboardToolbarShow;
+@property(nonatomic, readonly) MUKeyboardToolbar *keyboardToolbar;
+@property(nonatomic, assign) BOOL keyboardToolbarShow;
 
 - (void)adjustOffset;
 - (void)hideKeyBoard;
-- (void)addObjectForKeyboard:(id<UITextInputTraits, MUKeyboardAvoiderProtocol>)objectForKeyboard;
+- (void)addObjectForKeyboard:(id <UITextInputTraits, MUKeyboardAvoiderProtocol>)objectForKeyboard;
 - (void)addObjectsForKeyboard:(NSArray *)objectsForKeyboard;
-- (void)responderShouldReturn:(UIResponder*)aResponder;
+- (void)responderShouldReturn:(UIResponder *)aResponder;
 
 @end

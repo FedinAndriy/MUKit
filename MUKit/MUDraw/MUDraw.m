@@ -10,28 +10,25 @@
 #import "MUDraw.h"
 
 
-void MUDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor, bool isHorizontal)
-{
+void MUDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor, bool isHorizontal) {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGFloat locations[] = {0.0f, 1.0f};
     CGColorRef colors_c[2] = {startColor, endColor};
-    CFArrayRef colors = CFArrayCreate(NULL, (const void**)colors_c, 2, &kCFTypeArrayCallBacks);
-    
+    CFArrayRef colors = CFArrayCreate(NULL, (const void **) colors_c, 2, &kCFTypeArrayCallBacks);
+
     CGGradientRef gradient = CGGradientCreateWithColors(colorSpace, colors, locations);
-    
+
     CGPoint startPoint;
     CGPoint endPoint;
-    if(isHorizontal)
-    {
+    if (isHorizontal) {
         startPoint = CGPointMake(rect.origin.x, rect.origin.y);
         endPoint = CGPointMake(rect.origin.x + rect.size.width, rect.origin.y);
     }
-    else
-    {
+    else {
         startPoint = CGPointMake(rect.origin.x, rect.origin.y);
         endPoint = CGPointMake(rect.origin.x, rect.origin.y + rect.size.height);
     }
-    
+
     CGContextSaveGState(context);
     CGContextAddRect(context, rect);
     CGContextClip(context);
@@ -43,53 +40,43 @@ void MUDrawLinearGradient(CGContextRef context, CGRect rect, CGColorRef startCol
     CGColorSpaceRelease(colorSpace);
 }
 
-
-void MUDrawLinearGradientVertical(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
-{
+void MUDrawLinearGradientVertical(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor) {
     MUDrawLinearGradient(context, rect, startColor, endColor, true);
 }
 
-
-void MUDrawLinearGradientHorizontal(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor)
-{
+void MUDrawLinearGradientHorizontal(CGContextRef context, CGRect rect, CGColorRef startColor, CGColorRef endColor) {
     MUDrawLinearGradient(context, rect, startColor, endColor, false);
 }
 
-
-CGContextRef MUCreateThreadSafeContext(CGSize contextSize)
-{
+CGContextRef MUCreateThreadSafeContext(CGSize contextSize) {
     CGColorSpaceRef space = CGColorSpaceCreateDeviceRGB();
-	CGContextRef context = CGBitmapContextCreate(NULL,
-                                                 (int)contextSize.width,
-                                                 (int)contextSize.height,
-                                                 8,
-                                                 0,
-                                                 space,
-                                                 kCGImageAlphaPremultipliedLast);
-	CGColorSpaceRelease(space);
+    CGContextRef context = CGBitmapContextCreate(NULL,
+            (int) contextSize.width,
+            (int) contextSize.height,
+            8,
+            0,
+            space,
+            kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRelease(space);
     return context;
 }
 
-
-CGImageRef MUCreateCGImageFromThreadSafeContext(CGContextRef context)
-{
+CGImageRef MUCreateCGImageFromThreadSafeContext(CGContextRef context) {
     return CGBitmapContextCreateImage(context);
 }
 
+UIImage *MUImageWithColor(UIColor *color, CGSize size) {
+    UIImage *result = nil;
 
-UIImage* MUImageWithColor(UIColor* color, CGSize size)
-{
-    UIImage* result = nil;
-    
     UIGraphicsBeginImageContext(size);
-    
+
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetFillColorWithColor(context, color.CGColor);
     CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
-    
+
     result = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    
+
     return result;
 }
 

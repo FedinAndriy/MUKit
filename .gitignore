@@ -14,3 +14,5 @@ pkg/
 Pods
 Podfile.lock
 .idea
+
+DerivedData

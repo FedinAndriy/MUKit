@@ -15,40 +15,35 @@
 @synthesize object;
 
 
-- (id) init
+- (id)init
 {
     NSAssert(NO, @"You can't use this method! Instead use 'initWithObject:key:'");
     [self release];
     return nil;
 }
 
-
-- (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
+- (id)initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         key = [aKey retain];
         object = aObject;
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [key release];
     [super dealloc];
 }
 
-
-- (void) mapFromObject
+- (void)mapFromObject
 {
     NSAssert(nil, @"Override this method in subclasses!");
 }
 
-
-- (void) mapToObject
+- (void)mapToObject
 {
     NSAssert(nil, @"Override this method in subclasses!");
 }

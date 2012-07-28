@@ -20,7 +20,7 @@
 
 @interface MUTestObject : NSObject
 
-@property (nonatomic, retain) NSString* strValue;
+@property (nonatomic, retain) NSString * strValue;
 
 @end
 
@@ -54,7 +54,7 @@
     if (self) 
     {
         self.title = @"TEST";
-        tableDisposer = [[MUTableDisposerMaped alloc] init];
+        tableDisposer = [[MUTableDisposerMapped alloc] init];
         tableDisposer.tableStyle = UITableViewStyleGrouped;
         tableDisposer.tableClass = [MUKeyboardAvoidingTableView class];
         tableDisposer.delegate = self;

@@ -10,6 +10,6 @@
 
 @interface MUTextViewAutosize : MUTextView
 
-- (void) adjustSizeToContent;
+- (void)adjustSizeToContent;
 
 @end

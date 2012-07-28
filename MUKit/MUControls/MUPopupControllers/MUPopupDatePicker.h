@@ -12,9 +12,9 @@
 
 @interface MUPopupDatePicker : MUPopupPicker
 {
-    
+
 }
 
-@property (nonatomic, readonly) UIDatePicker* popupedPicker;
+@property(nonatomic, readonly) UIDatePicker *popupedPicker;
 
 @end

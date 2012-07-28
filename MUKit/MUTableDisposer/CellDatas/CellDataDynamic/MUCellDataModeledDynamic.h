@@ -14,11 +14,10 @@ typedef struct _MUCellIndent
     float left;
     float top;
     float right;
-    float botton;
+    float bottom;
 } MUCellIndent;
 
 MUCellIndent MUCellIndentMake(float left, float top, float right, float botton);
-
 
 @interface MUCellDataModeledDynamic : MUCellDataModeled
 {
@@ -27,7 +26,7 @@ MUCellIndent MUCellIndentMake(float left, float top, float right, float botton);
     float currentCellHeight;
 }
 
-- (MUCellIndent) setupCellIndent;
-- (float) recalculateCellHeight;
+- (MUCellIndent)setupCellIndent;
+- (float)recalculateCellHeight;
 
 @end

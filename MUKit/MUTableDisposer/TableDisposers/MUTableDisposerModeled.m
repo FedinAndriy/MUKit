@@ -9,59 +9,54 @@
 #import "MUTableDisposerModeled.h"
 
 @implementation MUTableDisposerModeled
+{
+    NSMutableDictionary *registeredClasses;
+}
 
 @synthesize modeledDelegate;
 
 
-- (id) init
+- (id)init
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         registeredClasses = [NSMutableDictionary new];
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [registeredClasses release];
-    
+
     [super dealloc];
 }
 
-
-- (void) registerCellData:(Class)aCellDataClass forModel:(Class)aModelClass
+- (void)registerCellData:(Class)aCellDataClass forModel:(Class)aModelClass
 {
+    NSAssert([aCellDataClass isSubclassOfClass:[MUCellDataModeled class]], @"CellData must be subclass of MUCellDataModeled!");
     [registeredClasses setObject:aCellDataClass forKey:aModelClass];
 }
 
-
-- (void) setupModels:(NSArray*)aModels forSectionAtIndex:(NSUInteger)aSectionIndex
+- (void)setupModels:(NSArray *)aModels forSectionAtIndex:(NSUInteger)aSectionIndex
 {
-    MUSectionReadonly* section = [self sectionByIndex:aSectionIndex];
+    MUSectionReadonly *section = [self sectionByIndex:aSectionIndex];
     [self setupModels:aModels forSection:section];
 }
 
-
-- (void) setupModels:(NSArray*)aModels forSection:(MUSectionReadonly*)aSection
+- (void)setupModels:(NSArray *)aModels forSection:(MUSectionReadonly *)aSection
 {
-    NSAssert(aSection, @"aSection is nil!!!");
-    
-    for(id model in aModels)
-    {
-        Class cellDataClass = [registeredClasses objectForKey:[model class]];
-        
-        NSAssert(cellDataClass, (NSString*)([NSString stringWithFormat:@"Model doesn't have registered cellData class %@", NSStringFromClass([model class])]));
-        NSAssert([cellDataClass isSubclassOfClass:[MUCellDataModeled class]], @"CellData must be subclass of MUCellDataModeled!");
+    assert(aSection);
 
-        MUCellDataModeled* cellData = [[[cellDataClass alloc] initWithModel:model] autorelease];
-        if(cellData)
-        {
+    for (id model in aModels) {
+        Class cellDataClass = [registeredClasses objectForKey:[model class]];
+
+        NSAssert(cellDataClass, ([NSString stringWithFormat:@"Model doesn't have registered cellData class %@", NSStringFromClass([model class])]));
+
+        MUCellDataModeled *cellData = [[[cellDataClass alloc] initWithModel:model] autorelease];
+        if (cellData) {
             [aSection addCellData:cellData];
 
-            if(modeledDelegate && [modeledDelegate respondsToSelector:@selector(tableDisposer:didCreateCellData:)])
-            {
+            if (modeledDelegate && [modeledDelegate respondsToSelector:@selector(tableDisposer:didCreateCellData:)]) {
                 [modeledDelegate tableDisposer:self didCreateCellData:cellData];
             }
 

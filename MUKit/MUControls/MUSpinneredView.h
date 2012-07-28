@@ -11,13 +11,13 @@
 /// Spinnered oveley to indicate some process
 @interface MUSpinneredView : UIView
 {
-	UIView* parentView;                                                         ///< parent view
-	UIActivityIndicatorView* spinner;                                           ///< spinner
-	BOOL isShow;
+    UIView *parentView;                                                         ///< parent view
+    UIActivityIndicatorView *spinner;                                           ///< spinner
+    BOOL isShow;
 }
 
-- (id) initWithParentView: (UIView*)aParentView color:(UIColor*)aColor;
-- (void) show;                                                                  ///< show overlay and start spinner
-- (void) hide;                                                                  ///< hide overlay and stop spinner
+- (id)initWithParentView:(UIView *)aParentView color:(UIColor *)aColor;
+- (void)show;                                                                  ///< show overlay and start spinner
+- (void)hide;                                                                  ///< hide overlay and stop spinner
 
 @end

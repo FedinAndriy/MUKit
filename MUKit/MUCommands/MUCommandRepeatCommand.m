@@ -12,34 +12,33 @@
 
 @synthesize command;
 
-//==============================================================================
-- (id) commandWithCommand:(MUCommand*)aCommand
+
+- (id)commandWithCommand:(MUCommand *)aCommand
 {
     return [[[MUCommandRepeatCommand alloc] initWithCommand:aCommand] autorelease];
 }
 
-//==============================================================================
-- (id) initWithCommand:(MUCommand*)aCommand
+
+- (id)initWithCommand:(MUCommand *)aCommand
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         command = [aCommand retain];
     }
     return self;
 }
 
-//==============================================================================
-- (void) dealloc
+
+- (void)dealloc
 {
     [command release];
-    
+
     [super dealloc];
 }
 
-//==============================================================================
-- (void) executeWithCallback:(MUCommandCallback)aCallback
+
+- (void)executeWithCallback:(MUCommandCallback)aCallback
 {
-    
+
 }
 
 @end

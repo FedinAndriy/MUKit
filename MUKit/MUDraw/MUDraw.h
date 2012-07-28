@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#ifndef Medline_MUDraw_h
-#define Medline_MUDraw_h
+#ifndef MUDraw_h
+#define MUDraw_h
 
 #import <QuartzCore/QuartzCore.h>
 
@@ -18,6 +18,6 @@ extern void MUDrawLinearGradientHorizontal(CGContextRef context, CGRect rect, CG
 extern CGContextRef MUCreateThreadSafeContext(CGSize contextSize);
 extern CGImageRef MUCreateCGImageFromThreadSafeContext(CGContextRef context);
 
-extern UIImage* MUImageWithColor(UIColor* color, CGSize size);
+extern UIImage *MUImageWithColor(UIColor *color, CGSize size);
 
 #endif

@@ -10,26 +10,20 @@
 
 BOOL canBeInputByPhonePad(char c);
 
-NSString* getOnlyNumbers(NSString *phoneNumber)
-{
-    NSMutableString *res = [[[NSMutableString alloc] init] autorelease];    
-    for(int i = 0; i < [phoneNumber length]; i++) 
-    {        
-        char next = [phoneNumber characterAtIndex:i];        
-        if(canBeInputByPhonePad(next))            
-            [res appendFormat:@"%c", next];        
-    }    
-    return res;    
+NSString *getOnlyNumbers(NSString *phoneNumber) {
+    NSMutableString *res = [[[NSMutableString alloc] init] autorelease];
+    for (int i = 0; i < [phoneNumber length]; i++) {
+        char next = [phoneNumber characterAtIndex:i];
+        if (canBeInputByPhonePad(next))
+            [res appendFormat:@"%c", next];
+    }
+    return res;
 }
 
-BOOL canBeInputByPhonePad(char c)
-{
-    if(c >= '0' && c <= '9') return YES;    
-    return NO;    
+BOOL canBeInputByPhonePad(char c) {
+    if (c >= '0' && c <= '9') return YES;
+    return NO;
 }
-
-
-
 
 @implementation MUValidator
 
@@ -37,13 +31,12 @@ BOOL canBeInputByPhonePad(char c)
 @synthesize errorMessage;
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     return NO;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [errorMessage release];
     [super dealloc];
@@ -51,89 +44,74 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorAny
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     return YES;
 }
 
 @end
 
-
-
-
 @implementation MUValidatorNumber
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^[0-9]+$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^[0-9]+$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText)
+    if (validatableObject && validatableObject.validatableText)
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     [regExp release];
     return count == 1;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorLetters
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^[A-Za-z]+$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^[A-Za-z]+$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText)
+    if (validatableObject && validatableObject.validatableText)
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     [regExp release];
     return count == 1;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorWords
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^([A-Za-z]| )+$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^([A-Za-z]| )+$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText)
+    if (validatableObject && validatableObject.validatableText)
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     [regExp release];
     return count == 1;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorEmail
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    static NSString* mailRegExp = @"^[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$";
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:mailRegExp options:NSRegularExpressionCaseInsensitive error:nil];
+    static NSString *mailRegExp = @"^[A-Z0-9._%+-]+@(?:[A-Z0-9-]+\\.)+(?:[A-Z]{2}|com|org|net|edu|gov|mil|biz|info|mobi|name|aero|asia|jobs|museum)$";
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:mailRegExp options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText)
+    if (validatableObject && validatableObject.validatableText)
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     [regExp release];
     return count == 1;
@@ -141,43 +119,35 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorEqual
 
 
-- (id) initWithTestedField:(id<MUValidationProtocol>)aTestedObject
+- (id)initWithTestedField:(id <MUValidationProtocol>)aTestedObject
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         testedValidator = [[aTestedObject validator] retain];
     }
-    
+
     return self;
 }
 
-
-- (id) initWithTestedFieldValidator:(MUValidator *)aTestedValidator
+- (id)initWithTestedFieldValidator:(MUValidator *)aTestedValidator
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         testedValidator = [aTestedValidator retain];
     }
-    
+
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [testedValidator release];
-    
+
     [super dealloc];
 }
 
-
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return [validatableObject.validatableText isEqualToString:testedValidator.validatableObject.validatableText];
@@ -185,13 +155,10 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorNotEmpty
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     return [validatableObject.validatableText length] > 0;
@@ -199,19 +166,15 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorUSAZipCode
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^[0-9]+$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^[0-9]+$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText && [validatableObject.validatableText length] == 5)
-    {
+    if (validatableObject && validatableObject.validatableText && [validatableObject.validatableText length] == 5) {
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     }
     [regExp release];
@@ -220,47 +183,38 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorFullName
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^([A-Za-z])+ ([A-Za-z])+$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^([A-Za-z])+ ([A-Za-z])+$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText)
+    if (validatableObject && validatableObject.validatableText)
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     [regExp release];
     return count == 1;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorURL
 
 
-- (BOOL) validate
+- (BOOL)validate
 {
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)+(:[0-9]+)?(/.*)?$" options:NSRegularExpressionCaseInsensitive error:nil];
+    NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^http(s)?://[a-z0-9-]+(.[a-z0-9-]+)+(:[0-9]+)?(/.*)?$" options:NSRegularExpressionCaseInsensitive error:nil];
     NSUInteger count = 0;
-    if(validatableObject && validatableObject.validatableText)
+    if (validatableObject && validatableObject.validatableText)
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
     [regExp release];
-    
+
     return count == 1;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorIntWithRange
 
@@ -268,15 +222,13 @@ BOOL canBeInputByPhonePad(char c)
 - (id)initWithRange:(NSRange)aRange
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         range = aRange;
     }
     return self;
 }
 
-
-- (BOOL) validate
+- (BOOL)validate
 {
     BOOL result = NO;
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -287,38 +239,30 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorStringWithRange
 
 
 - (id)initWithRange:(NSRange)aRange
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         range = aRange;
     }
     return self;
 }
 
-
-- (BOOL) validate
+- (BOOL)validate
 {
     BOOL result = NO;
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if(validatableObject && validatableObject.validatableText && 
-       [validatableObject.validatableText length] >= range.location &&
-       [validatableObject.validatableText length] <= range.location + range.length)
+    if (validatableObject && validatableObject.validatableText &&
+            [validatableObject.validatableText length] >= range.location &&
+            [validatableObject.validatableText length] <= range.location + range.length)
         result = YES;
     return result;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorCountNumberInTextWithRange
 
@@ -326,20 +270,17 @@ BOOL canBeInputByPhonePad(char c)
 - (id)initWithRange:(NSRange)aRange
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         range = aRange;
     }
     return self;
 }
 
-
-- (BOOL) validate
+- (BOOL)validate
 {
     BOOL result = NO;
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if(validatableObject && validatableObject.validatableText)
-    {
+    if (validatableObject && validatableObject.validatableText) {
         NSString *onlyNumber = getOnlyNumbers(validatableObject.validatableText);
         if (onlyNumber && [onlyNumber length] >= range.location && [onlyNumber length] <= range.location + range.length)
             result = YES;
@@ -349,80 +290,67 @@ BOOL canBeInputByPhonePad(char c)
 
 @end
 
-
-
-
 @implementation MUValidatorMoney
 
-- (BOOL) validate
+- (BOOL)validate
 {
-    validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];    
-    NSUInteger count = 0;    
-    if(validatableObject && validatableObject.validatableText)
-    {    
-        NSRegularExpression* regExp = [[NSRegularExpression alloc]initWithPattern:@"^[1-9]+([0])?(\\.[0-9]{1,2})?$" options:NSRegularExpressionCaseInsensitive error:nil];
+    validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    NSUInteger count = 0;
+    if (validatableObject && validatableObject.validatableText) {
+        NSRegularExpression *regExp = [[NSRegularExpression alloc] initWithPattern:@"^[1-9]+([0])?(\\.[0-9]{1,2})?$" options:NSRegularExpressionCaseInsensitive error:nil];
         count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
         [regExp release];
 
-        if (count == 0) 
-        {
-            regExp = [[NSRegularExpression alloc]initWithPattern:@"^[0]\\.[1-9]([0-9])?$" options:NSRegularExpressionCaseInsensitive error:nil];
+        if (count == 0) {
+            regExp = [[NSRegularExpression alloc] initWithPattern:@"^[0]\\.[1-9]([0-9])?$" options:NSRegularExpressionCaseInsensitive error:nil];
             count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
             [regExp release];
         }
-        
-        if (count == 0)
-        {
-            regExp = [[NSRegularExpression alloc]initWithPattern:@"^[0]\\.[0-9][1-9]$" options:NSRegularExpressionCaseInsensitive error:nil];
+
+        if (count == 0) {
+            regExp = [[NSRegularExpression alloc] initWithPattern:@"^[0]\\.[0-9][1-9]$" options:NSRegularExpressionCaseInsensitive error:nil];
             count = [regExp numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
             [regExp release];
         }
     }
-    
+
     return count == 1;
 }
 
 @end
-
-
-
 
 @implementation MUValidatorRegExp
 
 @synthesize regularExpression;
 
 
-- (id) initWithRegExp:(NSRegularExpression *)aRegExp
+- (id)initWithRegExp:(NSRegularExpression *)aRegExp
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         self.regularExpression = aRegExp;
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [regularExpression release];
-    
+
     [super dealloc];
 }
 
-
-- (BOOL) validate
+- (BOOL)validate
 {
     BOOL result = NO;
 
     validatableObject.validatableText = [validatableObject.validatableText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-    if(validatableObject.validatableText)
-    {
+    if (validatableObject.validatableText) {
         NSUInteger count = 0;
         count = [regularExpression numberOfMatchesInString:validatableObject.validatableText options:0 range:NSMakeRange(0, [validatableObject.validatableText length])];
-        
+
         result = count == 1;
     }
-    
+
     return result;
 }
 

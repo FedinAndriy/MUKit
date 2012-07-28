@@ -11,18 +11,18 @@
 
 @interface MUSegmentedControl : UIControl
 {
-    UIImageView* bgImageView;               /// bg
-    NSMutableArray* buttons;                       /// array of buttons
-    UIButton* currentItem;
+    UIImageView *bgImageView;               /// bg
+    NSMutableArray *buttons;                       /// array of buttons
+    UIButton *currentItem;
 //	BOOL enabled;
 }
 
-@property (nonatomic, readonly) UIImageView* backgroundImageView;
+@property(nonatomic, readonly) UIImageView *backgroundImageView;
 //@property (nonatomic, assign) BOOL enabled;
-@property (nonatomic, readonly) NSUInteger currentIndex;
+@property(nonatomic, readonly) NSUInteger currentIndex;
 
-- (void) setBackgroundImage:(UIImage*)aBackgroundImage;
-- (void) addButton:(UIButton*)aButton;
-- (void) switchToItemWithIndex:(NSUInteger)aIndex;                              ///< programmaticaly switch to title by index
+- (void)setBackgroundImage:(UIImage *)aBackgroundImage;
+- (void)addButton:(UIButton *)aButton;
+- (void)switchToItemWithIndex:(NSUInteger)aIndex;                              ///< programmaticaly switch to title by index
 
 @end

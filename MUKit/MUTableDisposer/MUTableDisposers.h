@@ -37,7 +37,7 @@
 
 // table disposers
 #import "MUTableDisposer.h"
-#import "MUTableDisposerMaped.h"
+#import "MUTableDisposerMapped.h"
 #import "MUTableDisposerModeled.h"
 #import "MUTableDisposerRequested.h"
 

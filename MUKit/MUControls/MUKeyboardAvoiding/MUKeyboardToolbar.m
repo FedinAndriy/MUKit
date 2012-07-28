@@ -24,20 +24,19 @@
 @synthesize delegate;
 
 
-- (id) initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         self.barStyle = UIBarStyleBlack;
         self.translucent = YES;
         self.backgroundColor = [UIColor clearColor];
-        
+
         // Default labels
         self.previousTitle = @"Previous";
         self.nextTitle = @"Next";
-        
+
         // Setup segmented controls
         segmentedPreviousNext = [[[UISegmentedControl alloc] initWithItems:[NSArray arrayWithObjects:self.previousTitle, self.nextTitle, nil]] autorelease];
         segmentedPreviousNext.segmentedControlStyle = UISegmentedControlStyleBar;
@@ -45,13 +44,13 @@
         segmentedPreviousNext.tintColor = [UIColor blackColor];
         segmentedPreviousNext.clipsToBounds = YES;
         [segmentedPreviousNext addTarget:self action:@selector(segmentedControlPreviousNextChangedValue:) forControlEvents:UIControlEventValueChanged];
-        
+
         // Make segmented controls a bar button
         UIBarButtonItem *barSegment = [[[UIBarButtonItem alloc] initWithCustomView:segmentedPreviousNext] autorelease];
-        
+
         // Create spacing
         UIBarButtonItem *flex = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil] autorelease];
-        
+
         // Create done button
         doneButton = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(buttonDonePressed:)] autorelease];
 
@@ -61,30 +60,27 @@
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     self.previousTitle = nil;
     self.nextTitle = nil;
     [super dealloc];
 }
 
-
-- (void) setTintColor:(UIColor *)tintColor
+- (void)setTintColor:(UIColor *)tintColor
 {
     [super setTintColor:tintColor];
     [segmentedPreviousNext setTintColor:tintColor];
 }
 
-
-- (void) selectedInputFieldIndex:(NSInteger)selectInsex allCountInputFields:(NSInteger)allCountInputFields
+- (void)selectedInputFieldIndex:(NSInteger)selectInsex allCountInputFields:(NSInteger)allCountInputFields
 {
     // Check if "Previous" button should be enabled
     if (selectInsex > 0)
         [segmentedPreviousNext setEnabled:YES forSegmentAtIndex:0];
     else
         [segmentedPreviousNext setEnabled:NO forSegmentAtIndex:0];
-    
+
     // Check if "Next" button should be enabled
     if (selectInsex < allCountInputFields - 1)
         [segmentedPreviousNext setEnabled:YES forSegmentAtIndex:1];
@@ -92,10 +88,9 @@
         [segmentedPreviousNext setEnabled:NO forSegmentAtIndex:1];
 }
 
-
 - (void)segmentedControlPreviousNextChangedValue:(id)sender
 {
-    switch ([(UISegmentedControl *)sender selectedSegmentIndex]) {
+    switch ([(UISegmentedControl *) sender selectedSegmentIndex]) {
         case 0:
             [delegate didPrevButtonPressd];
             break;
@@ -107,22 +102,19 @@
     }
 }
 
-
 - (void)buttonDonePressed:(id)sender
 {
     [delegate didDoneButtonPressd];
 }
 
-
-- (void) setPreviousTitle:(NSString *)aPreviousTitle
+- (void)setPreviousTitle:(NSString *)aPreviousTitle
 {
     [previousTitle release];
     previousTitle = [aPreviousTitle retain];
     [segmentedPreviousNext setTitle:previousTitle forSegmentAtIndex:0];
 }
 
-
-- (void) setNextTitle:(NSString *)aNextTitle
+- (void)setNextTitle:(NSString *)aNextTitle
 {
     [nextTitle release];
     nextTitle = [aNextTitle retain];

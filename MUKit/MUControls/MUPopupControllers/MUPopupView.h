@@ -19,31 +19,30 @@
 
 @interface MUPopupView : UIView <MUWeakRefProtocol>
 {
-	MUWeakRef* weakRef;
+    MUWeakRef *weakRef;
 }
 
-@property (nonatomic, readonly) NSObject* showStrategy;
-@property (nonatomic, assign) BOOL hideByTapOutside;
-@property (nonatomic, assign) BOOL showOverlayView;                             ///< determine show or not overlay view (by default it is gray transparent view above any free space)
+@property(nonatomic, readonly) NSObject *showStrategy;
+@property(nonatomic, assign) BOOL hideByTapOutside;
+@property(nonatomic, assign) BOOL showOverlayView;                             ///< determine show or not overlay view (by default it is gray transparent view above any free space)
 
-- (void) prepareToRelease;
+- (void)prepareToRelease;
 
-- (void) hideWithAnimation:(BOOL)animation;                                     ///< hide with popup strategy (works only on iPad)
+- (void)hideWithAnimation:(BOOL)animation;                                     ///< hide with popup strategy (works only on iPad)
 
 // for iPhone
-- (void) showWithAnimation:(BOOL)animation inView:(UIView*)aView;               ///< show with popup strategy (works only on iPhone)
+- (void)showWithAnimation:(BOOL)animation inView:(UIView *)aView;               ///< show with popup strategy (works only on iPhone)
 
 // for iPad
 - (void)showFromRect:(CGRect)rect inView:(UIView *)view permittedArrowDirections:(UIPopoverArrowDirection)arrowDirections animated:(BOOL)animated;
 
-- (void) setup;
-- (void) prepareToShow;
+- (void)setup;
+- (void)prepareToShow;
 
 // use it only in subclasses of this class, dont cull it manyally in your code (outside of subclasses of this classe)
-- (void) popupWillAppear:(BOOL)animated;
-- (void) popupDidAppear:(BOOL)animated;
-- (void) popupWillDisappear:(BOOL)animated;
-- (void) popupDidDisappear:(BOOL)animated;
-
+- (void)popupWillAppear:(BOOL)animated;
+- (void)popupDidAppear:(BOOL)animated;
+- (void)popupWillDisappear:(BOOL)animated;
+- (void)popupDidDisappear:(BOOL)animated;
 
 @end

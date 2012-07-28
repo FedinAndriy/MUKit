@@ -8,9 +8,9 @@
 
 #import "MUSearchBar.h"
 
-@interface MUSearchBar(Private)
+@interface MUSearchBar (Private)
 
-- (void) replaceBG;
+- (void)replaceBG;
 
 @end
 
@@ -30,18 +30,16 @@
 //}
 
 
-- (void) dealloc
+- (void)dealloc
 {
     [imageBG release];
-    
+
     [super dealloc];
 }
 
-
-- (void) setImageBG:(UIImage *)aImageBG
+- (void)setImageBG:(UIImage *)aImageBG
 {
-    if(imageBG != aImageBG)
-    {
+    if (imageBG != aImageBG) {
         [imageBG release];
         imageBG = [aImageBG retain];
         [self replaceBG];
@@ -49,14 +47,11 @@
     }
 }
 
-
-- (void) replaceBG
+- (void)replaceBG
 {
-    for(UIView* view in self.subviews)
-    {
+    for (UIView *view in self.subviews) {
         //NSLog(@"SUBV: %@; superclass: %@", view, [view superclass]);
-        if( [NSStringFromClass([view class]) isEqualToString:@"UISearchBarBackground"] )
-        {
+        if ([NSStringFromClass([view class]) isEqualToString:@"UISearchBarBackground"]) {
             [view removeFromSuperview];
             backgroundView = [[UIImageView alloc] initWithImage:imageBG];
             [self addSubview:backgroundView];
@@ -65,9 +60,5 @@
         }
     }
 }
-
-
-
-
 
 @end

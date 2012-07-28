@@ -9,38 +9,33 @@
 #import <Foundation/Foundation.h>
 
 
-
 @interface MUTargetAction : NSObject
 
-@property (nonatomic, readonly) id target;
-@property (nonatomic, readonly) SEL action;
+@property(nonatomic, readonly) id target;
+@property(nonatomic, readonly) SEL action;
 
-+ (id) targetActionWithTarget:(id)aTarget action:(SEL)anAction;
-- (id) initWithTarget:(id)aTarget action:(SEL)anAction;
++ (id)targetActionWithTarget:(id)aTarget action:(SEL)anAction;
+- (id)initWithTarget:(id)aTarget action:(SEL)anAction;
 
-- (void) setTarget:(id)aTarget action:(SEL)anAction;
-- (void) sendActionFrom:(NSObject*)aSender;
+- (void)setTarget:(id)aTarget action:(SEL)anAction;
+- (void)sendActionFrom:(NSObject *)aSender;
 
 @end
-
-
 
 @interface MUTargetActionList : NSObject
 {
-    NSMutableArray* taList;
+    NSMutableArray *taList;
 }
 
-- (void) addTarget:(id)aTarget action:(SEL)anAction;
-- (void) sendActionsFrom:(NSObject*)aSender;
+- (void)addTarget:(id)aTarget action:(SEL)anAction;
+- (void)sendActionsFrom:(NSObject *)aSender;
 
 @end
 
-
-
 @protocol MUTargetActionListProtocol <NSObject>
 
-@property (nonatomic, readonly) MUTargetActionList* taList;
+@property(nonatomic, readonly) MUTargetActionList *taList;
 
-- (void) addTarget:(id)aTarget action:(SEL)anAction;
+- (void)addTarget:(id)aTarget action:(SEL)anAction;
 
 @end

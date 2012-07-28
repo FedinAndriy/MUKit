@@ -11,8 +11,8 @@
 
 @protocol MUFetchable <NSObject>
 
-@property (nonatomic, assign) BOOL needFetch;      // need fetch data from server
+@property(nonatomic, assign) BOOL needFetch;      // need fetch data from server
 
-- (void) fetchData;
+- (void)fetchData;
 
 @end

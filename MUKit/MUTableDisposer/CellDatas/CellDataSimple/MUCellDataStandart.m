@@ -25,13 +25,12 @@
 
 #pragma mark - Init/Dealloc
 
-- (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
+- (id)initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
-    if (self)
-    {
+    if (self) {
         self.cellClass = [MUCellStandart class];
-        
+
         titleTextAlignment = UITextAlignmentLeft;
         titleFont = [UIFont systemFontOfSize:18];
         subtitleFont = [UIFont systemFontOfSize:16];
@@ -41,8 +40,7 @@
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [subtitle release];
     [image release];
@@ -51,20 +49,19 @@
     [title release];
     [titleColor release];
     [subtitleColor release];
-    
+
     [super dealloc];
 }
 
 #pragma mark - Maping
 
-- (void) mapFromObject
+- (void)mapFromObject
 {
     if (object && key)
         subtitle = [[object valueForKeyPath:key] retain];
 }
 
-
-- (void) mapToObject
+- (void)mapToObject
 {
     if (object && key)
         [object setValue:subtitle forKeyPath:key];

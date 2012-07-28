@@ -13,13 +13,13 @@
 
 @interface MUImageViewTapable : UIImageView
 {
-    NSMutableArray* targetActions;
-    NSObject* data;
+    NSMutableArray *targetActions;
+    NSObject *data;
 }
 
-@property (nonatomic, assign) BOOL enable;
-@property (nonatomic, retain) NSObject* data;
+@property(nonatomic, assign) BOOL enable;
+@property(nonatomic, retain) NSObject *data;
 
-- (void) addTarget:(id)aTarget action:(SEL)anAction;
+- (void)addTarget:(id)aTarget action:(SEL)anAction;
 
 @end

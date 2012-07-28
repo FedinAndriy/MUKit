@@ -13,9 +13,9 @@
     MUCommandCallback callback;
 }
 
-@property (nonatomic, readonly) NSTimeInterval idleTime;
+@property(nonatomic, readonly) NSTimeInterval idleTime;
 
-+ (id) commandWithIdleTime:(NSTimeInterval) anIdleTime;
-- (id) initWithIdleTime:(NSTimeInterval) anIdleTime;
++ (id)commandWithIdleTime:(NSTimeInterval)anIdleTime;
+- (id)initWithIdleTime:(NSTimeInterval)anIdleTime;
 
 @end

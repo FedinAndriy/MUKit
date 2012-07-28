@@ -13,35 +13,34 @@
 @synthesize repeatCount;
 @synthesize currentRepetitionIndex;
 
-//==============================================================================
-- (id) init
+
+- (id)init
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         repeatCount = 1;
         currentRepetitionIndex = 0;
     }
     return self;
 }
 
-//==============================================================================
-- (void) dealloc
+
+- (void)dealloc
 {
     [callback release];
-    
+
     [super dealloc];
 }
 
 // Don't override this method in your subclasses !
-//==============================================================================
-- (void) executeWithCallback:(MUCommandCallback)aCallback
+
+- (void)executeWithCallback:(MUCommandCallback)aCallback
 {
-    if(isExecution)
+    if (isExecution)
         return;
-    
+
     isExecution = YES;
     currentRepetitionIndex = 0;
-    
+
     callback = [aCallback copy];
 
     // prepare callback
@@ -62,33 +61,30 @@
 
     // execute task
     [self repeatTask];
-    
+
 }
 
-//==============================================================================
-- (void) repeatTask//:(MURepeatedTaskCallback)repeatedTaskCallback
+
+- (void)repeatTask//:(MURepeatedTaskCallback)repeatedTaskCallback
 {
     NSAssert(NO, @"You need override this method!");
 }
 
-//==============================================================================
-- (void) taskCompletedNeedRepeat:(BOOL)aNeedRepeat result:(BOOL)aTaskSuccess
+
+- (void)taskCompletedNeedRepeat:(BOOL)aNeedRepeat result:(BOOL)aTaskSuccess
 {
     currentRepetitionIndex++;
-    
-    if(!aNeedRepeat || currentRepetitionIndex == repeatCount)
-    {
+
+    if (!aNeedRepeat || currentRepetitionIndex == repeatCount) {
         isExecution = NO;
         callback(aTaskSuccess);
-        
+
         [callback release];
         callback = nil;
     }
-    else
-    {
+    else {
         [self repeatTask];
     }
 }
-
 
 @end

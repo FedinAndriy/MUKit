@@ -13,12 +13,12 @@
 @interface MUBaseTableController : MUBaseViewController <UITableViewDelegate, UITableViewDataSource>
 {
 @protected
-    NSMutableArray* dataSource;
-    IBOutlet UITableView* tableView;
+    NSMutableArray *dataSource;
+    IBOutlet UITableView *tableView;
 }
 
-- (Class) tableViewClass;
-- (BOOL) isDataSourceAvailable;
-- (UITableViewStyle) getTableViewStyle;
+- (Class)tableViewClass;
+- (BOOL)isDataSourceAvailable;
+- (UITableViewStyle)getTableViewStyle;
 
 @end

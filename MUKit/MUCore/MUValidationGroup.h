@@ -10,22 +10,21 @@
 
 @protocol MUValidationGroupDelegate <NSObject>
 
-- (void) proccessValidationResults:(NSMutableArray*)aValidationResults;
+- (void)proccessValidationResults:(NSMutableArray *)aValidationResults;
 
 @end
 
-
 @interface MUValidationGroup : NSObject
 {
-	NSArray* validators;
-    UIImage* invalidIndicatorImage;
+    NSArray *validators;
+    UIImage *invalidIndicatorImage;
 }
 
-@property (nonatomic, retain) UIImage* invalidIndicatorImage;
-@property (nonatomic, assign) NSObject<MUValidationGroupDelegate>* delegate;
+@property(nonatomic, retain) UIImage *invalidIndicatorImage;
+@property(nonatomic, assign) NSObject <MUValidationGroupDelegate> *delegate;
 
-- (id) initWithValidators:(NSArray*)aValidators;
-- (NSArray*) validate;
-- (void) hideInvalidIndicators;
+- (id)initWithValidators:(NSArray *)aValidators;
+- (NSArray *)validate;
+- (void)hideInvalidIndicators;
 
 @end

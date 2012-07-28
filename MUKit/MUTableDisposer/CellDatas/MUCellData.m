@@ -10,6 +10,11 @@
 #import "MUTargetAction.h"
 
 @implementation MUCellData
+{
+@private
+    NSMutableArray *cellSelectedHandlers;
+    NSMutableArray *cellDeselectedHandler;
+}
 
 
 @synthesize cellNibName;
@@ -24,86 +29,75 @@
 @synthesize enableEdit;
 
 
--(id) init
+- (id)init
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         visible = YES;
         autoDeselect = YES;
         enableEdit = YES;
         cellSelectionStyle = UITableViewCellSelectionStyleBlue;
         cellStyle = UITableViewCellStyleDefault;
         cellAccessoryType = UITableViewCellAccessoryNone;
-        
+
         cellSelectedHandlers = [NSMutableArray new];
         cellDeselectedHandler = [NSMutableArray new];
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [cellNibName release];
     [cellSelectedHandlers release];
     [cellDeselectedHandler release];
-    
+
     [super dealloc];
 }
 
-
-- (CGFloat) cellHeightForWidth:(CGFloat) aWidth
+- (CGFloat)cellHeightForWidth:(CGFloat)aWidth
 {
     return 44.f;
 }
 
-
-- (NSString *) cellIdentifier
+- (NSString *)cellIdentifier
 {
     return NSStringFromClass(self.cellClass);
 }
 
-
-- (void) addCellSelectedTarget:(id)aTarget action:(SEL)anAction
+- (void)addCellSelectedTarget:(id)aTarget action:(SEL)anAction
 {
     [cellSelectedHandlers addObject:[MUTargetAction targetActionWithTarget:aTarget action:anAction]];
 }
 
-
-- (void) addCellDeselectedTarget:(id)aTarget action:(SEL)anAction
+- (void)addCellDeselectedTarget:(id)aTarget action:(SEL)anAction
 {
     [cellDeselectedHandler addObject:[MUTargetAction targetActionWithTarget:aTarget action:anAction]];
 }
 
-
-- (void) performSelectedHandlers
+- (void)performSelectedHandlers
 {
-    for(MUTargetAction* handler in cellSelectedHandlers)
-    {
+    for (MUTargetAction *handler in cellSelectedHandlers) {
         [handler sendActionFrom:self];
     }
 }
 
-
-- (void) performDeselectedHandlers
+- (void)performDeselectedHandlers
 {
-    for(MUTargetAction* handler in cellDeselectedHandler)
-    {
+    for (MUTargetAction *handler in cellDeselectedHandler) {
         [handler sendActionFrom:self];
     }
 }
 
-
-- (MUCell*) createCell
+- (MUCell *)createCell
 {
-    MUCell* cell = nil;
-    
-    if(cellNibName)
-        cell = (MUCell*)[[[NSBundle mainBundle] loadNibNamed:cellNibName owner:self options:nil] lastObject];
+    MUCell *cell = nil;
+
+    if (cellNibName)
+        cell = (MUCell *) [[[NSBundle mainBundle] loadNibNamed:cellNibName owner:self options:nil] lastObject];
     else
         cell = [[[self.cellClass alloc] initWithStyle:self.cellStyle reuseIdentifier:self.cellIdentifier] autorelease];
-    
+
     return cell;
 }
 

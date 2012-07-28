@@ -15,41 +15,38 @@
 
 #pragma mark - Init/Dealloc
 
-- (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
+- (id)initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
-    if(self)
-    {
+    if (self) {
         titleFont = [UIFont systemFontOfSize:16];
         titleColor = [UIColor blackColor];
-        
+
         textFont = [UIFont systemFontOfSize:16];
         textColor = [UIColor blackColor];
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [title release];
     [titleColor release];
     [text release];
     [textColor release];
-    
+
     [super dealloc];
 }
 
 #pragma mark - Maping
 
-- (void) mapFromObject
+- (void)mapFromObject
 {
     if (object && key)
         text = [[object valueForKeyPath:key] retain];
 }
 
-
-- (void) mapToObject
+- (void)mapToObject
 {
     if (object && key)
         [object setValue:text forKeyPath:key];

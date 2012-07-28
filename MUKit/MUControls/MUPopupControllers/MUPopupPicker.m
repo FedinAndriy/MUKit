@@ -9,18 +9,13 @@
 #import "MUPopupPicker.h"
 
 
-
-
 @interface MUPopupPicker (Private)
 
-- (void) toolbarButtonPressed:(UIButton*)aSender;
-- (void) toolbarItemPressed:(UIBarButtonItem*)aSender;
-- (void) configureFrames;
+- (void)toolbarButtonPressed:(UIButton *)aSender;
+- (void)toolbarItemPressed:(UIBarButtonItem *)aSender;
+- (void)configureFrames;
 
 @end
-
-
-
 
 @implementation MUPopupPicker
 
@@ -28,118 +23,104 @@
 @synthesize selectedItem;
 
 
-- (void) dealloc
+- (void)dealloc
 {
     [toolbar release];
     [selectedItem release];
-    
+
     [super dealloc];
 }
 
-
 // Create, configure and return popupedView
-- (void) setup
+- (void)setup
 {
     [super setup];
-    
+
     self.backgroundColor = [UIColor clearColor];
     picker = [self createPicker];
     [self addSubview:picker];
-    
+
     [self configureFrames];
 }
 
-
-- (void) configureFrames
+- (void)configureFrames
 {
     //
     self.autoresizingMask ^= !(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
     picker.autoresizingMask ^= !(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    
+
     CGRect frame = picker.frame;
     frame.origin.y = toolbar.bounds.size.height;
     picker.frame = frame;
-    
+
     frame.origin.y = 0;
     frame.size.height += toolbar.bounds.size.height;
     self.frame = frame;
-    
+
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     picker.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    
+
 }
 
-
-- (void) setToolbar:(MUToolbar *)aToolbar
+- (void)setToolbar:(MUToolbar *)aToolbar
 {
-    if(toolbar == aToolbar)
+    if (toolbar == aToolbar)
         return;
-    
-    if(aToolbar)
-    {
+
+    if (aToolbar) {
         toolbar = [aToolbar retain];
         [self addSubview:toolbar];
         [toolbar sizeToFit];
         toolbar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
+
         [self configureFrames];
 
         int index = 0;
-        for(UIBarButtonItem* bbi in toolbar.items)
-        {
-            if(bbi.customView && [bbi.customView isKindOfClass:[UIButton class]])
-            {
+        for (UIBarButtonItem *bbi in toolbar.items) {
+            if (bbi.customView && [bbi.customView isKindOfClass:[UIButton class]]) {
                 bbi.customView.tag = index;
-                [((UIButton*)bbi.customView) addTarget:self action:@selector(toolbarButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+                [((UIButton *) bbi.customView) addTarget:self action:@selector(toolbarButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
             }
-            else
-            {
+            else {
                 bbi.tag = index;
                 [bbi setTarget:self];
                 [bbi setAction:@selector(toolbarItemPressed:)];
             }
-            
+
             ++index;
         }
     }
-    else
-    {
+    else {
         [toolbar removeFromSuperview];
         [toolbar release];
         toolbar = nil;
     }
 }
 
-
-- (UIView*) createPicker
+- (UIView *)createPicker
 {
     return nil;     // override it in subclasses
 }
 
-
-- (NSObject*) selectedItem
+- (NSObject *)selectedItem
 {
     return nil; // override it in subclasses
 }
 
 #pragma mark - Toolbar
 
-- (void) toolbarButtonPressed:(UIButton*)aSender
+- (void)toolbarButtonPressed:(UIButton *)aSender
 {
-    NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
     [userInfo setObject:[NSNumber numberWithInt:aSender.tag] forKey:POPUPVIEW_TOOLBAR_ITEM_PRESSED_INDEX];
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_TOOLBAR_ITEM_DID_PRESSED object:self userInfo:userInfo];
 }
 
-
-- (void) toolbarItemPressed:(UIBarButtonItem*)aSender
+- (void)toolbarItemPressed:(UIBarButtonItem *)aSender
 {
-    NSMutableDictionary* userInfo = [NSMutableDictionary dictionary];
+    NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
     [userInfo setObject:[NSNumber numberWithInt:aSender.tag] forKey:POPUPVIEW_TOOLBAR_ITEM_PRESSED_INDEX];
     [[NSNotificationCenter defaultCenter] postNotificationName:POPUPVIEW_TOOLBAR_ITEM_DID_PRESSED object:self userInfo:userInfo];
 }
-
-
-
 
 @end

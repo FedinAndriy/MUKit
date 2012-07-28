@@ -12,6 +12,6 @@
 
 @protocol MUKeyboardAvoiderProtocol <NSObject>
 
-@property (nonatomic, assign) id<MUKeyboardAvoidingProtocol> keyboardAvoiding;
+@property(nonatomic, assign) id <MUKeyboardAvoidingProtocol> keyboardAvoiding;
 
 @end

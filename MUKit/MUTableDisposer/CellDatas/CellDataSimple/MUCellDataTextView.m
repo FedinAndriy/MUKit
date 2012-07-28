@@ -24,14 +24,13 @@
 
 #pragma mark - Init/Dealloc
 
-- (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
+- (id)initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
-    if(self)
-    {
+    if (self) {
         self.cellClass = [MUCellTextView class];
         self.cellSelectionStyle = UITableViewCellSelectionStyleNone;
-        
+
         textAlignment = UITextAlignmentLeft;
         autocapitalizationType = UITextAutocapitalizationTypeNone;
         autocorrectionType = UITextAutocorrectionTypeNo;
@@ -42,17 +41,15 @@
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [validator release];
     [filter release];
-    
+
     [super dealloc];
 }
 
-
-- (CGFloat) cellHeightForWidth:(CGFloat)aWidth
+- (CGFloat)cellHeightForWidth:(CGFloat)aWidth
 {
     return 90;
 }

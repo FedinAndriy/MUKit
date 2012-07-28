@@ -14,28 +14,25 @@
 @synthesize model;
 
 
-- (id) init
+- (id)init
 {
     NSAssert(NO, @"You can't use this method! Instead use 'initWithModel:'");
     [self release];
     return nil;
 }
 
-
-- (id) initWithModel:(id)aModel
+- (id)initWithModel:(id)aModel
 {
     self = [super init];
-    if (self)
-    {
+    if (self) {
         model = [aModel retain];
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
-    [model release];    
+    [model release];
     [super dealloc];
 }
 

@@ -8,19 +8,11 @@
 
 #import "MUCellTextView.h"
 #import "MUCellDataTextView.h"
-#import <QuartzCore/QuartzCore.h>
-
-
 
 
 @interface MUCellTextView ()
 
-
 @end
-
-
-
-
 
 @implementation MUCellTextView
 
@@ -30,40 +22,36 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self)
-    {
+    if (self) {
         titleLabel = [[[UILabel alloc] initWithFrame:CGRectZero] autorelease];
         [self.contentView addSubview:titleLabel];
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
+
         textView = [[[MUTextView alloc] initWithFrame:CGRectZero] autorelease];
         [self.contentView addSubview:textView];
         textView.backgroundColor = [UIColor clearColor];
         textView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        
+
         [textView addObserver:self forKeyPath:@"observedText" options:NSKeyValueObservingOptionNew context:NULL];
-        
-        
+
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [textView removeObserver:self forKeyPath:@"observedText"];
-    
+
     [super dealloc];
 }
 
-
-- (void) setupCellData:(MUCellData *)aCellData
+- (void)setupCellData:(MUCellData *)aCellData
 {
     [super setupCellData:aCellData];
-    
-    MUCellDataTextView* cellDataTextView = (MUCellDataTextView*)aCellData;
-    
+
+    MUCellDataTextView *cellDataTextView = (MUCellDataTextView *) aCellData;
+
     // text
     CGFloat cellHeight = [cellDataTextView cellHeightForWidth:self.bounds.size.width];
     CGFloat titleHeight = cellDataTextView.titleFont.lineHeight;
@@ -74,13 +62,13 @@
     textView.keyboardType = cellDataTextView.keyboardType;
     textView.keyboardAppearance = cellDataTextView.keyboardAppearance;
     textView.returnKeyType = cellDataTextView.returnKeyType;
-    
+
     textView.text = cellDataTextView.text;
     textView.font = cellDataTextView.textFont;
     textView.textColor = cellDataTextView.textColor;
     textView.textAlignment = cellDataTextView.textAlignment;
     textView.editable = self.cellData.enableEdit;
-    
+
     textView.validator = cellDataTextView.validator;
     textView.filter = cellDataTextView.filter;
 
@@ -89,20 +77,18 @@
     titleLabel.text = cellDataTextView.title;
     titleLabel.textColor = cellDataTextView.titleColor;
     titleLabel.font = cellDataTextView.titleFont;
-    
+
 }
 
-
-- (NSArray *) inputTraits
+- (NSArray *)inputTraits
 {
     return [NSArray arrayWithObject:textView];
 }
 
-
-- (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 //    NSLog(@"Observing: %@", [change objectForKey:NSKeyValueChangeNewKey]);
-    ((MUCellDataTextView*)self.cellData).text = [change objectForKey:NSKeyValueChangeNewKey];
+    ((MUCellDataTextView *) self.cellData).text = [change objectForKey:NSKeyValueChangeNewKey];
 }
 
 @end

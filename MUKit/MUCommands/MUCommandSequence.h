@@ -11,19 +11,18 @@
 
 @interface MUCommandSequence : MUCommand
 {
-    NSMutableArray* commands;
+    NSMutableArray *commands;
     __block NSInteger executionIndex;
-    
-    
+
     MUCommandCallback callback;
 }
 
-@property (nonatomic, assign) BOOL breakWhenFailure;
+@property(nonatomic, assign) BOOL breakWhenFailure;
 
-+ (id) commandWithCommands:(NSArray*)aCommands;
-- (id) initWithCommands:(NSArray*)aCommands;
-- (void) addCommand:(MUCommand*)aCommand;
++ (id)commandWithCommands:(NSArray *)aCommands;
+- (id)initWithCommands:(NSArray *)aCommands;
+- (void)addCommand:(MUCommand *)aCommand;
 
-- (MUCommand*) commandAtIndex:(NSInteger)anIndex;
+- (MUCommand *)commandAtIndex:(NSInteger)anIndex;
 
 @end

@@ -10,20 +10,19 @@
 #import "MUTabedToolbar.h"
 
 
-
 @interface MUTabBarItem : NSObject
 
-@property (nonatomic, retain) NSString* title;
-@property (nonatomic, retain) UIColor* titleColor;
-@property (nonatomic, assign) UIFont* titleFont;
-@property (nonatomic, retain) UIColor* titleShadowColor;
-@property (nonatomic, assign) CGSize titleShadowOffset;
+@property(nonatomic, retain) NSString *title;
+@property(nonatomic, retain) UIColor *titleColor;
+@property(nonatomic, assign) UIFont *titleFont;
+@property(nonatomic, retain) UIColor *titleShadowColor;
+@property(nonatomic, assign) CGSize titleShadowOffset;
 
-@property (nonatomic, retain) UIImage* imageNormal;
-@property (nonatomic, retain) UIImage* imageSelected;
+@property(nonatomic, retain) UIImage *imageNormal;
+@property(nonatomic, retain) UIImage *imageSelected;
 
-@property (nonatomic, retain) UIImage* backgroundImageNormal;
-@property (nonatomic, retain) UIImage* backgroundImageSelected;
+@property(nonatomic, retain) UIImage *backgroundImageNormal;
+@property(nonatomic, retain) UIImage *backgroundImageSelected;
 
 @end
 
@@ -31,67 +30,62 @@
 
 @protocol MUTabBarItemProtocol <NSObject>
 
-@property (nonatomic, retain) MUTabBarItem* mutabBarItem;
-@property (nonatomic, assign) MUTabBarController* mutabBarController;
+@property(nonatomic, retain) MUTabBarItem *mutabBarItem;
+@property(nonatomic, assign) MUTabBarController *mutabBarController;
 @end
 
-
-@protocol MUTabBarControllerDelegate<NSObject>
+@protocol MUTabBarControllerDelegate <NSObject>
 
 @optional
-- (BOOL) tabBarController:(MUTabBarController*)aTabBarController shouldSelectViewController:(UIViewController *)aViewController;
-- (void) tabBarController:(MUTabBarController *)aTabBarController didSelectViewController:(UIViewController *)aViewController;
+- (BOOL)tabBarController:(MUTabBarController *)aTabBarController shouldSelectViewController:(UIViewController *)aViewController;
+- (void)tabBarController:(MUTabBarController *)aTabBarController didSelectViewController:(UIViewController *)aViewController;
 
 @end
-
 
 typedef enum MUTabBarControllerStyle
 {
     MUTabBarControllerStyleTabsFullSize,
     MUTabBarControllerStyleTabsSizeByBGImage
-    
-} MUTabBarControllerStyle;
 
+} MUTabBarControllerStyle;
 
 @interface MUTabBarController : UIViewController <MUTabedToolbarDelegate>
 {
-    MUTabedToolbar* tabBar;
-    UIImageView* ivTabArrow;
-    UIView* contentView;
-    UIView* currentView;
-    UIButton* disabledButton;
-    
+    MUTabedToolbar *tabBar;
+    UIImageView *ivTabArrow;
+    UIView *contentView;
+    UIView *currentView;
+    UIButton *disabledButton;
+
     BOOL isFirstSetIndex;
 }
 
-@property (nonatomic, assign) id<MUTabBarControllerDelegate> delegate;
+@property(nonatomic, assign) id <MUTabBarControllerDelegate> delegate;
 
-@property (nonatomic, assign) MUTabBarControllerStyle style;
+@property(nonatomic, assign) MUTabBarControllerStyle style;
 
-@property (nonatomic, assign) CGFloat tabBarHeight;
-@property (nonatomic, assign) BOOL tabBarOnTheTop;
-@property (nonatomic, retain) UIImage* tabBarBackgroundImage;
-@property (nonatomic, assign) BOOL tabBarDrawColor;
-@property (nonatomic, retain) UIColor* tabBarBackgroundColor;
-@property (nonatomic, assign) BOOL tabBarEnabled;
+@property(nonatomic, assign) CGFloat tabBarHeight;
+@property(nonatomic, assign) BOOL tabBarOnTheTop;
+@property(nonatomic, retain) UIImage *tabBarBackgroundImage;
+@property(nonatomic, assign) BOOL tabBarDrawColor;
+@property(nonatomic, retain) UIColor *tabBarBackgroundColor;
+@property(nonatomic, assign) BOOL tabBarEnabled;
 
-@property (nonatomic, retain) UIImage* tabArrowImage;
+@property(nonatomic, retain) UIImage *tabArrowImage;
 
-@property (nonatomic, copy) NSArray* viewControllers;
-@property (nonatomic, assign) UIViewController* selectedViewController;
-@property (nonatomic, assign) NSUInteger selectedIndex;
+@property(nonatomic, copy) NSArray *viewControllers;
+@property(nonatomic, assign) UIViewController *selectedViewController;
+@property(nonatomic, assign) NSUInteger selectedIndex;
 
-- (void) configureTabBar;                                                               ///< Override to customize tabBar
-- (UIButton*) createTabBarButtonAtIndex:(NSUInteger)anIndex;                            ///< Override to customize tabBar
-- (void) configureTabBarButton:(UIButton*)aTabBarButton atIndex:(NSUInteger)anIndex;    ///< Override to customize tabBarItem
-- (CGFloat) spaceBeforeTabBarButtonAtIndex:(NSUInteger)anIndex;                         ///< Override to configure additional space
+- (void)configureTabBar;                                                               ///< Override to customize tabBar
+- (UIButton *)createTabBarButtonAtIndex:(NSUInteger)anIndex;                            ///< Override to customize tabBar
+- (void)configureTabBarButton:(UIButton *)aTabBarButton atIndex:(NSUInteger)anIndex;    ///< Override to customize tabBarItem
+- (CGFloat)spaceBeforeTabBarButtonAtIndex:(NSUInteger)anIndex;                         ///< Override to configure additional space
 
 @end
 
-
-
 @interface UIViewController (MUTabBarController)
 
-@property (nonatomic, assign) MUTabBarController* mutabBarController;
+@property(nonatomic, assign) MUTabBarController *mutabBarController;
 
 @end

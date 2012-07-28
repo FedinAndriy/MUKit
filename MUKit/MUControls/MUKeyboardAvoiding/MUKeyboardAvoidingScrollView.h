@@ -13,13 +13,13 @@
 
 @interface MUKeyboardAvoidingScrollView : UIScrollView <MUKeyboardAvoidingProtocol, MUKeyboardToolbarProtocol>
 {
-    UIEdgeInsets    _priorInset;
-    BOOL            _keyboardVisible;
-    CGRect          _keyboardRect;
-    CGSize          _originalContentSize;
+    UIEdgeInsets _priorInset;
+    BOOL _keyboardVisible;
+    CGRect _keyboardRect;
+    CGSize _originalContentSize;
     NSMutableArray *_objectsInKeyboard;
-    
-    NSUInteger _selectIndexInputField;    
+
+    NSUInteger _selectIndexInputField;
     MUKeyboardToolbar *keyboardToolbar;
 }
 

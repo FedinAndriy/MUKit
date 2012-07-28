@@ -12,22 +12,20 @@
 
 #pragma mark - init/dealloc
 
-- (id) init
+- (id)init
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         // ...
         dataSource = [NSMutableArray new];
     }
-    
+
     return self;
 }
-
 
 - (void)dealloc
 {
     [dataSource release];
-    
+
     [super dealloc];
 }
 
@@ -37,20 +35,18 @@
 - (void)loadView
 {
     [super loadView];
-    
-	Class tableViewClass = [self tableViewClass];
-    if (!tableView)
-    {
+
+    Class tableViewClass = [self tableViewClass];
+    if (!tableView) {
         tableView = [[[tableViewClass alloc] initWithFrame:self.view.bounds style:[self getTableViewStyle]] autorelease];
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [tableView setBackgroundColor:[UIColor whiteColor]];
     }
-    
+
     [self.view addSubview:tableView];
 }
-
 
 - (void)viewDidUnload
 {
@@ -58,35 +54,32 @@
     [super viewDidUnload];
 }
 
-
-- (void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
 }
 
 #pragma mark - dataSource
 
-- (BOOL) isDataSourceAvailable
+- (BOOL)isDataSourceAvailable
 {
     return [dataSource count];
 }
 
 #pragma mark - table
 
-- (Class) tableViewClass
+- (Class)tableViewClass
 {
-	return [UITableView class];
+    return [UITableView class];
 }
 
-
 /**
- * Override this to change style of your table
- */
-- (UITableViewStyle) getTableViewStyle
+* Override this to change style of your table
+*/
+- (UITableViewStyle)getTableViewStyle
 {
     return UITableViewStylePlain;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -94,14 +87,10 @@
     return [dataSource count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // override this method in subclasses
     return nil;
 }
-
-
-
 
 @end

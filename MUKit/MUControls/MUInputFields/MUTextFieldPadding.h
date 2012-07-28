@@ -13,9 +13,9 @@
 {
 }
 
-+ (id) textFieldPaddingWithBG:(UIImage*)aBG padding:(int)aPadding;
-- (id) initWithBG:(UIImage*)aBG padding:(int)aPadding;
++ (id)textFieldPaddingWithBG:(UIImage *)aBG padding:(int)aPadding;
+- (id)initWithBG:(UIImage *)aBG padding:(int)aPadding;
 
-- (void) setPadding:(int)aPadding;
+- (void)setPadding:(int)aPadding;
 
 @end

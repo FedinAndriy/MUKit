@@ -9,27 +9,22 @@
 #import "MUAutoresizeButton.h"
 
 
-
-
 @interface MUAutoresizeButton (Private)
 
-- (void) setTitleName:(NSString*) titleName 
-            imageName:(NSString*) imageName 
-         imageCapSize:(ImageCapSize) imageCapSize 
-          titleOffset:(TitleOffset)titleOffset;
+- (void)setTitleName:(NSString *)titleName
+           imageName:(NSString *)imageName
+        imageCapSize:(ImageCapSize)imageCapSize
+         titleOffset:(TitleOffset)titleOffset;
 
-- (void) setTitleName:(NSString*) titleName 
-                image:(UIImage*) image 
-         imageCapSize:(ImageCapSize) imageCapSize 
-          titleOffset:(TitleOffset)titleOffset;
+- (void)setTitleName:(NSString *)titleName
+               image:(UIImage *)image
+        imageCapSize:(ImageCapSize)imageCapSize
+         titleOffset:(TitleOffset)titleOffset;
 
-- (UIImage*)getAutoresizeImageByFont:(UIFont*)font;
-- (void)addImage:(UIImage*)image;
+- (UIImage *)getAutoresizeImageByFont:(UIFont *)font;
+- (void)addImage:(UIImage *)image;
 
 @end
-
-
-
 
 @implementation MUAutoresizeButton
 
@@ -37,156 +32,141 @@
 @synthesize minWidth = _minWidth;
 
 
-+(id) buttonByImageName:(NSString*) imageName
++ (id)buttonByImageName:(NSString *)imageName
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
     [btn setTitleName:nil imageName:imageName imageCapSize:ImageCapSizeNone() titleOffset:TitleOffsetDefault()];
     return btn;
 }
 
-
-+(id) buttonByTitleName:(NSString*) titleName 
-              imageName:(NSString*) imageName
++ (id)buttonByTitleName:(NSString *)titleName
+              imageName:(NSString *)imageName
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
     [btn setTitleName:titleName imageName:imageName imageCapSize:ImageCapSizeNone() titleOffset:TitleOffsetDefault()];
     return btn;
 }
 
-
-+(id) buttonByTitleName:(NSString*) titleName 
-              imageName:(NSString*) imageName 
-           imageCapSize:(ImageCapSize) imageCapSize
++ (id)buttonByTitleName:(NSString *)titleName
+              imageName:(NSString *)imageName
+           imageCapSize:(ImageCapSize)imageCapSize
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
     [btn setTitleName:titleName imageName:imageName imageCapSize:imageCapSize titleOffset:TitleOffsetDefault()];
     return btn;
 }
 
-
-+(id) buttonByTitleName:(NSString*) titleName 
-              imageName:(NSString*) imageName 
-            titleOffset:(TitleOffset) titleOffset
++ (id)buttonByTitleName:(NSString *)titleName
+              imageName:(NSString *)imageName
+            titleOffset:(TitleOffset)titleOffset
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
     [btn setTitleName:titleName imageName:imageName imageCapSize:ImageCapSizeNone() titleOffset:titleOffset];
     return btn;
 }
 
-
-+(id) buttonByTitleName:(NSString*) titleName 
-              imageName:(NSString*) imageName 
-           imageCapSize:(ImageCapSize) imageCapSize
-            titleOffset:(TitleOffset) titleOffset
++ (id)buttonByTitleName:(NSString *)titleName
+              imageName:(NSString *)imageName
+           imageCapSize:(ImageCapSize)imageCapSize
+            titleOffset:(TitleOffset)titleOffset
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
     [btn setTitleName:titleName imageName:imageName imageCapSize:imageCapSize titleOffset:titleOffset];
     return btn;
 }
 
-
-+(id) buttonForNavBackByTitleName:(NSString*) titleName 
-                        imageName:(NSString*) imageName
++ (id)buttonForNavBackByTitleName:(NSString *)titleName
+                        imageName:(NSString *)imageName
 {
     MUAutoresizeButton *btn = [MUAutoresizeButton buttonWithType:UIButtonTypeCustom];
     [btn setTitleName:titleName imageName:imageName imageCapSize:ImageCapSizeNone() titleOffset:TitleOffsetForNavBack()];
     return btn;
 }
 
-
-- (id) initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if( (self = [super initWithCoder:aDecoder]) )
-    {
-        NSString* title = [self titleForState:UIControlStateNormal];
-        UIImage* bgImage = [self backgroundImageForState:UIControlStateNormal];
+    if ((self = [super initWithCoder:aDecoder])) {
+        NSString *title = [self titleForState:UIControlStateNormal];
+        UIImage *bgImage = [self backgroundImageForState:UIControlStateNormal];
 
-        UIFont* font = self.titleLabel.font;
+        UIFont *font = self.titleLabel.font;
         [self setTitleName:title image:bgImage imageCapSize:ImageCapSizeNone() titleOffset:TitleOffsetDefault()];
         [self setupFont:font];
     }
     return self;
 }
 
-
-- (void) setTitleName:(NSString *)titleName 
-            imageName:(NSString *)imageName 
-         imageCapSize:(ImageCapSize)imageCapSize 
-          titleOffset:(TitleOffset)titleOffset
+- (void)setTitleName:(NSString *)titleName
+           imageName:(NSString *)imageName
+        imageCapSize:(ImageCapSize)imageCapSize
+         titleOffset:(TitleOffset)titleOffset
 {
     [self setTitleName:titleName image:[UIImage imageNamed:imageName] imageCapSize:imageCapSize titleOffset:titleOffset];
 }
 
-
-- (void) setTitleName:(NSString*) titleName 
-                image:(UIImage*) image 
-         imageCapSize:(ImageCapSize) imageCapSize 
-          titleOffset:(TitleOffset)titleOffset
+- (void)setTitleName:(NSString *)titleName
+               image:(UIImage *)image
+        imageCapSize:(ImageCapSize)imageCapSize
+         titleOffset:(TitleOffset)titleOffset
 {
     _title = [titleName retain];
     originalBGImage = [image retain];
     _imageCapSize = imageCapSize;
     _titleOffset = titleOffset;
     _maxWidth = 0;
-    
+
     [self setupFont:[UIFont fontWithName:@"HelveticaNeue-Bold" size:12]];
 }
 
-
--(void)setupFont:(UIFont *)font
+- (void)setupFont:(UIFont *)font
 {
     UIImage *image = [self getAutoresizeImageByFont:font];
-    
+
     if (image)
         [self setBackgroundImage:image forState:UIControlStateNormal];
-    
-    if (_title)
-    {
+
+    if (_title) {
         [self setTitle:_title forState:UIControlStateNormal];
         self.titleLabel.font = font;
         self.titleLabel.textColor = [UIColor whiteColor];
-        self.titleLabel.shadowOffset = CGSizeMake(0,-1);
+        self.titleLabel.shadowOffset = CGSizeMake(0, -1);
         self.titleLabel.shadowColor = [UIColor darkGrayColor];
     }
 }
-
 
 - (void)setHighlighted:(BOOL)highlighted
 {
     [super setHighlighted:highlighted];
 }
 
-
-- (UIImage*)getAutoresizeImageByFont:(UIFont*)font
+- (UIImage *)getAutoresizeImageByFont:(UIFont *)font
 {
     UIImage *image = originalBGImage;   //[UIImage imageNamed:_imageName];
     if (!image)
         return nil;
-    
+
     CGSize sizeButton = image.size;
-    
-    if (_title)
-    {
+
+    if (_title) {
         CGSize sizeImage = image.size;
         CGSize sizeTitle = [_title sizeWithFont:font constrainedToSize:CGSizeMake(MAXFLOAT, sizeButton.height)];
 
-        if (sizeTitle.width > sizeImage.width - _titleOffset.leftOffset - _titleOffset.rightOffset)
-        {               
-            self.titleEdgeInsets = UIEdgeInsetsMake(self.titleEdgeInsets.top, 
-                                                    _titleOffset.leftOffset, 
-                                                    self.titleEdgeInsets.bottom, 
-                                                    _titleOffset.rightOffset);
+        if (sizeTitle.width > sizeImage.width - _titleOffset.leftOffset - _titleOffset.rightOffset) {
+            self.titleEdgeInsets = UIEdgeInsetsMake(self.titleEdgeInsets.top,
+                    _titleOffset.leftOffset,
+                    self.titleEdgeInsets.bottom,
+                    _titleOffset.rightOffset);
         }
-        
-        if (_imageCapSize.leftCapHeight >= 0 && _imageCapSize.topCapHeight >= 0) 
+
+        if (_imageCapSize.leftCapHeight >= 0 && _imageCapSize.topCapHeight >= 0)
             image = [image stretchableImageWithLeftCapWidth:_imageCapSize.leftCapHeight topCapHeight:_imageCapSize.topCapHeight];
         else
-            image = [image stretchableImageWithLeftCapWidth:sizeImage.width/2 topCapHeight:sizeImage.height/2];
-        
-        float width = sizeImage.width > sizeTitle.width + _titleOffset.leftOffset + _titleOffset.rightOffset ? sizeImage.width : sizeTitle.width + _titleOffset.leftOffset + _titleOffset.rightOffset;        
+            image = [image stretchableImageWithLeftCapWidth:sizeImage.width / 2 topCapHeight:sizeImage.height / 2];
+
+        float width = sizeImage.width > sizeTitle.width + _titleOffset.leftOffset + _titleOffset.rightOffset ? sizeImage.width : sizeTitle.width + _titleOffset.leftOffset + _titleOffset.rightOffset;
         sizeButton = CGSizeMake(width, image.size.height);
     }
-    
+
     if (_maxWidth > 0 && _maxWidth < sizeButton.width)
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, _maxWidth, sizeButton.height);
     else
@@ -194,46 +174,36 @@
     return image;
 }
 
-
 - (void)setMaxWidth:(int)maxWidth
 {
-    if (maxWidth < self.frame.size.width)
-    {
+    if (maxWidth < self.frame.size.width) {
         _maxWidth = maxWidth;
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, _maxWidth, self.frame.size.height);
     }
 }
 
-
-- (void) setMinWidth:(int)minWidth
+- (void)setMinWidth:(int)minWidth
 {
-    if (minWidth > self.frame.size.width)
-    {
+    if (minWidth > self.frame.size.width) {
         _minWidth = minWidth;
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, _minWidth, self.frame.size.height);
     }
 }
 
-
-- (void) setAutoresizeTitle:(NSString*)aTitle
+- (void)setAutoresizeTitle:(NSString *)aTitle
 {
-	[_title release];
-	_title = [aTitle retain];
+    [_title release];
+    _title = [aTitle retain];
 
     [self setupFont:[UIFont boldSystemFontOfSize:14]];
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [_title release];
     [originalBGImage release];
-    
+
     [super dealloc];
 }
-
-
-
-
 
 @end

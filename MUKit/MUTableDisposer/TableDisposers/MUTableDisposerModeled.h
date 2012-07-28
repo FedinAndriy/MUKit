@@ -12,26 +12,20 @@
 
 @class MUTableDisposerModeled;
 
-
 @protocol MUTableDisposerModeledDelegate <MUTableDisposerDelegate>
 
 @optional
 
-- (void) tableDisposer:(MUTableDisposerModeled*)aTableDisposer didCreateCellData:(MUCellData*)aCellData;
+- (void)tableDisposer:(MUTableDisposerModeled *)aTableDisposer didCreateCellData:(MUCellData *)aCellData;
 
 @end
 
-
-
 @interface MUTableDisposerModeled : MUTableDisposer
-{
-    NSMutableDictionary* registeredClasses;
-}
 
-@property (nonatomic, assign) id<MUTableDisposerModeledDelegate> modeledDelegate;
+@property(nonatomic, assign) id <MUTableDisposerModeledDelegate> modeledDelegate;
 
-- (void) registerCellData:(Class)aCellDataClass forModel:(Class)aModelClass;
-- (void) setupModels:(NSArray*)aModels forSectionAtIndex:(NSUInteger)aSectionIndex;
-- (void) setupModels:(NSArray*)aModels forSection:(MUSectionReadonly*)aSection;
+- (void)registerCellData:(Class)aCellDataClass forModel:(Class)aModelClass;
+- (void)setupModels:(NSArray *)aModels forSectionAtIndex:(NSUInteger)aSectionIndex;
+- (void)setupModels:(NSArray *)aModels forSection:(MUSectionReadonly *)aSection;
 
 @end

@@ -7,35 +7,31 @@
 //
 
 #import "MUCell.h"
-#import "MUCellData.h"
 
 @implementation MUCell
 
 @synthesize cellData;
 
 
-- (void) setupCellData:(MUCellData *)aCellData
+- (void)setupCellData:(MUCellData *)aCellData
 {
-    if(cellData != aCellData)
-    {
+    if (cellData != aCellData) {
         [cellData release];
         cellData = [aCellData retain];
     }
-    
+
     self.selectionStyle = cellData.cellSelectionStyle;
     self.accessoryType = cellData.cellAccessoryType;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [cellData release];
-    
+
     [super dealloc];
 }
 
-
-- (NSArray*) inputTraits
+- (NSArray *)inputTraits
 {
     return nil;
 }

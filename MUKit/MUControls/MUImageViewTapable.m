@@ -9,19 +9,12 @@
 #import "MUImageViewTapable.h"
 
 
-
-
-
 @interface MUImageViewTapable (Private)
 
-- (void) initialize;
-- (void) handleTap:(UITapGestureRecognizer*)aTapRecognizer;
+- (void)initialize;
+- (void)handleTap:(UITapGestureRecognizer *)aTapRecognizer;
 
 @end
-
-
-
-
 
 @implementation MUImageViewTapable
 
@@ -31,72 +24,61 @@
 
 - (id)init
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         [self initialize];
     }
     return self;
 }
 
-
-- (id) initWithCoder:(NSCoder *)aDecoder
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if( (self = [super initWithCoder:aDecoder]) )
-    {
+    if ((self = [super initWithCoder:aDecoder])) {
         [self initialize];
     }
     return self;
 }
 
-
-- (id) initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame
 {
-    if( (self = [super initWithFrame:frame]) )
-    {
+    if ((self = [super initWithFrame:frame])) {
         [self initialize];
     }
     return self;
 }
 
-
-- (void) initialize
+- (void)initialize
 {
     enable = YES;
     targetActions = [NSMutableArray new];
     self.userInteractionEnabled = YES;
-    
-    UITapGestureRecognizer* tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     [self addGestureRecognizer:tapRecognizer];
     [tapRecognizer release];
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [targetActions release];
     [data release];
-    
+
     [super dealloc];
 }
 
-
-- (void) addTarget:(id)aTarget action:(SEL)anAction
+- (void)addTarget:(id)aTarget action:(SEL)anAction
 {
-    MUTargetAction* ta = [MUTargetAction targetActionWithTarget:aTarget action:anAction];
+    MUTargetAction *ta = [MUTargetAction targetActionWithTarget:aTarget action:anAction];
     [targetActions addObject:ta];
 }
 
-
-- (void) handleTap:(UITapGestureRecognizer*)aTapRecognizer
+- (void)handleTap:(UITapGestureRecognizer *)aTapRecognizer
 {
-    if(!enable)
+    if (!enable)
         return;
-    
-    if(aTapRecognizer.state == UIGestureRecognizerStateEnded)
-    {
+
+    if (aTapRecognizer.state == UIGestureRecognizerStateEnded) {
         [targetActions makeObjectsPerformSelector:@selector(sendActionFrom:) withObject:self];
     }
 }
-
 
 @end

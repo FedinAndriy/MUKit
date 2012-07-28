@@ -11,10 +11,10 @@
 
 @implementation MUCellButton
 
-- (void) setupCellData:(MUCellDataButton *)aCellData
+- (void)setupCellData:(MUCellDataButton *)aCellData
 {
     [super setupCellData:aCellData];
-    
+
     self.textLabel.text = aCellData.title;
     self.textLabel.textAlignment = aCellData.titleAlignment;
     self.textLabel.textColor = aCellData.titleColor;

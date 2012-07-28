@@ -9,64 +9,50 @@
 #import "MUTargetAction.h"
 
 
-
-
-
 @implementation MUTargetAction
 
 @synthesize target;
 @synthesize action;
 
 
-+ (id) targetActionWithTarget:(id)aTarget action:(SEL)anAction
++ (id)targetActionWithTarget:(id)aTarget action:(SEL)anAction
 {
     return [[[MUTargetAction alloc] initWithTarget:aTarget action:anAction] autorelease];
 }
 
-
-- (id) initWithTarget:(id)aTarget action:(SEL)anAction
+- (id)initWithTarget:(id)aTarget action:(SEL)anAction
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         [self setTarget:aTarget action:anAction];
     }
     return self;
 }
 
-
-- (void) setTarget:(id)aTarget action:(SEL)anAction
+- (void)setTarget:(id)aTarget action:(SEL)anAction
 {
     target = aTarget;
     action = anAction;
 }
 
-
-- (void) sendActionFrom:(NSObject*)aSender
+- (void)sendActionFrom:(NSObject *)aSender
 {
-    if(target && [target respondsToSelector:action])
-    {
+    if (target && [target respondsToSelector:action]) {
         [target performSelector:action withObject:aSender];
     }
 }
 
 @end
 
-
-
-
-
 @implementation MUTargetActionList
 
 
-- (id) init
+- (id)init
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         taList = [NSMutableArray new];
     }
     return self;
 }
-
 
 - (void)dealloc
 {
@@ -74,17 +60,14 @@
     [super dealloc];
 }
 
-
-- (void) addTarget:(id)aTarget action:(SEL)anAction
+- (void)addTarget:(id)aTarget action:(SEL)anAction
 {
     [taList addObject:[MUTargetAction targetActionWithTarget:aTarget action:anAction]];
 }
 
-
-- (void) sendActionsFrom:(NSObject*)aSender
+- (void)sendActionsFrom:(NSObject *)aSender
 {
-    for(MUTargetAction* ta in taList)
-    {
+    for (MUTargetAction *ta in taList) {
         [ta sendActionFrom:aSender];
     }
 }

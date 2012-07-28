@@ -11,11 +11,11 @@
 
 @interface MUPopoverViewController : UIViewController
 {
-    MUPopupView* popupedView;
+    MUPopupView *popupedView;
 }
 
-@property (nonatomic, assign) UIPopoverController* popoverOwner;
+@property(nonatomic, assign) UIPopoverController *popoverOwner;
 
-- (id) initWithPopupView:(MUPopupView*)aPopupedView;
+- (id)initWithPopupView:(MUPopupView *)aPopupedView;
 
 @end

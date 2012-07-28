@@ -10,8 +10,8 @@
 
 @interface MUCreditCardNumberFormatter : NSObject
 
-- (BOOL) cardFormatForTextField:(UITextField *)textField 
-  shouldChangeCharactersInRange:(NSRange)range 
-              replacementString:(NSString *)string 
-                separatorString:(NSString *)separatorString;
+- (BOOL)cardFormatForTextField:(UITextField *)textField
+ shouldChangeCharactersInRange:(NSRange)range
+             replacementString:(NSString *)string
+               separatorString:(NSString *)separatorString;
 @end

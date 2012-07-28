@@ -12,14 +12,13 @@
 
 #pragma mark - override next methods to customize:
 
-- (UIView*) createPicker
+- (UIView *)createPicker
 {
 //    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectZero] autorelease];
-    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 320, 216)] autorelease];
+    UIDatePicker *pv = [[[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 320, 216)] autorelease];
     pv.datePickerMode = UIDatePickerModeDateAndTime;
-    
+
     return pv;
 }
-
 
 @end

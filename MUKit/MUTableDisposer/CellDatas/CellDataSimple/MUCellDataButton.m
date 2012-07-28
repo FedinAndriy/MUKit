@@ -21,13 +21,12 @@
 
 #pragma mark - Init/Dealloc
 
-- (id) init
+- (id)init
 {
     self = [super init];
-    if(self)
-    {
+    if (self) {
         self.cellClass = [MUCellButton class];
-        
+
         titleAlignment = UITextAlignmentLeft;
         titleFont = [UIFont systemFontOfSize:18];
         titleColor = [UIColor blackColor];
@@ -36,19 +35,18 @@
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [title release];
     [titleColor release];
     [targetAction release];
-    
+
     [super dealloc];
 }
 
 #pragma mark - Target/Action
 
-- (void) setTarget:(id)aTarget action:(SEL)anAction
+- (void)setTarget:(id)aTarget action:(SEL)anAction
 {
     [targetAction setTarget:aTarget action:anAction];
     [self addCellSelectedTarget:targetAction.target action:targetAction.action];

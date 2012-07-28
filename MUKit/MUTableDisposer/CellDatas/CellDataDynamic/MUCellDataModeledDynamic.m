@@ -9,52 +9,41 @@
 #import "MUCellDataModeledDynamic.h"
 
 
-MUCellIndent MUCellIndentMake(float left, float top, float right, float botton)
-{
+MUCellIndent MUCellIndentMake(float left, float top, float right, float bottom) {
     MUCellIndent cellIndent;
     cellIndent.left = left;
     cellIndent.top = top;
     cellIndent.right = right;
-    cellIndent.botton = botton;
+    cellIndent.bottom = bottom;
     return cellIndent;
 }
 
-
-
-
-
 @implementation MUCellDataModeledDynamic
 
-
-- (id) initWithModel:(id)aModel
+- (id)initWithModel:(id)aModel
 {
     self = [super initWithModel:aModel];
-    if (self)
-    {
+    if (self) {
         cellIndent = [self setupCellIndent];
     }
     return self;
 }
 
-
-- (MUCellIndent) setupCellIndent
+- (MUCellIndent)setupCellIndent
 {
     return MUCellIndentMake(5, 5, 20, 5);
 }
 
-
-- (float) cellHeightForWidth:(CGFloat)aWidth
+- (float)cellHeightForWidth:(CGFloat)aWidth
 {
-    if ((int)aWidth != currentCellWidth)
-    {
-        currentCellWidth = (int)aWidth;
+    if ((int) aWidth != currentCellWidth) {
+        currentCellWidth = (int) aWidth;
         currentCellHeight = [self recalculateCellHeight];
     }
     return currentCellHeight;
 }
 
-
-- (float) recalculateCellHeight
+- (float)recalculateCellHeight
 {
     return 44.f;
 }

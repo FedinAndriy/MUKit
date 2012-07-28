@@ -1,5 +1,5 @@
 //
-//  MUTableDisposerMaped.h
+//  MUTableDisposerMapped.hh
 //  MUKitTest
 //
 //  Created by Malaar on 30.03.12.
@@ -8,9 +8,9 @@
 
 #import "MUTableDisposer.h"
 
-@interface MUTableDisposerMaped : MUTableDisposer
+@interface MUTableDisposerMapped : MUTableDisposer
 
-- (void) mapFromObject;
-- (void) mapToObject;
+- (void)mapFromObject;
+- (void)mapToObject;
 
 @end

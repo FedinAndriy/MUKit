@@ -13,15 +13,15 @@
 
 @interface MUKeyboardAvoidingTableView : UITableView <MUKeyboardAvoidingProtocol, MUKeyboardToolbarProtocol>
 {
-    UIEdgeInsets    _priorInset;
-    BOOL            _keyboardVisible;
-    CGRect          _keyboardRect;
+    UIEdgeInsets _priorInset;
+    BOOL _keyboardVisible;
+    CGRect _keyboardRect;
     NSMutableArray *_objectsInKeyboard;
-    
-    NSUInteger _selectIndexInputField;    
+
+    NSUInteger _selectIndexInputField;
     MUKeyboardToolbar *keyboardToolbar;
 }
 
-- (void) removeAllObjectForKeyboard;
+- (void)removeAllObjectForKeyboard;
 
 @end

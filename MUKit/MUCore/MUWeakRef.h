@@ -12,29 +12,22 @@
 
 @class MUWeakRef;
 
-
-
-
 @protocol MUWeakRefProtocol <NSObject>
 
-- (MUWeakRef*) weakReference;
+- (MUWeakRef *)weakReference;
 
 @end
 
-
-
-
-
 @interface MUWeakRef : NSObject
 {
-	@private
-	NSObject<MUWeakRefProtocol>* object;
+@private
+    NSObject <MUWeakRefProtocol> *object;
 }
 
-@property (readonly) NSObject<MUWeakRefProtocol>* object;
+@property(readonly) NSObject <MUWeakRefProtocol> *object;
 
-- (id) initWithObject:(NSObject<MUWeakRefProtocol>*) aObject;
-- (void) invalidate;
+- (id)initWithObject:(NSObject <MUWeakRefProtocol> *)aObject;
+- (void)invalidate;
 
 @end
 

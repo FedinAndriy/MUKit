@@ -6,21 +6,15 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 #import "MUValidationGroup.h"
 #import "MUValidator.h"
 
 
-
-
 @interface MUValidationGroup (Private)
 
-- (void) showInvalidViewForField:(UITextField*)aTextField;
+- (void)showInvalidViewForField:(UITextField *)aTextField;
 
 @end
-
-
-
 
 @implementation MUValidationGroup
 
@@ -29,94 +23,78 @@
 
 #pragma mark - init/dealloc
 
-- (id) init
+- (id)init
 {
-	NSAssert(NO, @"Can't use this method !!!");	[self release];
-	return nil;
+    NSAssert(NO, @"Can't use this method !!!");
+    [self release];
+    return nil;
 }
 
-
-- (id) initWithValidators:(NSArray *)aValidators
+- (id)initWithValidators:(NSArray *)aValidators
 {
-	if( (self = [super init]) )
-	{
-		validators = [aValidators copy];
+    if ((self = [super init])) {
+        validators = [aValidators copy];
     }
-	
-	return self;
+
+    return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
-	[validators release];
+    [validators release];
     [invalidIndicatorImage release];
-	
-	[super dealloc];
+
+    [super dealloc];
 }
 
 #pragma mark - validation
 
-- (NSArray*) validate
+- (NSArray *)validate
 {
     [self hideInvalidIndicators];
-    NSMutableArray* result = [NSMutableArray array];    
-    NSMutableArray* validationResults = [NSMutableArray array];
-    
-    for (MUValidator *validator in validators)
-    {
-        [validationResults addObject: [NSNumber numberWithBool:[validator validate]]];
+    NSMutableArray *result = [NSMutableArray array];
+    NSMutableArray *validationResults = [NSMutableArray array];
+
+    for (MUValidator *validator in validators) {
+        [validationResults addObject:[NSNumber numberWithBool:[validator validate]]];
     }
-    
+
     // to castom proccess any links between validatable vields
-    if(delegate)
-    {
+    if (delegate) {
         [delegate proccessValidationResults:validationResults];
-    }    
-    
-    if ([validators count] == [validationResults count]) 
-    {
+    }
+
+    if ([validators count] == [validationResults count]) {
         MUValidator *validator = nil;
-        for(int i = 0; i < [validationResults count]; ++i)
-        {
+        for (int i = 0; i < [validationResults count]; ++i) {
             validator = [validators objectAtIndex:i];
-            if( ![[validationResults objectAtIndex:i] boolValue] )
-            {
+            if (![[validationResults objectAtIndex:i] boolValue]) {
                 [result addObject:validator.validatableObject];
-                if ([validator.validatableObject isKindOfClass:[UITextField class]])
-                {
-                    [self showInvalidViewForField:(UITextField*)validator.validatableObject];
+                if ([validator.validatableObject isKindOfClass:[UITextField class]]) {
+                    [self showInvalidViewForField:(UITextField *) validator.validatableObject];
                 }
             }
         }
     }
-    else
-    {
+    else {
         NSAssert(nil, @"MUKit(MUValidationGroup): [textFields count] != [validationResults count]");
     }
-    
+
     return result;
 }
 
-
-- (void) showInvalidViewForField:(UITextField*)aTextField
+- (void)showInvalidViewForField:(UITextField *)aTextField
 {
-    aTextField.rightView = [[[UIImageView alloc] initWithImage: invalidIndicatorImage] autorelease];
+    aTextField.rightView = [[[UIImageView alloc] initWithImage:invalidIndicatorImage] autorelease];
     aTextField.rightViewMode = UITextFieldViewModeAlways;
 }
 
-
-- (void) hideInvalidIndicators
+- (void)hideInvalidIndicators
 {
-    for(MUValidator *object in validators)
-    {
-        if( [object.validatableObject isKindOfClass:[UITextField class]] )
-            [(UITextField*)object.validatableObject setRightView:nil];
+    for (MUValidator *object in validators) {
+        if ([object.validatableObject isKindOfClass:[UITextField class]])
+            [(UITextField *) object.validatableObject setRightView:nil];
     }
 }
-
-
-
-
 
 @end

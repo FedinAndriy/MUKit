@@ -7,7 +7,6 @@
 //
 
 #import "MUProgressView.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation MUProgressView
 
@@ -19,40 +18,36 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
-    if (self) 
-    {
+    if (self) {
         [self setup];
     }
     return self;
 }
-
 
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         [self setup];
     }
     return self;
 }
 
-
-- (void) setup
+- (void)setup
 {
     self.backgroundColor = [UIColor clearColor];
-    
+
     trackView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     trackView.contentMode = UIViewContentModeScaleAspectFill;
     trackView.clipsToBounds = YES;
     trackView.backgroundColor = [UIColor clearColor];
     trackView.image = [self trackImage];
     [self addSubview:trackView];
-    
-    progressView = [[UIImageView alloc] initWithFrame:CGRectMake([self offsetProgressView], 
-                                                                 [self offsetProgressView], 
-                                                                 0, 
-                                                                 self.frame.size.height - [self offsetProgressView])];
+
+    progressView = [[UIImageView alloc] initWithFrame:CGRectMake([self offsetProgressView],
+            [self offsetProgressView],
+            0,
+            self.frame.size.height - [self offsetProgressView])];
     progressView.contentMode = UIViewContentModeScaleAspectFill;
     progressView.clipsToBounds = YES;
     progressView.backgroundColor = [self progressColor];
@@ -60,14 +55,12 @@
     [self addSubview:progressView];
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [progressView release];
     [trackView release];
     [super dealloc];
 }
-
 
 - (void)layoutSubviews
 {
@@ -83,30 +76,25 @@
     return 1;
 }
 
-
 - (CGColorRef)borderColor
 {
     return [[UIColor lightGrayColor] CGColor];
 }
-
 
 - (float)offsetProgressView
 {
     return 1.f;
 }
 
-
 - (UIColor *)progressColor
 {
     return [UIColor clearColor];
 }
 
-
 - (UIImage *)progressImage
 {
     return nil;
 }
-
 
 - (UIImage *)trackImage
 {
@@ -115,23 +103,20 @@
 
 #pragma mark - Setter Methods
 
-- (void) setProgressColor:(UIColor *)progressColor
+- (void)setProgressColor:(UIColor *)progressColor
 {
     progressView.backgroundColor = progressColor;
 }
-
 
 - (void)setProgressImage:(UIImage *)progressImage
 {
     progressView.image = progressImage;
 }
 
-
 - (void)setTrackImage:(UIImage *)trackImage
 {
     trackView.image = trackImage;
 }
-
 
 - (void)setCornerRadius:(float)aCornerRadius
 {
@@ -143,33 +128,28 @@
     trackView.layer.cornerRadius = cornerRadius;
 }
 
-
-- (void) setProgress:(float)aProgress
+- (void)setProgress:(float)aProgress
 {
     [self setProgress:aProgress animated:NO];
 }
 
-
-- (void) setProgress:(float)aProgress animated:(BOOL)animated
+- (void)setProgress:(float)aProgress animated:(BOOL)animated
 {
     progress = aProgress;
-    CGRect frame = CGRectMake([self offsetProgressView], 
-                              [self offsetProgressView], 
-                              0, 
-                              self.frame.size.height - 2*[self offsetProgressView]);
-    
-    if (progress >= 1.f)
-    {
-        progress = 1.f;    
-        frame.size.width = self.frame.size.width - 2*[self offsetProgressView];
+    CGRect frame = CGRectMake([self offsetProgressView],
+            [self offsetProgressView],
+            0,
+            self.frame.size.height - 2 * [self offsetProgressView]);
+
+    if (progress >= 1.f) {
+        progress = 1.f;
+        frame.size.width = self.frame.size.width - 2 * [self offsetProgressView];
     }
-    else if (progress > 0.f && progress < 1.f) 
-    {
-        frame.size.width = (self.frame.size.width - 2*[self offsetProgressView]) * progress;
+    else if (progress > 0.f && progress < 1.f) {
+        frame.size.width = (self.frame.size.width - 2 * [self offsetProgressView]) * progress;
     }
 
-    [UIView animateWithDuration:(animated)?(0.3):(0) animations:^
-    {
+    [UIView animateWithDuration:(animated) ? (0.3) : (0) animations:^{
         progressView.frame = frame;
     }];
 }

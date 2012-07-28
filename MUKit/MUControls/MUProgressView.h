@@ -14,14 +14,14 @@
     UIImageView *trackView;
 }
 
-@property (nonatomic, assign) float cornerRadius;
-@property (nonatomic, assign) float progress;
+@property(nonatomic, assign) float cornerRadius;
+@property(nonatomic, assign) float progress;
 
-- (void) setup;
-- (void) setProgressColor:(UIColor *)progressColor;
-- (void) setProgressImage:(UIImage *)progressImage;
-- (void) setTrackImage:(UIImage *)trackImage;
-- (void) setProgress:(float)progress animated:(BOOL)animated;
+- (void)setup;
+- (void)setProgressColor:(UIColor *)progressColor;
+- (void)setProgressImage:(UIImage *)progressImage;
+- (void)setTrackImage:(UIImage *)trackImage;
+- (void)setProgress:(float)progress animated:(BOOL)animated;
 
 //use of the derived-class
 - (float)borderWidth;

@@ -17,16 +17,14 @@
 
 #pragma mark - Init/Dealloc
 
-+ (id) checkableDataWithDataSource:(NSArray*)aDataSource selectedIndex:(NSInteger)aSelectedIndex titleKey:(NSString*)aTitleKey
++ (id)checkableDataWithDataSource:(NSArray *)aDataSource selectedIndex:(NSInteger)aSelectedIndex titleKey:(NSString *)aTitleKey
 {
     return [[[MUCheckableData alloc] initWithDataSource:aDataSource selectedIndex:aSelectedIndex titleKey:aTitleKey] autorelease];
 }
 
-
-- (id) initWithDataSource:(NSArray*)aDataSource selectedIndex:(NSInteger)aSelectedIndex titleKey:(NSString*)aTitleKey
+- (id)initWithDataSource:(NSArray *)aDataSource selectedIndex:(NSInteger)aSelectedIndex titleKey:(NSString *)aTitleKey
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         titleKey = [aTitleKey retain];
         selectedIndex = aSelectedIndex;
         self.dataSource = aDataSource;
@@ -34,57 +32,44 @@
     return self;
 }
 
-
-- (id) init
+- (id)init
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         selectedIndex = -1;
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [titleKey release];
     [dataSource release];
-    
+
     [super dealloc];
 }
 
-
-- (NSString*) titleAtIndex:(NSInteger)anIndex
+- (NSString *)titleAtIndex:(NSInteger)anIndex
 {
     MU_CHECK_INDEX(anIndex, 0, [dataSource count]);
     return [[dataSource objectAtIndex:anIndex] valueForKeyPath:titleKey];
 }
 
-
-- (NSObject*) selectedObject
+- (NSObject *)selectedObject
 {
-    NSObject* result = nil;
-    if(selectedIndex >= 0 && selectedIndex < [dataSource count])
-        result = [dataSource objectAtIndex: selectedIndex];
-    
+    NSObject *result = nil;
+    if (selectedIndex >= 0 && selectedIndex < [dataSource count])
+        result = [dataSource objectAtIndex:selectedIndex];
+
     return result;
 }
 
 @end
 
-
-
-
-
 @interface MUCheckableTableController ()
 
-- (void) selectionCompleted;
+- (void)selectionCompleted;
 
 @end
-
-
-
-
 
 @implementation MUCheckableTableController
 
@@ -94,66 +79,58 @@
 
 #pragma mark - Init/Dealloc
 
-- (id) initWithCheckableData:(MUCheckableData*) aCheckableData title:(NSString*)aTitle
+- (id)initWithCheckableData:(MUCheckableData *)aCheckableData title:(NSString *)aTitle
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         selectedIndex = aCheckableData.selectedIndex;
         dataSource = [[NSMutableArray arrayWithArray:aCheckableData.dataSource] retain];
         checkableData = [aCheckableData retain];
 
         self.navigationItem.title = aTitle;
     }
-    
+
     return self;
 }
 
-
-- (id) init
+- (id)init
 {
     [self release];
     return nil;
 }
 
-
 - (void)dealloc
 {
     [checkableData release];
-    
+
     [super dealloc];
 }
 
-
-- (UIBarButtonItem*) createLeftNavButton
+- (UIBarButtonItem *)createLeftNavButton
 {
-    UIBarButtonItem *bbi = nil; 
+    UIBarButtonItem *bbi = nil;
     if (self.showCancelButton)
         bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemCancel) target:nil action:nil] autorelease];
     return bbi;
 }
 
-
-- (UIBarButtonItem*) createRightNavButton
+- (UIBarButtonItem *)createRightNavButton
 {
-    UIBarButtonItem *bbi = nil; 
-    if(multipleSelection || !closeWhenSelected)
+    UIBarButtonItem *bbi = nil;
+    if (multipleSelection || !closeWhenSelected)
         bbi = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemDone) target:nil action:nil] autorelease];
     return bbi;
 }
 
-
-- (void) leftNavButtonPressed:(id)aSender
+- (void)leftNavButtonPressed:(id)aSender
 {
     [self dismissModalViewControllerAnimated:YES];
-    if([delegate respondsToSelector:@selector(didCanceledCheckableTableController:)])
+    if ([delegate respondsToSelector:@selector(didCanceledCheckableTableController:)])
         [delegate didCanceledCheckableTableController:self];
 }
 
-
-- (void) rightNavButtonPressed:(id)aSender
+- (void)rightNavButtonPressed:(id)aSender
 {
-    if(selectedIndex != -1)
-    {
+    if (selectedIndex != -1) {
         // apply changes at selectedIndex
         [self selectionCompleted];
     }
@@ -166,51 +143,45 @@
     return [dataSource count];
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // cell
-    static NSString* cellIdentifier = @"FilterCell";
-    UITableViewCell* cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if(!cell)
-    {
+    static NSString *cellIdentifier = @"FilterCell";
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
         cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     }
 
     // select
-    if(selectedIndex == [indexPath row])
-    {
+    if (selectedIndex == [indexPath row]) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         prevSelectedCell = cell;
     }
     else
         cell.accessoryType = UITableViewCellAccessoryNone;
-    
+
     // title
     cell.textLabel.text = [checkableData titleAtIndex:indexPath.row];
-    
+
     return cell;
 }
 
-
-- (void) tableView:(UITableView*)aTableView didSelectRowAtIndexPath:indexPath
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:indexPath
 {
-	[aTableView deselectRowAtIndexPath:indexPath animated:YES];
+    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    if(selectedIndex != [indexPath row])
-    {
+    if (selectedIndex != [indexPath row]) {
         selectedIndex = [indexPath row];
-        UITableViewCell* cell = [aTableView cellForRowAtIndexPath:indexPath];
+        UITableViewCell *cell = [aTableView cellForRowAtIndexPath:indexPath];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
 
         prevSelectedCell.accessoryType = UITableViewCellAccessoryNone;
         prevSelectedCell = cell;
     }
 
-    if(!multipleSelection && closeWhenSelected)
-    {
+    if (!multipleSelection && closeWhenSelected) {
         [self performSelector:@selector(selectionCompleted) withObject:nil afterDelay:0.3];
     }
 }
@@ -221,14 +192,11 @@
 //}
 
 
-- (void) selectionCompleted
+- (void)selectionCompleted
 {
     checkableData.selectedIndex = selectedIndex;
     [self dismissModalViewControllerAnimated:YES];
     [delegate checkableTableController:self completeSelectionWithCheckableData:checkableData];
 }
-
-
-
 
 @end

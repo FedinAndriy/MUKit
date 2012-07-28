@@ -15,11 +15,11 @@
 
 @interface MUTextField : UITextField <MUValidationProtocol, UITextFieldDelegate, MUKeyboardAvoiderProtocol>
 {
-    MUValidator* validator;
-    MUTextField_Holder* delegateHolder;
+    MUValidator *validator;
+    MUTextField_Holder *delegateHolder;
 }
 
-@property (nonatomic, assign) id<UITextFieldDelegate> mudelegate;
-@property (nonatomic, retain) MUFilter *filter;
+@property(nonatomic, assign) id <UITextFieldDelegate> mudelegate;
+@property(nonatomic, retain) MUFilter *filter;
 
 @end

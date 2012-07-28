@@ -10,29 +10,22 @@
 #import "MUWeakRef.h"
 
 
-
-
-
 @interface MUPair : NSObject
 {
-    
+
 }
 
-@property (nonatomic, retain) NSObject* first;
-@property (nonatomic, retain) NSObject* second;
+@property(nonatomic, retain) NSObject *first;
+@property(nonatomic, retain) NSObject *second;
 
-+ (id) pairWithFirst:(NSObject*)aFirst second:(NSObject*)aSecond;
-- (id) initWithFirst:(NSObject*)aFirst second:(NSObject*)aSecond;
++ (id)pairWithFirst:(NSObject *)aFirst second:(NSObject *)aSecond;
+- (id)initWithFirst:(NSObject *)aFirst second:(NSObject *)aSecond;
 
 @end
 
-
-
-
-
 @interface NSArray (MUPair)
 
-- (MUPair*) pairByFirst:(NSObject*)aFirst;
-- (MUPair*) pairBySecond:(NSObject*)aSecond;
+- (MUPair *)pairByFirst:(NSObject *)aFirst;
+- (MUPair *)pairBySecond:(NSObject *)aSecond;
 
 @end

@@ -12,8 +12,8 @@
 
 @synthesize isExecution;
 
-//==============================================================================
-- (void) executeWithCallback:(MUCommandCallback)aCallback
+
+- (void)executeWithCallback:(MUCommandCallback)aCallback
 {
     NSAssert(NO, @"You need override this method!");
 }

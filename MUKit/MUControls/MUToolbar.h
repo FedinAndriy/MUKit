@@ -9,17 +9,14 @@
 #import <Foundation/Foundation.h>
 
 
-
-
 ///
 @interface MUToolbar : UIToolbar
 {
-    UIImage* bgImage;
+    UIImage *bgImage;
     BOOL drawColor;
 }
 
-@property (nonatomic, retain) UIImage* backgroundImage;
-@property (nonatomic, assign) BOOL drawColor;
-
+@property(nonatomic, retain) UIImage *backgroundImage;
+@property(nonatomic, assign) BOOL drawColor;
 
 @end

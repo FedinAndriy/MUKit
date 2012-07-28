@@ -9,43 +9,32 @@
 #import "MUWeakRef.h"
 
 
-
-
-
 @implementation MUWeakRef
 
 @dynamic object;
 
 
-- (id) initWithObject:(NSObject<MUWeakRefProtocol>*) aObject
+- (id)initWithObject:(NSObject <MUWeakRefProtocol> *)aObject
 {
-	if( (self = [super init]) )
-	{
-		object = aObject;	// weak ref
-	}
-	
-	return self;
+    if ((self = [super init])) {
+        object = aObject;    // weak ref
+    }
+
+    return self;
 }
 
-
-- (void) invalidate
+- (void)invalidate
 {
-	@synchronized(self)
-	{
-		object = nil;
-	}
+    @synchronized (self) {
+        object = nil;
+    }
 }
 
-
-- (NSObject<MUWeakRefProtocol>*) object
+- (NSObject <MUWeakRefProtocol> *)object
 {
-	@synchronized(self)
-	{
-		return [[object retain] autorelease];
-	}
+    @synchronized (self) {
+        return [[object retain] autorelease];
+    }
 }
-
-
-
 
 @end

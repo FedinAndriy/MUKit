@@ -11,14 +11,13 @@
 @implementation MUTextViewAutosize
 
 
-- (void) setText:(NSString *)aText
+- (void)setText:(NSString *)aText
 {
     [super setText:aText];
     [self adjustSizeToContent];
 }
 
-
-- (void) adjustSizeToContent
+- (void)adjustSizeToContent
 {
     CGRect frame = self.frame;
     frame.size.height = self.contentSize.height;

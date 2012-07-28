@@ -19,12 +19,12 @@
     MUCommandCallback callback;
 }
 
-@property (nonatomic, assign) NSInteger repeatCount;
-@property (nonatomic, readonly) NSInteger currentRepetitionIndex;
+@property(nonatomic, assign) NSInteger repeatCount;
+@property(nonatomic, readonly) NSInteger currentRepetitionIndex;
 
 //- (void) repeatTask:(MURepeatedTaskCallback)repeatedTaskCallback;               ///< in your subclasses override this method, not 'executeWithCallback'
-- (void) repeatTask;               ///< in your subclasses override this method, not 'executeWithCallback'
+- (void)repeatTask;               ///< in your subclasses override this method, not 'executeWithCallback'
 
-- (void) taskCompletedNeedRepeat:(BOOL)aNeedRepeat result:(BOOL)aTaskSuccess;
+- (void)taskCompletedNeedRepeat:(BOOL)aNeedRepeat result:(BOOL)aTaskSuccess;
 
 @end

@@ -11,15 +11,12 @@
 
 
 @interface MUTableDisposerRequested : MUTableDisposerModeled
-{
-    NSMutableDictionary* requests;
-}
 
-- (void) designateRequest:(id)aRequest forSectionAtIndex:(NSUInteger)aSectionIndex;
-- (void) designateRequest:(id)aRequest forSection:(MUSectionReadonly*)aSection;
+- (void)designateRequest:(id)aRequest forSectionAtIndex:(NSUInteger)aSectionIndex;
+- (void)designateRequest:(id)aRequest forSection:(MUSectionReadonly *)aSection;
 
-- (void) reloadDataForSectionAtIndex:(NSUInteger)aSectionIndex;
-- (void) reloadDataForSection:(MUSectionReadonly*)aSection;
-- (void) reloadDataForAllSections;
+- (void)reloadDataForSectionAtIndex:(NSUInteger)aSectionIndex;
+- (void)reloadDataForSection:(MUSectionReadonly *)aSection;
+- (void)reloadDataForAllSections;
 
 @end

@@ -10,9 +10,9 @@
 
 @interface MUCommandRepeatCommand : MUCommand
 
-@property (nonatomic, readonly) MUCommand* command;
+@property(nonatomic, readonly) MUCommand *command;
 
-- (id) commandWithCommand:(MUCommand*)aCommand;
-- (id) initWithCommand:(MUCommand*)aCommand;
+- (id)commandWithCommand:(MUCommand *)aCommand;
+- (id)initWithCommand:(MUCommand *)aCommand;
 
 @end

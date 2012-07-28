@@ -10,36 +10,30 @@
 
 @class MUStackedView;
 
-
-
 @protocol MUStackedViewDelegate <NSObject>
 
 @optional
-- (void) stackedView:(MUStackedView*)aStackedView willChangeFromIndex:(NSUInteger)aFromIndex toIndex:(NSUInteger)aToIndex;
-- (void) stackedView:(MUStackedView*)aStackedView didChangedFromIndex:(NSUInteger)aFromIndex toIndex:(NSUInteger)aToIndex;
+- (void)stackedView:(MUStackedView *)aStackedView willChangeFromIndex:(NSUInteger)aFromIndex toIndex:(NSUInteger)aToIndex;
+- (void)stackedView:(MUStackedView *)aStackedView didChangedFromIndex:(NSUInteger)aFromIndex toIndex:(NSUInteger)aToIndex;
 
 @end
 
-
-
-
-
 @interface MUStackedView : UIView
 {
-    NSMutableArray* stackedSubviews;
-    UIView* currentView;
-    id<MUStackedViewDelegate> delegate;
+    NSMutableArray *stackedSubviews;
+    UIView *currentView;
+    id <MUStackedViewDelegate> delegate;
 }
 
-@property (nonatomic, assign) id<MUStackedViewDelegate> delegate;
-@property (nonatomic, assign) NSUInteger currentIndex;
-@property (nonatomic, assign) UIView* currentStackedSubview;
-@property (nonatomic, readonly) NSUInteger countStackedSubviews;
+@property(nonatomic, assign) id <MUStackedViewDelegate> delegate;
+@property(nonatomic, assign) NSUInteger currentIndex;
+@property(nonatomic, assign) UIView *currentStackedSubview;
+@property(nonatomic, readonly) NSUInteger countStackedSubviews;
 
-- (void) addStackedSubview:(UIView *)aView;
-- (void) insertStackedSubview:(UIView *)aView atIndex:(NSUInteger)aIndex;
-- (void) removeStackedSubviewAtIndex:(NSUInteger)aIndex;
-- (void) removeStackedSubview:(UIView *)aView;
-- (void) removeAllStackedSubviews;
+- (void)addStackedSubview:(UIView *)aView;
+- (void)insertStackedSubview:(UIView *)aView atIndex:(NSUInteger)aIndex;
+- (void)removeStackedSubviewAtIndex:(NSUInteger)aIndex;
+- (void)removeStackedSubview:(UIView *)aView;
+- (void)removeAllStackedSubviews;
 
 @end

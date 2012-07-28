@@ -12,17 +12,16 @@
 
 @protocol MUSwitchControllerDelegate <NSObject>
 
-- (BOOL) switchController:(MUSwitchController*)aSwitchController shouldSwitchToController:(UIViewController*)aController;
-- (void) switchController:(MUSwitchController*)aSwitchController willSwitchToController:(UIViewController*)aController;
-- (void) switchController:(MUSwitchController*)aSwitchController didSwitchToController:(UIViewController*)aController;
+- (BOOL)switchController:(MUSwitchController *)aSwitchController shouldSwitchToController:(UIViewController *)aController;
+- (void)switchController:(MUSwitchController *)aSwitchController willSwitchToController:(UIViewController *)aController;
+- (void)switchController:(MUSwitchController *)aSwitchController didSwitchToController:(UIViewController *)aController;
 
 @end
 
-
 @interface MUSwitchController : UINavigationController
 
-@property (nonatomic, assign) id<MUSwitchControllerDelegate> switchDelegate;
+@property(nonatomic, assign) id <MUSwitchControllerDelegate> switchDelegate;
 
-- (void) switchToController:(UIViewController*)aController animated:(BOOL)anAnimate;
+- (void)switchToController:(UIViewController *)aController animated:(BOOL)anAnimate;
 
 @end

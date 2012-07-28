@@ -14,6 +14,6 @@
     UILabel *titleLabel;
 }
 
-@property (nonatomic, readonly ) MUTextField *textField;
+@property(nonatomic, readonly) MUTextField *textField;
 
 @end

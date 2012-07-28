@@ -10,12 +10,12 @@
 
 @interface MUCellDataTextPair : MUCellDataMaped
 
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) UIColor *titleColor;
-@property (nonatomic, assign) UIFont *titleFont;
+@property(nonatomic, retain) NSString *title;
+@property(nonatomic, retain) UIColor *titleColor;
+@property(nonatomic, assign) UIFont *titleFont;
 
-@property (nonatomic, retain) NSString *text;
-@property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic, assign) UIFont *textFont;
+@property(nonatomic, retain) NSString *text;
+@property(nonatomic, retain) UIColor *textColor;
+@property(nonatomic, assign) UIFont *textFont;
 
 @end

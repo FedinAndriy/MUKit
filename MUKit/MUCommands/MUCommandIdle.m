@@ -9,48 +9,47 @@
 #import "MUCommandIdle.h"
 #import "MULogger.h"
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @interface MUCommandIdle (Private)
 
-- (void) idleTimeCompleted:(NSTimeInterval)aTimeInterval;
+- (void)idleTimeCompleted:(NSTimeInterval)aTimeInterval;
 
 @end
 
-//==============================================================================
-//==============================================================================
-//==============================================================================
+
+
+
 @implementation MUCommandIdle
 
 @synthesize idleTime;
 
-//==============================================================================
-+ (id) commandWithIdleTime:(NSTimeInterval) anIdleTime
+
++ (id)commandWithIdleTime:(NSTimeInterval)anIdleTime
 {
     return [[[MUCommandIdle alloc] initWithIdleTime:anIdleTime] autorelease];
 }
 
-//==============================================================================
-- (id) initWithIdleTime:(NSTimeInterval) anIdleTime
+
+- (id)initWithIdleTime:(NSTimeInterval)anIdleTime
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         idleTime = anIdleTime;
     }
     return self;
 }
 
-//==============================================================================
-- (void) dealloc
+
+- (void)dealloc
 {
     [callback release];
-    
+
     [super dealloc];
 }
 
-//==============================================================================
-- (void) executeWithCallback:(MUCommandCallback)aCallback
+
+- (void)executeWithCallback:(MUCommandCallback)aCallback
 {
     [callback release];
     callback = [aCallback copy];
@@ -60,8 +59,8 @@
     [NSTimer scheduledTimerWithTimeInterval:idleTime target:self selector:@selector(idleTimeCompleted:) userInfo:nil repeats:NO];
 }
 
-//==============================================================================
-- (void) idleTimeCompleted:(NSTimeInterval)aTimeInterval
+
+- (void)idleTimeCompleted:(NSTimeInterval)aTimeInterval
 {
     MULogInfo(@"MUCommandIdle end.");
 

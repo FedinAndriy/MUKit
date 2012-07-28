@@ -15,47 +15,38 @@
 
 #pragma mark - override next methods to customize:
 
-- (UIView*) createPicker
+- (UIView *)createPicker
 {
 //    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectZero] autorelease];
-    UIDatePicker* pv = [[[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 320, 216)] autorelease];
+    UIDatePicker *pv = [[[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 320, 216)] autorelease];
     pv.datePickerMode = UIDatePickerModeDate;
-    
+
     return pv;
 }
 
-
-- (UIDatePicker*) popupedPicker
+- (UIDatePicker *)popupedPicker
 {
-    return (UIDatePicker*)self->picker;
+    return (UIDatePicker *) self->picker;
 }
 
-
-- (NSObject*) selectedItem
+- (NSObject *)selectedItem
 {
     return self.popupedPicker.date;
 }
 
-
-- (void) popupWillAppear:(BOOL)animated
+- (void)popupWillAppear:(BOOL)animated
 {
     [super popupWillAppear:animated];
-    
+
     // setup current value
-    if(self->selectedItem)
-    {
-        if([self->selectedItem isKindOfClass:[NSDate class]])
-        {
-            self.popupedPicker.date = (NSDate*)self->selectedItem;
+    if (self->selectedItem) {
+        if ([self->selectedItem isKindOfClass:[NSDate class]]) {
+            self.popupedPicker.date = (NSDate *) self->selectedItem;
         }
-        else
-        {
+        else {
             NSAssert(NO, @"Wrong class type !!!");
         }
     }
 }
-
-
-
 
 @end

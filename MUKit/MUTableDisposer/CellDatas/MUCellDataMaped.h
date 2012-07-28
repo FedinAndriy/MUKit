@@ -14,12 +14,12 @@
     NSObject *object;
 }
 
-@property (nonatomic, readonly) NSString *key;
-@property (nonatomic, readonly) NSObject *object;
+@property(nonatomic, readonly) NSString *key;
+@property(nonatomic, readonly) NSObject *object;
 
-- (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey;
+- (id)initWithObject:(NSObject *)aObject key:(NSString *)aKey;
 
-- (void) mapFromObject;
-- (void) mapToObject;
+- (void)mapFromObject;
+- (void)mapToObject;
 
 @end

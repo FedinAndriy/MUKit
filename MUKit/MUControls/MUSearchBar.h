@@ -11,10 +11,10 @@
 
 @interface MUSearchBar : UISearchBar
 {
-    UIImage* imageBG;
-    UIImageView* backgroundView;
+    UIImage *imageBG;
+    UIImageView *backgroundView;
 }
 
-@property (nonatomic, retain) UIImage* imageBG;
+@property(nonatomic, retain) UIImage *imageBG;
 
 @end

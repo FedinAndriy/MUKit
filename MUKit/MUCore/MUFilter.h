@@ -15,25 +15,22 @@
     NSUInteger maxLengthText;
 }
 
-@property (nonatomic, assign) NSUInteger maxLengthText;
+@property(nonatomic, assign) NSUInteger maxLengthText;
 
-- (id)initWithMaxLengthText:(NSUInteger) aMaxLengthText;
-- (BOOL) filterText:(id)inputTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
+- (id)initWithMaxLengthText:(NSUInteger)aMaxLengthText;
+- (BOOL)filterText:(id)inputTextField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 
 @end
-
 
 /// text with only number
 @interface MUFilterNumbers : MUFilter
 
 @end
 
-
 /// text with only letters
 @interface MUFilterLetters : MUFilter
 
 @end
-
 
 @interface MUFilterLettersAndDigits : MUFilter
 

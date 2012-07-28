@@ -11,37 +11,31 @@
 @class MUCell;
 @class MUCellData;
 
-
 @interface MUCellData : NSObject
-{
-    @private
-    NSMutableArray *cellSelectedHandlers;
-    NSMutableArray *cellDeselectedHandler;
-}
 
-@property (nonatomic, assign) Class controllerClass;// deprecated
+@property(nonatomic, assign) Class controllerClass;// deprecated
 
-@property (nonatomic, retain) NSString* cellNibName;
+@property(nonatomic, retain) NSString *cellNibName;
 
-@property (nonatomic, assign) Class cellClass;
-@property (nonatomic, readonly) NSString *cellIdentifier;
+@property(nonatomic, assign) Class cellClass;
+@property(nonatomic, readonly) NSString *cellIdentifier;
 
-@property (nonatomic, assign) UITableViewCellStyle cellStyle;
-@property (nonatomic, assign) UITableViewCellSelectionStyle cellSelectionStyle;
-@property (nonatomic, assign) UITableViewCellAccessoryType cellAccessoryType;
-@property (nonatomic, assign) BOOL autoDeselect;
-@property (nonatomic, assign) BOOL visible;
-@property (nonatomic, assign) BOOL enableEdit;
+@property(nonatomic, assign) UITableViewCellStyle cellStyle;
+@property(nonatomic, assign) UITableViewCellSelectionStyle cellSelectionStyle;
+@property(nonatomic, assign) UITableViewCellAccessoryType cellAccessoryType;
+@property(nonatomic, assign) BOOL autoDeselect;
+@property(nonatomic, assign) BOOL visible;
+@property(nonatomic, assign) BOOL enableEdit;
 
-- (id) init;
-- (CGFloat) cellHeightForWidth:(CGFloat) aWidth; 
+- (id)init;
+- (CGFloat)cellHeightForWidth:(CGFloat)aWidth;
 
-- (void) addCellSelectedTarget:(id)aTarget action:(SEL)anAction;
-- (void) addCellDeselectedTarget:(id)aTarget action:(SEL)anAction;
+- (void)addCellSelectedTarget:(id)aTarget action:(SEL)anAction;
+- (void)addCellDeselectedTarget:(id)aTarget action:(SEL)anAction;
 
-- (void) performSelectedHandlers;
-- (void) performDeselectedHandlers;
+- (void)performSelectedHandlers;
+- (void)performDeselectedHandlers;
 
-- (MUCell*) createCell;
+- (MUCell *)createCell;
 
 @end

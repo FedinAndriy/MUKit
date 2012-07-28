@@ -26,11 +26,10 @@
 
 #pragma mark - Init/Dealloc
 
-- (id) initWithObject:(NSObject *)aObject key:(NSString *)aKey
+- (id)initWithObject:(NSObject *)aObject key:(NSString *)aKey
 {
     self = [super initWithObject:aObject key:aKey];
-    if(self)
-    {
+    if (self) {
         self.cellClass = [MUCellTextField class];
         self.cellSelectionStyle = UITableViewCellSelectionStyleNone;
 
@@ -43,14 +42,13 @@
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [placeholder release];
     [placeholderColor release];
     [validator release];
     [filter release];
-    
+
     [super dealloc];
 }
 

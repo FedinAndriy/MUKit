@@ -15,8 +15,8 @@ typedef void (^MUCommandCallback)(BOOL success);
     __block BOOL isExecution;
 }
 
-@property (nonatomic, assign) BOOL isExecution;
+@property(nonatomic, assign) BOOL isExecution;
 
-- (void) executeWithCallback:(MUCommandCallback)aCallback;
+- (void)executeWithCallback:(MUCommandCallback)aCallback;
 
 @end

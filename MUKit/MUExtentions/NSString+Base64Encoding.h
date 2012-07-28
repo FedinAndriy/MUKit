@@ -1,5 +1,5 @@
 //
-//  NSString+Base64Encoding.h
+//  NSString+Extension+Base64Encoding.h
 //  MUKit
 //
 //  Created by Malaar on 7/11/11.
@@ -11,6 +11,6 @@
 
 @interface NSString (Base64Encoding)
 
-+ (NSString *) base64StringFromData: (NSData *)data length: (int)length;
++ (NSString *)base64StringFromData:(NSData *)data length:(int)length;
 
 @end

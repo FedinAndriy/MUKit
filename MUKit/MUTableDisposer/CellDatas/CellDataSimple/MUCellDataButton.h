@@ -11,13 +11,13 @@
 
 @interface MUCellDataButton : MUCellData
 
-@property (nonatomic, retain) NSString* title;
-@property (nonatomic, retain) UIColor *titleColor;
-@property (nonatomic, assign) UIFont *titleFont;
-@property (nonatomic, assign) UITextAlignment titleAlignment;
+@property(nonatomic, retain) NSString *title;
+@property(nonatomic, retain) UIColor *titleColor;
+@property(nonatomic, assign) UIFont *titleFont;
+@property(nonatomic, assign) UITextAlignment titleAlignment;
 
-@property (nonatomic, readonly) MUTargetAction* targetAction;
+@property(nonatomic, readonly) MUTargetAction *targetAction;
 
-- (void) setTarget:(id)aTarget action:(SEL)anAction;
+- (void)setTarget:(id)aTarget action:(SEL)anAction;
 
 @end

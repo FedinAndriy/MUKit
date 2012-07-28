@@ -13,21 +13,19 @@
 @synthesize popoverOwner;
 
 
-- (id) initWithPopupView:(MUPopupView*)aPopupedView
+- (id)initWithPopupView:(MUPopupView *)aPopupedView
 {
-    if( (self = [super init]) )
-    {
+    if ((self = [super init])) {
         popupedView = [aPopupedView retain];
         self.modalInPopover = !popupedView.hideByTapOutside;
     }
     return self;
 }
 
-
-- (void) dealloc
+- (void)dealloc
 {
     [popupedView release];
-    
+
     [super dealloc];
 }
 
@@ -36,7 +34,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+
     self.view.backgroundColor = [UIColor clearColor];
     self.view.bounds = popupedView.bounds;
 
@@ -46,29 +44,25 @@
     [self setContentSizeForViewInPopover:popupedView.bounds.size];
 }
 
-
-- (void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [popupedView popupWillAppear:animated];
 }
 
-
-- (void) viewDidAppear:(BOOL)animated
+- (void)viewDidAppear:(BOOL)animated
 {
     [popupedView popupDidAppear:animated];
 }
 
-
-- (void) viewWillDisappear:(BOOL)animated
+- (void)viewWillDisappear:(BOOL)animated
 {
     [popupedView popupWillDisappear:animated];
 }
 
-
-- (void) viewDidDisappear:(BOOL)animated
+- (void)viewDidDisappear:(BOOL)animated
 {
     [popupedView popupDidDisappear:animated];
-    
+
     [popoverOwner autorelease];
 }
 
