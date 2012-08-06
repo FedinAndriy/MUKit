@@ -371,6 +371,7 @@
 
     // disable button
     disabledButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    disabledButton.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
     [tabBar addSubview:disabledButton];
     [disabledButton addTarget:self action:@selector(disabledButtonPressed) forControlEvents:UIControlEventTouchUpInside];
 
