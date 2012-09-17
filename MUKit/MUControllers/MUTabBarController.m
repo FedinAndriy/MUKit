@@ -345,7 +345,7 @@
 
 - (void) setupControllers
 {
-    CGSize tabBarItemFullSize = CGSizeMake(tabBar.bounds.size.width / [viewControllers count], tabBar.bounds.size.height);
+    CGSize tabBarItemFullSize = CGSizeMake(ceil(tabBar.bounds.size.width / [viewControllers count]), tabBar.bounds.size.height);
     NSUInteger tabBarButtonIndex = 0;
     
     NSMutableArray* tabs = [NSMutableArray arrayWithCapacity:[viewControllers count]];
